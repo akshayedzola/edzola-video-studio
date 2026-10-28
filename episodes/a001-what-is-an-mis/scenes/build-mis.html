@@ -1,0 +1,314 @@
+<!doctype html>
+<!-- ep000 v2 · build-mis · "Building an MIS, floor by floor".
+     Five floors stack bottom-up on the left; the right panel shows what each floor fixes.
+     b8: bracket wraps the floors as "MIS"; b9: the definition. All timing via EZ.b/EZ.at.
+     Fictional organisation (Sitara Foundation), illustrative data only. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <link rel="stylesheet" href="brand.css" />
+  <script src="cues.js"></script>
+  <script src="gsap.min.js"></script>
+  <script src="kit.js"></script>
+  <style>
+    /* Opening title (b1–b2) */
+    #title { position: absolute; left: 120px; top: 230px; width: 1680px; text-align: center; }
+    #title .k { margin-bottom: 30px; }
+    #title .l1 { font-size: 104px; line-height: 1.1; }
+    #title .l2 { font-size: 116px; line-height: 1.12; color: var(--coral-deep); font-style: italic; margin-top: 8px; }
+    #title .l3 { font-size: 54px; margin-top: 60px; color: var(--ink); font-weight: 600; }
+
+    /* The building: floors stack from y=870 upwards */
+    #stack { position: absolute; left: 120px; top: 254px; width: 920px; height: 616px; }
+    .floor { position: absolute; left: 0; width: 920px; height: 112px; border-radius: 26px; display: flex; align-items: center;
+      padding-left: 26px; box-shadow: 0 2px 6px rgba(26,26,26,.06), 0 14px 30px rgba(26,26,26,.10); }
+    .floor .badge { width: 72px; height: 72px; border-radius: 50%; background: var(--paper); display: flex; align-items: center;
+      justify-content: center; font-size: 40px; flex: none; }
+    .floor svg { width: 60px; height: 60px; margin-left: 26px; flex: none; }
+    .floor .lbl { margin-left: 22px; font-size: 44px; font-weight: 650; color: var(--ink); white-space: nowrap; }
+    #f1 { top: 504px; background: var(--coral); }
+    #f2 { top: 378px; background: var(--teal); }
+    #f3 { top: 252px; background: var(--yellow); }
+    #f4 { top: 126px; background: var(--teal); }
+    #f5 { top: 0; background: var(--coral); }
+    #glow { position: absolute; left: 110px; top: 244px; width: 940px; height: 132px; border-radius: 34px;
+      box-shadow: 0 0 46px 14px rgba(232,150,122,.75); }
+
+    /* Bracket + MIS label (b8) */
+    #bracket { position: absolute; left: 1062px; top: 254px; width: 60px; height: 616px; }
+    #misLabel { position: absolute; left: 1160px; top: 400px; width: 640px; }
+    #misLabel .big { font-size: 200px; line-height: 1; color: var(--coral-deep); }
+    #misLabel .sub { font-size: 36px; font-weight: 600; margin-top: 16px; color: var(--ink); }
+
+    /* Right panel: "what it fixes" */
+    #panel { position: absolute; left: 1140px; top: 220px; width: 660px; height: 650px; }
+    .fx { position: absolute; left: 0; top: 0; width: 660px; height: 650px; }
+    .fx .kicker { position: absolute; left: 44px; top: 40px; font-size: 22px; }
+    .fx .ttl { position: absolute; left: 44px; top: 78px; font-size: 46px; }
+    .kchip { position: absolute; padding: 12px 26px; border-radius: 16px; background: var(--paper); border: 3px solid var(--yellow);
+      font-size: 32px; font-weight: 600; white-space: nowrap; box-shadow: var(--shadow); }
+    #kOne { left: 66px; top: 330px; border-color: var(--teal); font-size: 36px; }
+    #kOne b { color: var(--teal-deep); }
+    .note { position: absolute; left: 44px; font-size: 28px; color: var(--grey); }
+
+    .ev { position: absolute; top: 196px; padding: 9px 18px; border-radius: 999px; font-size: 24px; font-weight: 700; color: var(--ink);
+      white-space: nowrap; box-shadow: 0 6px 16px rgba(26,26,26,.12); }
+    #record { position: absolute; left: 44px; top: 290px; width: 572px; height: 316px; border-radius: 20px; background: var(--cream);
+      border: 2px solid var(--line); }
+    #record .hd { position: absolute; left: 28px; top: 22px; font-size: 30px; font-weight: 700; }
+    #record .hd span { color: var(--grey); font-weight: 600; }
+    .rrow { position: absolute; left: 28px; width: 516px; height: 46px; display: flex; align-items: center; gap: 16px; font-size: 28px; font-weight: 600; }
+    .rrow .dot { width: 16px; height: 16px; border-radius: 50%; flex: none; }
+    .rrow .ok { margin-left: auto; color: var(--teal-deep); font-weight: 800; }
+
+    #rule { position: absolute; left: 44px; top: 200px; width: 572px; height: 120px; border-radius: 20px; background: var(--yellow-soft);
+      border: 3px solid var(--yellow); display: flex; align-items: center; padding-left: 30px; font-size: 40px; }
+    #ruleNote { top: 340px; }
+    #blocked { position: absolute; left: 44px; top: 420px; width: 572px; height: 100px; border-radius: 20px; background: var(--danger-bg);
+      border: 3px solid var(--danger); display: flex; align-items: center; padding: 0 28px; font-size: 30px; font-weight: 700; color: var(--danger); }
+    #blocked .x { margin-left: auto; width: 54px; height: 54px; border-radius: 50%; background: var(--danger); color: #fff;
+      display: flex; align-items: center; justify-content: center; font-size: 32px; }
+    #blockedNote { top: 540px; color: var(--danger); font-weight: 600; font-size: 26px; }
+
+    .scr { position: absolute; top: 180px; width: 176px; height: 134px; border-radius: 14px; background: var(--paper);
+      border: 2px solid var(--line); overflow: hidden; box-shadow: var(--shadow); }
+    .scr .bar { height: 40px; display: flex; align-items: center; padding-left: 14px; font-size: 21px; font-weight: 700; color: var(--ink); }
+    .scr .ln { height: 10px; border-radius: 5px; background: var(--line); margin: 14px 14px 0; }
+    #wires { position: absolute; left: 0; top: 0; width: 660px; height: 650px; }
+    #rec4 { position: absolute; left: 175px; top: 470px; width: 310px; height: 104px; border-radius: 18px; background: var(--paper);
+      border: 3px solid var(--coral); text-align: center; padding-top: 14px; box-shadow: var(--shadow); }
+    #rec4 .a { font-size: 22px; font-weight: 700; letter-spacing: .12em; color: var(--coral-deep); }
+    #rec4 .b { font-size: 32px; font-weight: 700; margin-top: 6px; }
+
+    #phone { position: absolute; left: 190px; top: 168px; width: 280px; height: 452px; border-radius: 44px; border: 10px solid var(--ink);
+      background: var(--peach); }
+    #phone .notch { position: absolute; left: 90px; top: 12px; width: 80px; height: 14px; border-radius: 7px; background: var(--ink); }
+    #notif { position: absolute; left: 120px; top: 250px; width: 420px; padding: 22px 26px; border-radius: 22px; background: var(--paper);
+      box-shadow: 0 10px 30px rgba(26,26,26,.18); border: 2px solid var(--line); }
+    #notif .app { font-size: 20px; font-weight: 700; color: var(--grey); letter-spacing: .06em; }
+    #notif .m1 { font-size: 32px; font-weight: 700; margin-top: 8px; }
+    #notif .m2 { font-size: 32px; font-weight: 700; color: var(--coral-deep); margin-top: 2px; }
+    .ring { position: absolute; left: 498px; top: 228px; width: 60px; height: 60px; border-radius: 50%; border: 4px solid var(--coral); }
+    #bell { position: absolute; left: 508px; top: 238px; width: 40px; height: 40px; border-radius: 50%; background: var(--coral-deep); }
+
+    /* Definition (b9) */
+    #def { position: absolute; left: 1140px; top: 230px; width: 660px; height: 640px; padding: 56px 52px; }
+    #def .kicker { font-size: 22px; }
+    #def .txt { font-size: 66px; line-height: 1.16; margin-top: 30px; }
+    #def .hl { color: var(--coral-deep); font-style: italic; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="build-mis" data-start="0" data-duration="{{DURATION}}"
+       data-width="1920" data-height="1080" data-fps="30">
+    <div id="stage" class="abs" style="inset:0">
+      <div id="title">
+        <div class="kicker k">So what would fix this?</div>
+        <div class="l1 serif">Not a better spreadsheet.</div>
+        <div class="l2 serif">A different kind of system.</div>
+        <div class="l3">Let's build it, one floor at a time.</div>
+      </div>
+
+      <div id="glow"></div>
+      <div id="stack">
+        <div class="floor" id="f1"><div class="badge serif">1</div>
+          <svg viewBox="0 0 60 60" fill="none" stroke="#1a1a1a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="12" width="48" height="36" rx="6"/><circle cx="21" cy="28" r="6"/><path d="M12 42c2-5 16-5 18 0M36 24h12M36 32h9"/></svg>
+          <div class="lbl">One ID per person</div></div>
+        <div class="floor" id="f2"><div class="badge serif">2</div>
+          <svg viewBox="0 0 60 60" fill="none" stroke="#1a1a1a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 34l6-20h32l6 20v14H8z"/><path d="M8 34h14l3 6h10l3-6h14"/><path d="M30 4v18M24 16l6 6 6-6"/></svg>
+          <div class="lbl">One place per event</div></div>
+        <div class="floor" id="f3"><div class="badge serif">3</div>
+          <svg viewBox="0 0 60 60" fill="none" stroke="#1a1a1a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M30 6l20 8v14c0 13-9 22-20 26C19 50 10 41 10 28V14z"/><path d="M21 30l6 6 12-13"/></svg>
+          <div class="lbl">Shared rules</div></div>
+        <div class="floor" id="f4"><div class="badge serif">4</div>
+          <svg viewBox="0 0 60 60" fill="none" stroke="#1a1a1a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="8" width="20" height="16" rx="3"/><rect x="36" y="8" width="20" height="16" rx="3"/><rect x="20" y="38" width="20" height="16" rx="3"/>
+            <path d="M14 24v6h32v-6M30 30v8"/></svg>
+          <div class="lbl">A view for every team</div></div>
+        <div class="floor" id="f5"><div class="badge serif">5</div>
+          <svg viewBox="0 0 60 60" fill="none" stroke="#1a1a1a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M48 26A19 19 0 0 0 14 18"/><path d="M12 8v11h11"/><path d="M12 34a19 19 0 0 0 34 8"/><path d="M48 52V41H37"/></svg>
+          <div class="lbl">A loop back to the field</div></div>
+      </div>
+
+      <svg id="bracket" viewBox="0 0 60 616" fill="none" stroke="#a64c35" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path id="brPath" d="M4 4 H26 V300 L44 308 L26 316 V612 H4"/></svg>
+      <div id="misLabel"><div class="big serif">MIS</div><div class="sub">Management information system</div></div>
+
+      <div id="panel" class="card">
+        <!-- Floor 1: one ID per person -->
+        <div class="fx" id="fx1" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div class="kicker">What it fixes</div><div class="ttl serif">Three spellings, one person</div>
+          <div class="kchip" id="k1" style="left:44px; top:196px" data-layout-allow-overlap>Kavya Sharma</div>
+          <div class="kchip" id="k2" style="left:250px; top:290px" data-layout-allow-overlap>Kavya S.</div>
+          <div class="kchip" id="k3" style="left:120px; top:390px" data-layout-allow-overlap>K. Sharma</div>
+          <div class="kchip" id="kOne" data-layout-allow-overlap>Kavya Sharma · <b>ID 0217</b></div>
+          <div class="note" id="n1" style="top:470px">One person. One record. Only one.</div>
+        </div>
+        <!-- Floor 2: one place per event -->
+        <div class="fx" id="fx2" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div class="kicker">What it fixes</div><div class="ttl serif">Every event, entered once</div>
+          <div id="record">
+            <div class="hd">Kavya Sharma <span>· ID 0217</span></div>
+            <div class="rrow" id="r1" style="top:84px"><div class="dot" style="background:var(--coral)"></div>Enrolled<div class="ok">✓</div></div>
+            <div class="rrow" id="r2" style="top:138px"><div class="dot" style="background:var(--yellow)"></div>Attended<div class="ok">✓</div></div>
+            <div class="rrow" id="r3" style="top:192px"><div class="dot" style="background:var(--teal)"></div>Stipend<div class="ok">✓</div></div>
+            <div class="rrow" id="r4" style="top:246px"><div class="dot" style="background:var(--coral-deep)"></div>Placed<div class="ok">✓</div></div>
+          </div>
+          <div class="ev" id="e1" style="left:44px; background:#f6c6b5" data-layout-allow-overlap>Enrolled</div>
+          <div class="ev" id="e2" style="left:194px; background:var(--yellow)" data-layout-allow-overlap>Attended</div>
+          <div class="ev" id="e3" style="left:354px; background:var(--teal)" data-layout-allow-overlap>Stipend</div>
+          <div class="ev" id="e4" style="left:494px; background:var(--peach)" data-layout-allow-overlap>Placed</div>
+        </div>
+        <!-- Floor 3: shared rules -->
+        <div class="fx" id="fx3" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div class="kicker">What it fixes</div><div class="ttl serif">One meaning of "placed"</div>
+          <div id="rule" class="serif">Placed = offer + joined</div>
+          <div class="note" id="ruleNote">The same rule, for every team.</div>
+          <div id="blocked">Mark placed before trained<div class="x">✕</div></div>
+          <div class="note" id="blockedNote">Not allowed: training not complete</div>
+        </div>
+        <!-- Floor 4: a view for every team -->
+        <div class="fx" id="fx4" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div class="kicker">What it fixes</div><div class="ttl serif">Own screens, same record</div>
+          <svg id="wires" viewBox="0 0 660 650" fill="none" stroke="#a64c35" stroke-width="4" stroke-linecap="round">
+            <path class="wire" d="M132 316 C132 400 300 400 315 468"/>
+            <path class="wire" d="M330 316 L330 468"/>
+            <path class="wire" d="M528 316 C528 400 360 400 345 468"/></svg>
+          <div class="scr" id="s1" style="left:44px"><div class="bar" style="background:var(--coral)">Programme</div><div class="ln"></div><div class="ln" style="width:60%"></div><div class="ln" style="width:80%"></div></div>
+          <div class="scr" id="s2" style="left:242px"><div class="bar" style="background:var(--yellow)">M&amp;E</div><div class="ln"></div><div class="ln" style="width:70%"></div><div class="ln" style="width:50%"></div></div>
+          <div class="scr" id="s3" style="left:440px"><div class="bar" style="background:var(--teal)">Finance</div><div class="ln"></div><div class="ln" style="width:55%"></div><div class="ln" style="width:75%"></div></div>
+          <div id="rec4"><div class="a">ONE RECORD</div><div class="b">Kavya · ID 0217</div></div>
+        </div>
+        <!-- Floor 5: a loop back to the field -->
+        <div class="fx" id="fx5" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div class="kicker">What it fixes</div><div class="ttl serif">Data that comes back</div>
+          <div id="phone"><div class="notch"></div></div>
+          <div class="ring" id="ring1" data-layout-allow-overlap></div><div class="ring" id="ring2" data-layout-allow-overlap></div>
+          <div id="notif" data-layout-allow-overlap>
+            <div class="app">SITARA MIS · NOW</div>
+            <div class="m1">Kavya missed 3 sessions.</div>
+            <div class="m2">Call her today.</div>
+          </div>
+          <div id="bell" data-layout-allow-overlap></div>
+        </div>
+      </div>
+
+      <div id="def" class="card">
+        <div class="kicker">An MIS is</div>
+        <div class="txt serif">One record per person, shared by everyone, <span class="hl">that the work runs through.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tl = gsap.timeline({paused: true, defaults: {ease: "power2.out"}});
+      var b = EZ.b, e = EZ.e, at = EZ.at;
+
+      gsap.set(["#title .k", "#title .l1", "#title .l2", "#title .l3", ".floor", "#glow", "#bracket", "#misLabel",
+                "#panel", ".fx", "#def", "#kOne", "#n1", ".rrow", ".ev", "#rule", "#ruleNote", "#blocked", "#blockedNote",
+                ".scr", "#rec4", "#phone", "#notif", ".ring", "#bell", "#k1", "#k2", "#k3"], {opacity: 0});
+      var brPath = document.getElementById("brPath"), brLen = brPath.getTotalLength();
+      gsap.set(brPath, {strokeDasharray: brLen, strokeDashoffset: brLen});
+      EZ.$$(".wire").forEach(function (w) { var L = w.getTotalLength(); gsap.set(w, {strokeDasharray: L, strokeDashoffset: L}); });
+
+      // b1 "So what would fix this? Not a better spreadsheet. A different kind of system."
+      EZ.rise(tl, "#title .k", b(1), {y: 20});
+      EZ.rise(tl, "#title .l1", at(1, 0.3), {y: 30, d: 0.7});
+      tl.fromTo("#title .l2", {opacity: 0, y: 30, scale: 0.95}, {opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "back.out(1.6)"}, at(1, 0.62));
+      // b2 "Let's build it, one floor at a time."
+      EZ.rise(tl, "#title .l3", b(2) + 0.1, {y: 20});
+      tl.to("#title", {opacity: 0, y: -40, duration: 0.5, ease: "power2.in"}, e(2) - 0.1);
+
+      // Each floor drops in with weight; the floors below take the impact.
+      function drop(n, t) {
+        var f = "#f" + n;
+        tl.fromTo(f, {opacity: 0, y: -260}, {opacity: 1, y: 0, duration: 0.5, ease: "power3.in"}, t);
+        tl.fromTo(f, {scaleY: 1}, {scaleY: 0.9, duration: 0.08, yoyo: true, repeat: 1, ease: "sine.out", transformOrigin: "50% 100%"}, t + 0.5);
+        for (var k = 1; k < n; k++) tl.to("#f" + k, {y: 4, duration: 0.07, yoyo: true, repeat: 1}, t + 0.5);
+      }
+      function showFx(n, t) {
+        if (n === 1) tl.to("#panel", {opacity: 1, duration: 0.4}, t);
+        else tl.to("#fx" + (n - 1), {opacity: 0, x: -30, duration: 0.35, ease: "power2.in"}, t);
+        tl.fromTo("#fx" + n, {opacity: 0, x: 30}, {opacity: 1, x: 0, duration: 0.5}, t + (n === 1 ? 0.1 : 0.3));
+      }
+
+      // b3 Floor one: one ID per person. Kavya's three spellings merge into one record.
+      drop(1, b(3));
+      showFx(1, b(3) + 0.3);
+      EZ.pop(tl, ["#k1", "#k2", "#k3"], at(3, 0.25), {stagger: 0.12});
+      var m = at(3, 0.6);
+      tl.to("#k1", {x: 22, y: 134, duration: 0.6, ease: "power2.inOut"}, m);
+      tl.to("#k2", {x: -184, y: 40, duration: 0.6, ease: "power2.inOut"}, m + 0.05);
+      tl.to("#k3", {x: -54, y: -60, duration: 0.6, ease: "power2.inOut"}, m + 0.1);
+      tl.to(["#k1", "#k2", "#k3"], {opacity: 0, duration: 0.2}, m + 0.6);
+      EZ.pop(tl, "#kOne", m + 0.62, {d: 0.5});
+      EZ.rise(tl, "#n1", m + 0.9, {y: 14});
+
+      // b4 Floor two: one place per event. Four events drop into one record.
+      drop(2, b(4));
+      showFx(2, b(4) + 0.2);
+      [1, 2, 3, 4].forEach(function (i) {
+        var t = at(4, 0.42 + 0.1 * (i - 1));
+        var leftNow = [44, 194, 354, 494][i - 1];
+        tl.fromTo("#e" + i, {opacity: 0, y: -30}, {opacity: 1, y: 0, duration: 0.25}, t - 0.3);
+        tl.to("#e" + i, {x: 360 - leftNow, y: [84, 138, 192, 246][i - 1] + 290 - 196 + 4, duration: 0.45, ease: "power2.in"}, t);
+        tl.to("#e" + i, {opacity: 0, duration: 0.12}, t + 0.42);
+        tl.fromTo("#r" + i, {opacity: 0}, {opacity: 1, duration: 0.25}, t + 0.4);
+      });
+
+      // b5 Floor three: shared rules; placing before training is blocked.
+      drop(3, b(5));
+      showFx(3, b(5) + 0.2);
+      EZ.pop(tl, "#rule", at(5, 0.3), {d: 0.5});
+      EZ.rise(tl, "#ruleNote", at(5, 0.4), {y: 12});
+      EZ.rise(tl, "#blocked", at(5, 0.68), {y: 20, d: 0.5});
+      EZ.shake(tl, "#blocked", at(5, 0.85));
+      EZ.rise(tl, "#blockedNote", at(5, 0.88), {y: 10, d: 0.4});
+
+      // b6 Floor four: a view for every team, all wired to the same record.
+      drop(4, b(6));
+      showFx(4, b(6) + 0.2);
+      EZ.rise(tl, ".scr", at(6, 0.25), {y: 24, stagger: 0.18});
+      EZ.pop(tl, "#rec4", at(6, 0.5), {d: 0.5});
+      tl.to(".wire", {strokeDashoffset: 0, duration: 0.8, stagger: 0.12, ease: "power2.inOut"}, at(6, 0.6));
+      EZ.pulse(tl, ".scr", at(6, 0.82), 1.05);
+
+      // b7 Floor five, glowing: data flows back to the field. Phone ping.
+      drop(5, b(7));
+      tl.fromTo("#glow", {opacity: 0}, {opacity: 1, duration: 0.6}, b(7) + 0.6);
+      tl.to("#glow", {opacity: 0.45, duration: 0.9, yoyo: true, repeat: 3, ease: "sine.inOut"}, b(7) + 1.2);
+      showFx(5, b(7) + 0.2);
+      EZ.rise(tl, "#phone", at(7, 0.3), {y: 30, d: 0.6});
+      var p = at(7, 0.7);
+      tl.fromTo("#notif", {opacity: 0, y: -60}, {opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)"}, p - 0.25);
+      EZ.pop(tl, "#bell", p, {d: 0.3});
+      tl.fromTo("#ring1", {opacity: 0.9, scale: 0.6}, {opacity: 0, scale: 1.9, duration: 0.9, ease: "power1.out"}, p);
+      tl.fromTo("#ring2", {opacity: 0.9, scale: 0.6}, {opacity: 0, scale: 1.9, duration: 0.9, ease: "power1.out"}, p + 0.3);
+
+      // b8 "Put those five floors together…" — pulse bottom to top, bracket wraps them: MIS.
+      tl.to("#panel", {opacity: 0, x: 40, duration: 0.45, ease: "power2.in"}, b(8));
+      tl.to("#glow", {opacity: 0.5, duration: 0.4}, b(8));
+      [1, 2, 3, 4, 5].forEach(function (n, i) { EZ.pulse(tl, "#f" + n, at(8, 0.12) + i * 0.2, 1.03); });
+      tl.set("#bracket", {opacity: 1}, at(8, 0.4));
+      tl.to(brPath, {strokeDashoffset: 0, duration: 0.8, ease: "power2.inOut"}, at(8, 0.4));
+      tl.fromTo("#misLabel", {opacity: 0, x: -30}, {opacity: 1, x: 0, duration: 0.7}, at(8, 0.55));
+
+      // b9 The definition replaces the right side.
+      tl.to("#misLabel", {opacity: 0, y: -30, duration: 0.4, ease: "power2.in"}, b(9));
+      EZ.rise(tl, "#def", b(9) + 0.2, {y: 30, d: 0.8});
+      tl.fromTo("#def .hl", {opacity: 0.15}, {opacity: 1, duration: 0.7}, at(9, 0.55));
+      tl.fromTo("#bracket", {opacity: 1}, {opacity: 0.5, duration: 0.6}, b(9));
+
+      EZ.finish(tl, {tag: true});
+      window.__timelines = window.__timelines || {};
+      window.__timelines["build-mis"] = tl;
+    })();
+  </script>
+</body>
+</html>

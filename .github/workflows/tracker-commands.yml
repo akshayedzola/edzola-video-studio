@@ -1,0 +1,118 @@
+# Slash commands on episode issues: /claim, /unclaim, /published <youtube-url>, /release, /help
+# The issue is the single source of truth for who is making which video and where it is.
+name: tracker-commands
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  command:
+    if: ${{ !github.event.issue.pull_request && startsWith(github.event.comment.body, '/') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const MAX_ACTIVE_CLAIMS = 2;
+            const STAGES = ['stage:open', 'stage:claimed', 'stage:creation', 'stage:review', 'stage:approved', 'stage:published'];
+            const {owner, repo} = context.repo;
+            const issue = context.payload.issue;
+            const actor = context.payload.comment.user.login;
+            const [cmd, ...rest] = context.payload.comment.body.trim().split(/\s+/);
+            const labels = issue.labels.map(l => l.name);
+            const reply = body => github.rest.issues.createComment({owner, repo, issue_number: issue.number, body});
+            const setStage = async stage => {
+              for (const s of STAGES) if (labels.includes(s) && s !== stage)
+                await github.rest.issues.removeLabel({owner, repo, issue_number: issue.number, name: s}).catch(() => {});
+              await github.rest.issues.addLabels({owner, repo, issue_number: issue.number, labels: [stage]});
+            };
+            const isMaintainer = async () => {
+              const {data} = await github.rest.repos.getCollaboratorPermissionLevel({owner, repo, username: actor});
+              return ['admin', 'maintain', 'write'].includes(data.permission);
+            };
+            const id = (issue.title.match(/^\[([a-z0-9-]+)\]/) || [])[1];
+            if (!labels.includes('episode') || !id) {
+              if (cmd === '/claim') await reply('This issue is not an episode in the catalogue, so it cannot be claimed.');
+              return;
+            }
+
+            if (cmd === '/help') {
+              return reply([
+                '**Commands**',
+                '- `/claim`: take this episode (you can hold ' + MAX_ACTIVE_CLAIMS + ' unfinished episodes at a time)',
+                '- `/unclaim`: give it back',
+                '- `/published <youtube-url>`: maintainers only, once the video is live',
+                '- `/release`: maintainers only, frees a stalled claim',
+                'Stages move automatically with your pull request: draft PR = creation, ready for review = manual review, merged = approved.',
+              ].join('\n'));
+            }
+
+            if (cmd === '/claim') {
+              if (!labels.includes('stage:open') || issue.assignees.length) {
+                const who = issue.assignees.map(a => '@' + a.login).join(', ') || 'someone';
+                return reply(`@${actor} this episode is already taken by ${who}. Pick another one from the [open list](https://github.com/${owner}/${repo}/issues?q=is%3Aopen+label%3Aepisode+label%3Astage%3Aopen).`);
+              }
+              const q = `repo:${owner}/${repo} is:issue is:open label:episode assignee:${actor} -label:stage:approved -label:stage:published`;
+              const active = (await github.rest.search.issuesAndPullRequests({q})).data.total_count;
+              if (active >= MAX_ACTIVE_CLAIMS) {
+                return reply(`@${actor} you already have ${active} unfinished episodes. Finish or \`/unclaim\` one first, so nobody else is blocked.`);
+              }
+              await github.rest.issues.addAssignees({owner, repo, issue_number: issue.number, assignees: [actor]});
+              await setStage('stage:claimed');
+              return reply([
+                `🎬 **${id}** is yours, @${actor}. Thank you!`,
+                '',
+                '**Next steps**',
+                `1. \`git checkout -b ep/${id}\` and \`cp -R episodes/_template episodes/${id}\``,
+                '2. Write `brief.md` and `knowledge-brief.md`, then the storyboard (see [the explainer formula](../blob/main/docs/13-explainer-formula.md)).',
+                `3. Open a **draft** pull request early with \`Episode: #${issue.number}\` in the description. That moves this issue to *creation*.`,
+                '4. When the video passes `npm run render` QA, mark the PR **ready for review**. That moves it to *manual review*.',
+                '',
+                'Claims with no activity for 14 days get a reminder, and are released after 21. Stuck? Comment here; that keeps the claim alive.',
+              ].join('\n'));
+            }
+
+            if (cmd === '/unclaim' || cmd === '/release') {
+              const mine = issue.assignees.some(a => a.login === actor);
+              if (cmd === '/unclaim' && !mine) return reply(`@${actor} only the person who claimed this can \`/unclaim\` it.`);
+              if (cmd === '/release' && !(await isMaintainer())) return reply(`@${actor} \`/release\` is for maintainers.`);
+              await github.rest.issues.removeAssignees({owner, repo, issue_number: issue.number, assignees: issue.assignees.map(a => a.login)});
+              await github.rest.issues.removeLabel({owner, repo, issue_number: issue.number, name: 'stale-claim'}).catch(() => {});
+              await setStage('stage:open');
+              return reply('This episode is open again for anyone to `/claim`.');
+            }
+
+            if (cmd === '/published') {
+              if (!(await isMaintainer())) return reply(`@${actor} only maintainers publish to the EdZola channel.`);
+              const url = rest[0] || '';
+              if (!/^https:\/\/(www\.)?(youtube\.com\/(watch\?v=|shorts\/)|youtu\.be\/)[\w-]+/.test(url)) {
+                return reply('Usage: `/published https://www.youtube.com/watch?v=...`');
+              }
+              await setStage('stage:published');
+              await reply(`📺 Published: ${url}\n\nRemember: add the retention and comment numbers at 14 and 28 days to \`episodes/${id}/metrics.md\`, and fold any lessons into \`LEARNINGS.md\`.`);
+              await github.rest.issues.update({owner, repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'});
+
+              // Unlock derived work: Shorts for long-form episodes, language versions for everything.
+              const base = issue.title.replace(/^\[[^\]]+\]\s*/, '');
+              const isLong = !id.includes('--');
+              const isShort = /--short-\d+$/.test(id);
+              const derived = [];
+              if (isLong) for (let k = 1; k <= 3; k++) derived.push({id: `${id}--short-${k}`, title: `Short ${k}: ${base}`, kind: 'kind:short'});
+              const langs = {hi: 'Hindi', ta: 'Tamil', mr: 'Marathi'};
+              if (isLong || isShort) for (const [code, name] of Object.entries(langs)) derived.push({id: `${id}--${code}`, title: `${name}: ${base}`, kind: 'kind:language'});
+              const keep = labels.filter(l => l.startsWith('series:') || l.startsWith('priority:') || l === 'product');
+              for (const d of derived) {
+                await github.rest.issues.create({owner, repo, title: `[${d.id}] ${d.title}`,
+                  labels: ['episode', 'stage:open', d.kind, ...keep],
+                  body: `Derived from #${issue.number} (published: ${url}).\n\n` +
+                        (d.kind === 'kind:short'
+                          ? 'A vertical **Short** (9:16, 45–60 s): moves 1, 5 and 9 of the explainer formula, or one scene that stands on its own. Reuse the parent storyboard and scenes.'
+                          : 'A **language version**: translate the narration and on-screen text (human-reviewed, never machine-only), voice it with a native-sounding voice, and keep the visuals.') +
+                        `\n\nComment \`/claim\` to take it.\n<!-- episode-id:${d.id} -->`});
+              }
+              if (derived.length) await reply(`Opened ${derived.length} follow-up episodes (Shorts and language versions).`);
+            }

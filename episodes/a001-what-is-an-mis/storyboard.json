@@ -1,0 +1,1051 @@
+{
+  "$schema": "../../schemas/storyboard.schema.json",
+  "video_id": "a001-what-is-an-mis",
+  "title": "What is an MIS, really?",
+  "series": "Technology for Impact, Explained",
+  "audience": "Nonprofit programme leaders and M&E heads who have bought software but still fight over report numbers",
+  "learning_outcome": "The viewer can explain the mechanism by which separate team records produce conflicting reports, and name the five layers of an MIS that prevent it.",
+  "format": "before_after",
+  "status": "draft",
+  "renderer": "hyperframes",
+  "captions": "burned",
+  "music": "procedural:warm-pulse",
+  "voice": {
+    "engine": "chatterbox",
+    "voice": "default",
+    "speed": 1.0,
+    "lang": "en-gb",
+    "persona": "A warm, curious female narrator in her thirties with a light Indian English accent. Clear, conversational, like a favourite teacher explaining something she finds genuinely fascinating."
+  },
+  "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/concepts/points-of-view.md",
+    "knowledge/case-studies/sitara-foundation.md"
+  ],
+  "claims": [
+    {
+      "claim": "Sitara Foundation, Kavya, and every number shown (500 rows, 37 duplicates, 463 people, 298 placed, 120 hours)",
+      "status": "illustrative"
+    },
+    {
+      "claim": "A dashboard without a decision is decoration",
+      "source": "knowledge/frameworks/map-framework.md",
+      "status": "edzola_opinion"
+    },
+    {
+      "claim": "MAP: Model, Align, Power with AI",
+      "source": "knowledge/frameworks/map-framework.md",
+      "status": "edzola_opinion"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "cold-open",
+      "type": "hook",
+      "chapter": "Three answers to one question",
+      "template": "CaseOpen",
+      "composition": "scenes/cold-open.html",
+      "notes": "Curiosity gap + stakes. Mystery framing. Title lands only at the end.",
+      "visual": "Dark-to-cream: open on a dim ink background with a single clock reading 9:59 → 10:00 (tick). A phone-call card slides in: 'Funder call' with a question bubble typed out: 'How many learners did you place this quarter?'. Then three team avatars (simple circles with Programme coral / M&E yellow / Finance teal) each pop a big number bubble 312, 287, 341 on b4/b5/b6, slightly overlapping, each with a pop. b7: the three numbers line up and a thin red question line connects them. b8: big '?' fades. b9: all three numbers shake once and dim. b10: kinetic title: 'What is an MIS,' then 'really?' in deep coral, with the starburst accent.",
+      "beats": [
+        {
+          "text": "Tomorrow. Ten a.m.",
+          "voice": {
+            "pace": 0.9,
+            "energy": 0.35,
+            "direction": "Low, intriguing, unhurried. Setting a scene."
+          },
+          "sfx": [
+            {
+              "name": "tick",
+              "at": 0.1
+            },
+            {
+              "name": "tick",
+              "at": 0.6
+            }
+          ],
+          "pause": 0.4
+        },
+        {
+          "text": "Your biggest funder asks you one simple question.",
+          "voice": {
+            "pace": 0.98,
+            "energy": 0.45,
+            "direction": "Building quiet tension."
+          }
+        },
+        {
+          "text": "How many learners did you place this quarter?",
+          "voice": {
+            "pace": 0.96,
+            "energy": 0.5,
+            "direction": "Asking the question as the funder would, curious and direct."
+          },
+          "pause": 0.5
+        },
+        {
+          "text": "Programme says 312.",
+          "say": "Programme says three hundred and twelve.",
+          "voice": {
+            "pace": 1.08,
+            "energy": 0.7,
+            "direction": "Quick, confident."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.7
+            }
+          ],
+          "pause": 0.15
+        },
+        {
+          "text": "M&E says 287.",
+          "say": "And M and E? Two eighty-seven.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.55,
+            "direction": "Quick, slightly surprised.",
+            "seed": 11
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.7
+            }
+          ],
+          "pause": 0.15
+        },
+        {
+          "text": "Finance says 341.",
+          "say": "Finance says three forty-one!",
+          "voice": {
+            "pace": 1.12,
+            "energy": 0.85,
+            "direction": "Quick, now clearly surprised."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.7
+            }
+          ],
+          "pause": 0.5
+        },
+        {
+          "text": "Same organisation. Same quarter. Three answers.",
+          "voice": {
+            "pace": 0.88,
+            "energy": 0.6,
+            "direction": "Slow and deliberate, each phrase landing."
+          },
+          "pause": 0.5
+        },
+        {
+          "text": "So who got it wrong?",
+          "voice": {
+            "pace": 0.95,
+            "energy": 0.5,
+            "direction": "Playful, inviting the viewer to guess.",
+            "seed": 11
+          },
+          "pause": 0.7,
+          "say": "So, who got it wrong?"
+        },
+        {
+          "text": "Nobody. And that's exactly the problem.",
+          "voice": {
+            "pace": 0.9,
+            "energy": 0.8,
+            "direction": "A beat of surprise, then a firm, warm punchline."
+          },
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 0.05
+            }
+          ],
+          "pause": 0.5
+        },
+        {
+          "text": "Let's find out why. What is an MIS, really?",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.7,
+            "direction": "Bright and inviting, the start of a story."
+          },
+          "sfx": [
+            {
+              "name": "rise",
+              "at": 0.2
+            },
+            {
+              "name": "chime",
+              "at": 0.75
+            }
+          ],
+          "pause": 0.8
+        }
+      ]
+    },
+    {
+      "id": "hospital",
+      "type": "analogy",
+      "chapter": "A hospital you'd walk out of",
+      "template": "Analogy",
+      "composition": "scenes/hospital.html",
+      "notes": "Anchor the abstract problem to a familiar, emotionally loaded situation, then map it back.",
+      "visual": "Flat, friendly illustration style (simple geometric people: circle head + rounded body, no faces needed). Centre: a patient bed icon labelled 'One patient'. b2: three figures appear around it — Doctor, Nurse, Pharmacist — each holding its own folder (folder icons in three colours). b3: the doctor's folder updates: a line 'Dose: 5mg → 10mg' animates in the doctor's folder only (with a little pen stroke). b4: a dashed arrow tries to travel to the pharmacist's folder and stops halfway with a small ✕; pharmacist folder still says 'Dose: 5mg' — highlight in danger red. b5: a subtle 'EXIT' sign glows top-right (wry joke). b6: the MAPPING moment — each label morphs: 'One patient' → 'One learner', 'Doctor' → 'Programme', 'Nurse' → 'M&E', 'Pharmacist' → 'Finance'; the bed icon morphs into a student/graduation-cap icon; folders become spreadsheet icons. Use a smooth crossfade + slide for each label, staggered on the words in b6. b7: zoom out slightly; caption-style title 'Most nonprofits run like this hospital' with 'this hospital' in coral.",
+      "beats": [
+        {
+          "text": "Picture a hospital. One patient.",
+          "voice": {
+            "pace": 0.95,
+            "energy": 0.45,
+            "direction": "Warm storyteller, painting a picture."
+          }
+        },
+        {
+          "text": "The doctor keeps a file. The nurse keeps her own file. The pharmacist keeps a third.",
+          "voice": {
+            "pace": 1.02,
+            "energy": 0.5,
+            "direction": "Light rhythm, listing."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.05
+            },
+            {
+              "name": "pop",
+              "at": 0.4
+            },
+            {
+              "name": "pop",
+              "at": 0.75
+            }
+          ]
+        },
+        {
+          "text": "On Monday, the doctor doubles the dose.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.5,
+            "direction": "Matter of fact."
+          },
+          "sfx": [
+            {
+              "name": "scribble",
+              "at": 0.6
+            }
+          ]
+        },
+        {
+          "text": "The pharmacist's file never hears about it.",
+          "voice": {
+            "pace": 0.92,
+            "energy": 0.6,
+            "direction": "Concerned, slowing down."
+          },
+          "sfx": [
+            {
+              "name": "error",
+              "at": 0.6
+            }
+          ],
+          "pause": 0.5
+        },
+        {
+          "text": "You'd walk out of that hospital, wouldn't you?",
+          "voice": {
+            "pace": 0.98,
+            "energy": 0.6,
+            "direction": "Wry, a hint of a smile."
+          },
+          "pause": 0.6
+        },
+        {
+          "text": "Now swap the words. The patient becomes a learner. The doctor becomes your programme team. The pharmacist becomes finance.",
+          "voice": {
+            "pace": 1.04,
+            "energy": 0.65,
+            "direction": "Building energy, revealing a connection."
+          },
+          "sfx": [
+            {
+              "name": "swish",
+              "at": 0.25
+            },
+            {
+              "name": "swish",
+              "at": 0.55
+            },
+            {
+              "name": "swish",
+              "at": 0.85
+            }
+          ]
+        },
+        {
+          "text": "Most nonprofits run exactly like this hospital. Not because anyone is careless, but because nobody designed it any other way.",
+          "voice": {
+            "pace": 0.93,
+            "energy": 0.55,
+            "direction": "Earnest and empathetic, no blame."
+          },
+          "pause": 0.7
+        }
+      ]
+    },
+    {
+      "id": "quarter-sim",
+      "type": "system_simulation",
+      "chapter": "Watch a quarter happen",
+      "template": "QuarterSim",
+      "composition": "scenes/quarter-sim.html",
+      "notes": "Show the mechanism of failure, live. The time-lapse should feel like watching a slow-motion accident.",
+      "visual": "Layout: left column = 'the field' (a learner avatar 'Kavya', a field officer with a phone, a trainer with a clipboard). Right = three spreadsheet panels stacked or side by side: Programme (coral header), M&E (yellow), Finance (teal), each with a few rows. Top-centre: a week clock / calendar strip 'Week 1 ... Week 13'. Top-right corner: an hours counter 'Hours spent reconciling: 0'. Org label 'Sitara Foundation · fictional · 500 learners' and ILLUSTRATIVE DATA tag. b1: org label + field + empty sheets appear. b2: Week 1 highlights; an event token (small rounded pill 'Enrolled') flies from the phone along a curved path into Programme sheet only, creating row 'Kavya Sharma'. b3: Week 2; a paper icon from the trainer → waits → flies into M&E sheet a beat later, creating row 'K. Sharma'. b4: Week 3; a '₹ stipend' token flies into Finance creating 'Kavya S.'. Highlight the three Kavya rows with yellow outline and thin dashed connectors between them labelled 'same person?'. b5: TIME-LAPSE: the week strip races Week 4 → Week 13; dozens of tokens (many colours) fly from the field into random single sheets; sheets fill up with rows (scrolling); hours counter starts climbing. b6: some rows flash red as values diverge (e.g. 'Placed' vs 'Training'); show drift with little ≠ marks between panels. b7: hours counter rolls 0 → 40 → 80 → 120 in sync with the words; counter grows in size each step. b8: time-lapse stops at Week 13; zoom on the three Kavya rows, which now show three different statuses: Placed / Training / Stipend stopped. Hold.",
+      "beats": [
+        {
+          "text": "Let's watch it happen. Meet Sitara Foundation, a fictional skilling nonprofit with five hundred learners.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.55,
+            "direction": "Friendly, introducing a character."
+          }
+        },
+        {
+          "text": "Week one. Kavya enrols. The field officer adds her to the programme sheet.",
+          "voice": {
+            "pace": 1.02,
+            "energy": 0.5,
+            "direction": "Narrating, light."
+          },
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 0.55
+            },
+            {
+              "name": "pop",
+              "at": 0.8
+            }
+          ]
+        },
+        {
+          "text": "Week two. Her trainer marks attendance on paper. A week later, someone in M&E types it in again, as K. Sharma.",
+          "voice": {
+            "pace": 1.03,
+            "energy": 0.5,
+            "direction": "Narrating, slight irony on 'again'."
+          },
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 0.6
+            },
+            {
+              "name": "pop",
+              "at": 0.85
+            }
+          ]
+        },
+        {
+          "text": "Week three. Finance pays her stipend. Only finance knows, and to them she's Kavya S.",
+          "voice": {
+            "pace": 1.03,
+            "energy": 0.55,
+            "direction": "Narrating, a little knowing."
+          },
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 0.35
+            },
+            {
+              "name": "pop",
+              "at": 0.6
+            }
+          ],
+          "pause": 0.4
+        },
+        {
+          "text": "Now multiply Kavya by five hundred, and run the clock for a whole quarter.",
+          "voice": {
+            "pace": 1.03,
+            "energy": 0.62,
+            "direction": "Energy rising, like starting a race.",
+            "seed": 5
+          },
+          "sfx": [
+            {
+              "name": "rise",
+              "at": 0.5
+            }
+          ],
+          "say": "Now multiply Kaavya by five hundred. And run the clock, for the entire quarter."
+        },
+        {
+          "text": "Every event lands in one sheet, but not the others. Copies drift. Spellings multiply.",
+          "voice": {
+            "pace": 1.12,
+            "energy": 0.75,
+            "direction": "Fast, rhythmic, slightly breathless."
+          },
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 0.1
+            },
+            {
+              "name": "whoosh",
+              "at": 0.3
+            },
+            {
+              "name": "whoosh",
+              "at": 0.5
+            },
+            {
+              "name": "whoosh",
+              "at": 0.7
+            }
+          ]
+        },
+        {
+          "text": "And quietly, a counter keeps climbing. Hours spent copying and reconciling. Forty. Eighty. A hundred and twenty.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.75,
+            "direction": "Rising intensity on each number."
+          },
+          "sfx": [
+            {
+              "name": "tick",
+              "at": 0.62
+            },
+            {
+              "name": "tick",
+              "at": 0.76
+            },
+            {
+              "name": "tick",
+              "at": 0.92
+            }
+          ]
+        },
+        {
+          "text": "By the end of the quarter, Kavya lives in three places, and none of them agree.",
+          "voice": {
+            "pace": 0.9,
+            "energy": 0.6,
+            "direction": "Slowing down, letting it land."
+          },
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 0.85
+            }
+          ],
+          "pause": 0.8
+        }
+      ]
+    },
+    {
+      "id": "predict",
+      "type": "retrieval",
+      "chapter": "Your turn: pick a number",
+      "template": "Predict",
+      "composition": "scenes/predict.html",
+      "notes": "Prediction makes the reveal memorable. Give real silence for the countdown.",
+      "visual": "Direct address. b1: a large 'Your turn' kicker. b2: three tall choice cards (Programme 312 coral, M&E 287 yellow, Finance 341 teal) with a subtle hover-like float. b3: a circular countdown ring in the centre counts 3 → 2 → 1 over the pause (the beat's pause is 2.6 s), with each number scaling in; ticking sfx. b4: ring completes, cards gently pulse, text 'Hold that thought.'",
+      "beats": [
+        {
+          "text": "So here's a question for you.",
+          "voice": {
+            "pace": 0.97,
+            "energy": 0.6,
+            "direction": "Direct, turning to the viewer, warm."
+          }
+        },
+        {
+          "text": "If you had to send the funder one number tonight, which would you pick? Programme, M&E, or finance?",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.6,
+            "direction": "Curious, genuinely asking."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.72
+            },
+            {
+              "name": "pop",
+              "at": 0.82
+            },
+            {
+              "name": "pop",
+              "at": 0.93
+            }
+          ]
+        },
+        {
+          "text": "Take three seconds.",
+          "voice": {
+            "pace": 0.95,
+            "energy": 0.5,
+            "direction": "Gentle."
+          },
+          "sfx": [
+            {
+              "name": "tick",
+              "at": 1.2
+            },
+            {
+              "name": "tick",
+              "at": 1.55
+            },
+            {
+              "name": "tick",
+              "at": 1.9
+            }
+          ],
+          "pause": 2.6
+        },
+        {
+          "text": "Got one? Good. Hold on to it.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.5,
+            "direction": "Playful, a little mischievous.",
+            "seed": 11
+          },
+          "pause": 0.6,
+          "say": "Got one? Good. Now hold on to it."
+        }
+      ]
+    },
+    {
+      "id": "twist",
+      "type": "reveal",
+      "chapter": "The twist",
+      "template": "Collapse",
+      "composition": "scenes/twist.html",
+      "notes": "Based on experiments/hyperframes/index.html, re-timed to the beats. Surprise, then reframe the misconception that someone made an error.",
+      "visual": "Reuse and adapt the experiment composition: b1 three team cards top. b2: 500-row grid appears with counter '500 rows'. b3: 37 duplicate rows glow yellow and fly to their twins; the Kavya cluster (Kavya Sharma / Kavya S. / K. Sharma) merges into one chip. b4: counter rolls 500 → 463 'real people'. b5: grid dims except placed rows which turn coral. b6: '298' rolls up huge in coral, label 'actually placed'; team cards strike through. b7: hold, small text 'Not 312. Not 287. Not 341.' b8: closing line 'Each team counted correctly. They were counting different things.' with the second sentence in italic coral.",
+      "beats": [
+        {
+          "text": "Here's what actually happened.",
+          "voice": {
+            "pace": 0.95,
+            "energy": 0.55,
+            "direction": "Lowered voice, like revealing a secret."
+          }
+        },
+        {
+          "text": "Line up all three sheets and you get five hundred rows.",
+          "voice": {
+            "pace": 1.02,
+            "energy": 0.55,
+            "direction": "Clear, explanatory."
+          },
+          "sfx": [
+            {
+              "name": "swish",
+              "at": 0.6
+            }
+          ]
+        },
+        {
+          "text": "But thirty-seven of them are the same people, typed twice and spelled differently.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.65,
+            "direction": "Gently surprised."
+          },
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 0.5
+            },
+            {
+              "name": "pop",
+              "at": 0.8
+            }
+          ]
+        },
+        {
+          "text": "Merge them, and five hundred rows become four hundred and sixty-three real people.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.6,
+            "direction": "Satisfying, things clicking into place."
+          },
+          "sfx": [
+            {
+              "name": "tick",
+              "at": 0.7
+            }
+          ]
+        },
+        {
+          "text": "Now count who was actually placed.",
+          "voice": {
+            "pace": 0.95,
+            "energy": 0.6,
+            "direction": "Anticipation."
+          },
+          "pause": 0.4
+        },
+        {
+          "text": "Two hundred and ninety-eight.",
+          "voice": {
+            "pace": 0.9,
+            "energy": 0.9,
+            "direction": "The big reveal, bright and emphatic."
+          },
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 0.0
+            },
+            {
+              "name": "chime",
+              "at": 0.5
+            }
+          ],
+          "pause": 0.6
+        },
+        {
+          "text": "None of the three numbers was right.",
+          "voice": {
+            "pace": 0.95,
+            "energy": 0.7,
+            "direction": "Emphatic."
+          },
+          "pause": 0.4
+        },
+        {
+          "text": "And here's the twist. Each team counted correctly. They were just counting different things.",
+          "voice": {
+            "pace": 0.9,
+            "energy": 0.65,
+            "direction": "Thoughtful insight, slowing on the last sentence."
+          },
+          "pause": 0.9
+        }
+      ]
+    },
+    {
+      "id": "build-mis",
+      "type": "concept_build",
+      "chapter": "Building an MIS, floor by floor",
+      "template": "LayerStack",
+      "composition": "scenes/build-mis.html",
+      "notes": "Each floor answers a failure the viewer has just seen. The definition is earned, then stated.",
+      "visual": "A building/stack metaphor centre-left: five horizontal floors stack from the bottom up, each a wide rounded slab with a number badge, an icon and a short label. Right side: a 'what it fixes' panel that shows a tiny callback to the problem from earlier scenes for each floor. Floor 1 (coral) 'One ID per person' — callback: three Kavya chips merge into one 'Kavya Sharma · ID 0217'. Floor 2 (teal) 'One place per event' — callback: four event tokens (Enrolled, Attended, Stipend, Placed) drop into a single record card. Floor 3 (yellow) 'Shared rules' — callback: a rule chip 'Placed = job offer + joined' and a blocked action 'Placed before trained ✕'. Floor 4 (teal) 'A view for every team' — callback: three small screens labelled Programme / M&E / Finance, all wired to one record. Floor 5 (coral, glowing) 'A loop back to the field' — callback: a phone notification slides in: 'Kavya missed 3 sessions. Call her today.' with a ping. b8: the five floors pulse in sequence bottom to top; a bracket labelled 'MIS' wraps them. b9: definition card replaces the right panel: 'One record per person, shared by everyone, that the work runs through.' with 'that the work runs through' in coral. Each floor rises in with a soft thud.",
+      "beats": [
+        {
+          "text": "So what would fix this? Not a better spreadsheet. A different kind of system.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.6,
+            "direction": "Turning point, optimistic."
+          }
+        },
+        {
+          "text": "Let's build it, one floor at a time.",
+          "voice": {
+            "pace": 1.02,
+            "energy": 0.7,
+            "direction": "Energetic, rolling up sleeves."
+          },
+          "pause": 0.4
+        },
+        {
+          "text": "Floor one. One ID per person. Kavya gets one record, and only one.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.65,
+            "direction": "Clear, confident."
+          },
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 0.05
+            },
+            {
+              "name": "swish",
+              "at": 0.7
+            }
+          ]
+        },
+        {
+          "text": "Floor two. One place to record each event. Enrolment, attendance, stipend, placement. Entered once, where the work happens.",
+          "voice": {
+            "pace": 1.05,
+            "energy": 0.6,
+            "direction": "Brisk, listing."
+          },
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 0.02
+            },
+            {
+              "name": "pop",
+              "at": 0.45
+            },
+            {
+              "name": "pop",
+              "at": 0.55
+            },
+            {
+              "name": "pop",
+              "at": 0.65
+            },
+            {
+              "name": "pop",
+              "at": 0.75
+            }
+          ]
+        },
+        {
+          "text": "Floor three. Shared rules. Placed means the same thing to everyone, and the system won't let you mark someone placed before they've trained.",
+          "voice": {
+            "pace": 1.03,
+            "energy": 0.6,
+            "direction": "Clear, slightly firm on the rule."
+          },
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 0.02
+            },
+            {
+              "name": "error",
+              "at": 0.85
+            }
+          ]
+        },
+        {
+          "text": "Floor four. A view for every team. Programme, M&E and finance each see their own screen, all drawing from the same record.",
+          "voice": {
+            "pace": 1.03,
+            "energy": 0.6,
+            "direction": "Pleased, things fitting together."
+          },
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 0.02
+            },
+            {
+              "name": "swish",
+              "at": 0.6
+            }
+          ]
+        },
+        {
+          "text": "Floor five, the one most people miss. The data flows back to the field. Kavya has missed three sessions. Call her today.",
+          "voice": {
+            "pace": 0.95,
+            "energy": 0.75,
+            "direction": "Leaning in, this is the important one; warm urgency on the last sentence."
+          },
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 0.02
+            },
+            {
+              "name": "ping",
+              "at": 0.72
+            }
+          ],
+          "pause": 0.6
+        },
+        {
+          "text": "Put those five floors together, and you have a management information system.",
+          "voice": {
+            "pace": 0.95,
+            "energy": 0.7,
+            "direction": "Satisfied, a culmination."
+          },
+          "sfx": [
+            {
+              "name": "rise",
+              "at": 0.3
+            }
+          ]
+        },
+        {
+          "text": "One record per person, shared by everyone, that the work actually runs through.",
+          "voice": {
+            "pace": 0.86,
+            "energy": 0.6,
+            "direction": "Slow, warm, definitive. The line to remember."
+          },
+          "sfx": [
+            {
+              "name": "chime",
+              "at": 0.1
+            }
+          ],
+          "pause": 1.0
+        }
+      ]
+    },
+    {
+      "id": "replay",
+      "type": "before_after",
+      "chapter": "Same quarter, replayed",
+      "template": "SplitReplay",
+      "composition": "scenes/replay.html",
+      "notes": "Before/after on the same events makes the difference undeniable.",
+      "visual": "Split screen with a soft vertical divider. Left header 'Without an MIS' (grey), right header 'With an MIS' (coral). Both sides share the same week strip at top. b1: headers + week strip appear. b2: left side: the familiar three sheets with tokens flying into single sheets and rows going out of sync (re-use quarter-sim style, faster). b3: right side: the same coloured tokens fly into ONE central record card (Kavya Sharma · ID 0217) whose timeline fills: Enrolled ✓ Attended ✓ Stipend ✓ Placed ✓; also three small team screens below light up together. b4: bottom of each side: report counter. Left shows three flickering numbers 312/287/341; right shows a single steady '298' for all three teams. b5: right side gets a small stopwatch '2 min' and a pill '120 hours back to learners' in teal.",
+      "beats": [
+        {
+          "text": "Now let's replay that same quarter. Same learners, same events, but with an MIS.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.65,
+            "direction": "Inviting, upbeat."
+          }
+        },
+        {
+          "text": "On the left, the old way. Three sheets, three versions.",
+          "voice": {
+            "pace": 1.02,
+            "energy": 0.5,
+            "direction": "Slightly weary."
+          },
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 0.5
+            }
+          ]
+        },
+        {
+          "text": "On the right, every event lands in one record, the moment it happens.",
+          "voice": {
+            "pace": 1.02,
+            "energy": 0.7,
+            "direction": "Bright, clean, satisfying."
+          },
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 0.3
+            },
+            {
+              "name": "pop",
+              "at": 0.5
+            },
+            {
+              "name": "pop",
+              "at": 0.65
+            },
+            {
+              "name": "pop",
+              "at": 0.8
+            }
+          ]
+        },
+        {
+          "text": "At the end of the quarter, everyone sees the same number. Two hundred and ninety-eight.",
+          "voice": {
+            "pace": 0.97,
+            "energy": 0.7,
+            "direction": "Calm confidence, emphasis on the number."
+          },
+          "sfx": [
+            {
+              "name": "chime",
+              "at": 0.75
+            }
+          ]
+        },
+        {
+          "text": "The funder call takes two minutes, and those hundred and twenty hours go back to the learners.",
+          "voice": {
+            "pace": 0.95,
+            "energy": 0.6,
+            "direction": "Warm, heartfelt."
+          },
+          "pause": 0.8
+        }
+      ]
+    },
+    {
+      "id": "not-list",
+      "type": "myth_vs_reality",
+      "chapter": "What an MIS is not, and Monday's questions",
+      "template": "NotList",
+      "composition": "scenes/not-list.html",
+      "notes": "Fast myth-busting, then transfer to the viewer's own organisation.",
+      "visual": "Part A (b1–b4): heading 'An MIS is not…'. Three cards stack vertically and each gets a hand-drawn coral strike-through on its beat: 'Software you buy' (sub: 'Software is a tool. The system is how you agree to work.'), 'A dashboard' (sub: 'A dashboard without a decision is decoration.'), 'A bigger spreadsheet' (sub: 'More columns won't fix three copies.'). Part B (b5–b8): cards slide away; a notepad / clipboard titled 'Ask your team on Monday' with three numbered questions writing themselves in (typewriter or handwritten reveal), each with a checkbox that ticks: 1 'How many places does one learner live?' 2 'Who decides what \"placed\" means?' 3 'Does data come back to the field?'.",
+      "beats": [
+        {
+          "text": "Before we finish, three things an MIS is not.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.6,
+            "direction": "Brisk, lively."
+          }
+        },
+        {
+          "text": "It's not software you buy. Software is a tool. The system is how your organisation agrees to work.",
+          "voice": {
+            "pace": 1.02,
+            "energy": 0.6,
+            "direction": "Confident."
+          },
+          "sfx": [
+            {
+              "name": "strike",
+              "at": 0.15
+            }
+          ]
+        },
+        {
+          "text": "It's not a dashboard. A dashboard without a decision is decoration.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.65,
+            "direction": "Slightly wry, punchy on 'decoration'."
+          },
+          "sfx": [
+            {
+              "name": "strike",
+              "at": 0.15
+            }
+          ]
+        },
+        {
+          "text": "And it's not a bigger spreadsheet. More columns won't fix three copies.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.65,
+            "direction": "Knowing smile."
+          },
+          "sfx": [
+            {
+              "name": "strike",
+              "at": 0.2
+            }
+          ],
+          "pause": 0.5
+        },
+        {
+          "text": "So here are three questions to ask your team on Monday.",
+          "voice": {
+            "pace": 0.98,
+            "energy": 0.6,
+            "direction": "Practical, encouraging."
+          },
+          "sfx": [
+            {
+              "name": "swish",
+              "at": 0.3
+            }
+          ]
+        },
+        {
+          "text": "One. How many places does one learner live?",
+          "voice": {
+            "pace": 0.95,
+            "energy": 0.55,
+            "direction": "Thoughtful."
+          },
+          "sfx": [
+            {
+              "name": "scribble",
+              "at": 0.3
+            }
+          ]
+        },
+        {
+          "text": "Two. Who decides what placed means?",
+          "voice": {
+            "pace": 0.95,
+            "energy": 0.55,
+            "direction": "Thoughtful."
+          },
+          "sfx": [
+            {
+              "name": "scribble",
+              "at": 0.3
+            }
+          ]
+        },
+        {
+          "text": "Three. Does the data ever come back to the people in the field?",
+          "voice": {
+            "pace": 0.93,
+            "energy": 0.6,
+            "direction": "Thoughtful, the most important question."
+          },
+          "sfx": [
+            {
+              "name": "scribble",
+              "at": 0.3
+            }
+          ],
+          "pause": 0.8
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "type": "outro",
+      "chapter": "How we build one",
+      "template": "Close",
+      "composition": "scenes/close.html",
+      "hold": 1.8,
+      "notes": "MAP in one breath, brand sign-off, next episode.",
+      "visual": "b1: three MAP chips appear in sequence on the words Model (coral), Align (teal), Power (yellow), each with its 3–5 word line underneath, then compress upward. Then the EdZola hand-drawn wordmark (assets/brand/edzola-wordmark-transparent.png) draws/fades in centre with tagline 'Systems built for the world's hardest work.' and the floral mark rotating slowly. b2: 'Next episode' peach card slides up: 'Why 80% placement isn't the same as 80% employment'.",
+      "beats": [
+        {
+          "text": "At EdZola, we build these systems in three moves. Model what's worth knowing. Align it with how people actually work. And power it with AI, once the data can be trusted.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.6,
+            "direction": "Warm and assured, a closing thought."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.35
+            },
+            {
+              "name": "pop",
+              "at": 0.58
+            },
+            {
+              "name": "pop",
+              "at": 0.82
+            }
+          ]
+        },
+        {
+          "text": "Next time: why an eighty percent placement rate might not mean what you think.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.7,
+            "direction": "Teasing, curious, leaving them wanting more."
+          },
+          "sfx": [
+            {
+              "name": "swish",
+              "at": 0.1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

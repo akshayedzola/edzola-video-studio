@@ -1,0 +1,45 @@
+{
+  "$comment": "Machine-readable catalogue of scene templates. Agents read this to know what they can put in a storyboard; the validator rejects unknown templates/actions. Keep in sync with studio/src/templates/index.ts and docs/06-scene-template-library.md.",
+  "templates": {
+    "TitleHook": {
+      "use_for": ["hook", "question", "chapter_title"],
+      "props": {"kicker": "string?", "title": "string (<= 60 chars)", "highlight": "substring of title?", "subtitle": "string?"},
+      "actions": ["show-kicker", "show-title", "show-subtitle", "show-accent"]
+    },
+    "Spreadsheets": {
+      "use_for": ["problem_reveal", "duplicate_records", "diverging_records", "system_simulation"],
+      "props": {"org": "{name, sub}?", "tag": "string? e.g. 'Illustrative data'", "sheets": "[{team, tone, columns[<=3], rows[<=5][], widths?: fractions}] (1-3 sheets)"},
+      "actions": ["show-org", "show-sheet", "highlight", "set-cell", "flag", "pulse-sheets"],
+      "action_args": {"show-sheet": "{sheet}", "highlight": "{rows: number[]} or {row}", "set-cell": "{sheet,row,col,value,tone}", "flag": "{text,tone}"}
+    },
+    "MetricConflict": {
+      "use_for": ["data_storytelling", "metric_reveal", "contradiction"],
+      "props": {"label": "string", "values": "[{team, value, tone}] (2-3)", "question": "string?"},
+      "actions": ["show-label", "show-value", "question", "shake", "dim-values"],
+      "action_args": {"show-value": "{i}"}
+    },
+    "ConceptBuild": {
+      "use_for": ["progressive_construction", "system_map", "architecture", "flow_reveal"],
+      "props": {"title": "string?", "nodes": "[{id,label,sub?,x,y,w?,h?,tone?}] centre-origin coords", "edges": "[{from,to}]", "frame": "{label, pad?}?"},
+      "actions": ["show-title", "show-node", "show-edge", "pulse", "show-frame"],
+      "action_args": {"show-node": "{id} or {ids}", "show-edge": "{from,to}", "pulse": "{id} or {ids}"}
+    },
+    "Statement": {
+      "use_for": ["myth_vs_reality", "key_takeaway", "quote"],
+      "props": {"myth": "string?", "mythLabel": "string?", "reality": "string", "realityLabel": "string?", "highlight": "substring of reality?"},
+      "actions": ["show-myth", "strike", "show-reality"]
+    },
+    "FrameworkSteps": {
+      "use_for": ["framework", "process_steps", "summary"],
+      "props": {"kicker": "string?", "title": "string?", "steps": "[{letter,title,text,tone?}] (2-4)"},
+      "actions": ["show-title", "show-step", "pulse-step", "dim-others"],
+      "action_args": {"show-step": "{i}", "pulse-step": "{i}", "dim-others": "{i}"}
+    },
+    "EndCard": {
+      "use_for": ["outro", "call_to_action"],
+      "props": {"tagline": "string?", "next": "{label?, title}?"},
+      "actions": ["show-logo", "show-tagline", "show-next"]
+    }
+  },
+  "tones": ["coral", "teal", "yellow", "ink", "success", "warning", "danger"]
+}

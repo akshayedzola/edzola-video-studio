@@ -1,0 +1,15 @@
+name: Playbook improvement
+description: Make the studio better. Docs, knowledge, scene patterns, tooling, guardrails.
+title: "Playbook: "
+labels: [playbook, learning-loop]
+body:
+  - type: textarea
+    id: what
+    attributes: {label: "What did you notice? (a lesson, a gap, a bug, a better way)"}
+    validations: {required: true}
+  - type: textarea
+    id: change
+    attributes: {label: "What should change, and where? (file or section)"}
+  - type: input
+    id: episode
+    attributes: {label: "Episode where you learned this (optional)", placeholder: "a003-placement-vs-employment"}

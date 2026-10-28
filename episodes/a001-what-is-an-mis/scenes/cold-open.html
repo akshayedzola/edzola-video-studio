@@ -1,0 +1,145 @@
+<!doctype html>
+<!-- ep000 v2 · cold-open · "Three answers to one question".
+     Mystery framing: funder call, three team numbers, then the title.
+     Times come from narration beats via EZ.b(n)/EZ.at(n, f). Fictional data. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <link rel="stylesheet" href="brand.css" />
+  <script src="cues.js"></script>
+  <script src="gsap.min.js"></script>
+  <script src="kit.js"></script>
+  <style>
+    #night { position: absolute; inset: 0; background: #1a1a1a; }
+    #clock { position: absolute; left: 0; top: 300px; width: 1920px; text-align: center; color: #fdf8f4; }
+    #clock .when { font-size: 34px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; opacity: .7; }
+    #clock .time { font-size: 230px; line-height: 1; margin-top: 10px; }
+    #clock .ampm { font-size: 70px; margin-left: 12px; opacity: .8; }
+
+    #call { position: absolute; left: 560px; top: 130px; width: 800px; padding: 34px 40px; }
+    #call .row { display: flex; align-items: center; gap: 22px; }
+    #call .avatar { width: 74px; height: 74px; border-radius: 50%; background: var(--peach); display: flex;
+      align-items: center; justify-content: center; font-size: 34px; }
+    #call .who { font-size: 30px; font-weight: 700; }
+    #call .sub { font-size: 22px; color: var(--grey); margin-top: 4px; }
+    #call .live { margin-left: auto; width: 16px; height: 16px; border-radius: 50%; background: #5bb26a; }
+    #question { margin-top: 26px; font-size: 44px; line-height: 1.25; min-height: 110px; }
+
+    .team { position: absolute; top: 650px; width: 380px; text-align: center; }
+    .team .head { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto; position: relative; }
+    .team .body { width: 190px; height: 90px; border-radius: 95px 95px 24px 24px; margin: 10px auto 0; }
+    .team .name { margin-top: 18px; font-size: 30px; font-weight: 700; }
+    .bubble { position: absolute; left: 50%; top: -150px; margin-left: -125px; width: 250px; padding: 14px 0;
+      text-align: center; font-size: 104px; line-height: 1; border-radius: 30px; background: var(--paper);
+      box-shadow: var(--shadow); border: 3px solid var(--line); }
+    .bubble:after { content: ""; position: absolute; left: 50%; bottom: -16px; margin-left: -16px; width: 32px; height: 32px;
+      background: var(--paper); border-right: 3px solid var(--line); border-bottom: 3px solid var(--line);
+      transform: rotate(45deg); }
+    #t1 { left: 230px; } #t2 { left: 770px; } #t3 { left: 1310px; }
+    #t1 .head, #t1 .body { background: var(--coral); }
+    #t2 .head, #t2 .body { background: var(--yellow); }
+    #t3 .head, #t3 .body { background: var(--teal); }
+
+    #qmark { position: absolute; left: 0; top: 70px; width: 1920px; text-align: center; font-size: 520px;
+      line-height: 1; color: var(--coral-deep); opacity: 0; }
+    #nobody { position: absolute; left: 0; top: 160px; width: 1920px; text-align: center; font-size: 110px; opacity: 0; }
+
+    #title { position: absolute; left: 0; top: 300px; width: 1920px; text-align: center; }
+    #title .k { margin-bottom: 26px; }
+    #title .l1 { font-size: 150px; line-height: 1.02; }
+    #title .l2 { font-size: 170px; line-height: 1.05; color: var(--coral-deep); font-style: italic; }
+    #burst { position: absolute; left: 1430px; top: 250px; width: 200px; opacity: 0; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="cold-open" data-start="0" data-duration="{{DURATION}}"
+       data-width="1920" data-height="1080" data-fps="30">
+    <div id="stage" class="abs" style="inset:0">
+      <div id="night"></div>
+      <div id="clock"><div class="when">Tomorrow</div>
+        <div class="time serif"><span id="hh">9:59</span><span class="ampm">am</span></div></div>
+
+      <div id="call" class="card">
+        <div class="row"><div class="avatar">☎</div>
+          <div><div class="who">Funder call</div><div class="sub">Quarterly review · 10:00 am</div></div>
+          <div class="live"></div></div>
+        <div id="question" class="serif">How many learners did you place this quarter?</div>
+      </div>
+
+      <div id="qmark" class="serif" data-layout-allow-overlap data-layout-allow-occlusion>?</div>
+      <div id="nobody" class="serif">Nobody.</div>
+
+      <div class="team" id="t1"><div class="bubble serif" id="n1">312</div><div class="head"></div><div class="body"></div><div class="name">Programme</div></div>
+      <div class="team" id="t2"><div class="bubble serif" id="n2">287</div><div class="head"></div><div class="body"></div><div class="name">M&amp;E</div></div>
+      <div class="team" id="t3"><div class="bubble serif" id="n3">341</div><div class="head"></div><div class="body"></div><div class="name">Finance</div></div>
+
+      <div id="title"><div class="kicker k">Technology for Impact, Explained · Episode 0</div>
+        <div class="l1 serif">What is an MIS,</div><div class="l2 serif">really?</div></div>
+      <img id="burst" src="brand/starburst-yellow.svg" />
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tl = gsap.timeline({paused: true, defaults: {ease: "power2.out"}});
+      var b = EZ.b, at = EZ.at, $ = EZ.$;
+
+      // Hidden start states (outside the timeline so frame 0 is clean).
+      gsap.set(["#call", ".team", ".bubble", "#title", "#title .k", "#title .l1", "#title .l2"], {opacity: 0});
+      gsap.set("#clock", {opacity: 0});
+
+      // b1 "Tomorrow. Ten a.m." — clock in the dark, flips to 10:00.
+      tl.to("#clock", {opacity: 1, duration: 0.6}, 0.1);
+      tl.call(function () { $("#hh").textContent = "10:00"; }, null, at(1, 0.55));
+      tl.call(function () { $("#hh").textContent = "9:59"; }, null, at(1, 0.54)); // reversible seek
+      tl.fromTo("#hh", {scale: 1}, {scale: 1.06, duration: 0.12, yoyo: true, repeat: 1}, at(1, 0.55));
+
+      // b2 — lights come up; the call arrives.
+      tl.to("#night", {opacity: 0, duration: 0.9, ease: "power1.inOut"}, b(2));
+      tl.to("#clock", {opacity: 0, y: -40, duration: 0.6}, b(2));
+      EZ.rise(tl, "#call", b(2) + 0.4, {y: 50, d: 0.8});
+      tl.fromTo("#call .live", {opacity: 1}, {opacity: 0.25, duration: 0.5, yoyo: true, repeat: 7, ease: "sine.inOut"}, b(2) + 0.6);
+
+      // b3 — the question types itself as it's asked.
+      EZ.type(tl, "#question", b(3), (EZ.e(3) - b(3)) * 0.9);
+
+      // b4–b6 — three teams, three numbers, each on its beat.
+      [1, 2, 3].forEach(function (i) {
+        var beat = 3 + i;
+        EZ.rise(tl, "#t" + i, b(beat), {y: 40, d: 0.5});
+        EZ.pop(tl, "#n" + i, at(beat, 0.65), {d: 0.5});
+      });
+
+      // b7 "Same organisation. Same quarter. Three answers." — the call recedes; numbers pulse in turn.
+      tl.to("#call", {opacity: 0.25, scale: 0.92, duration: 0.6}, b(7));
+      EZ.pulse(tl, "#n1", at(7, 0.70), 1.12);
+      EZ.pulse(tl, "#n2", at(7, 0.80), 1.12);
+      EZ.pulse(tl, "#n3", at(7, 0.90), 1.12);
+
+      // b8 "So who got it wrong?" — a big question mark behind everything.
+      tl.to("#call", {opacity: 0, duration: 0.4}, b(8));
+      tl.fromTo("#qmark", {opacity: 0, scale: 0.7}, {opacity: 0.9, scale: 1, duration: 0.7, ease: "back.out(1.6)"}, b(8) + 0.2);
+
+      // b9 "Nobody. And that's exactly the problem." — numbers shake and dim.
+      tl.to("#qmark", {opacity: 0, duration: 0.3}, b(9));
+      tl.fromTo("#nobody", {opacity: 0, y: 20}, {opacity: 1, y: 0, duration: 0.5}, b(9) + 0.05);
+      EZ.shake(tl, [".bubble"], at(9, 0.5));
+      tl.to(".bubble", {opacity: 0.35, duration: 0.5}, at(9, 0.7));
+
+      // b10 — clear the stage; the title lands.
+      tl.to(["#nobody", ".team"], {opacity: 0, y: -30, duration: 0.5, stagger: 0.05, ease: "power2.in"}, b(10));
+      tl.set("#title", {opacity: 1}, b(10) + 0.3);
+      EZ.rise(tl, "#title .k", b(10) + 0.4, {y: 20});
+      EZ.rise(tl, "#title .l1", at(10, 0.5), {y: 40, d: 0.8});
+      tl.fromTo("#title .l2", {opacity: 0, y: 40, scale: 0.9}, {opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "back.out(1.7)"}, at(10, 0.78));
+      tl.fromTo("#burst", {opacity: 0, scale: 0.4, rotation: -30}, {opacity: 1, scale: 1, rotation: 0, duration: 0.8, ease: "back.out(2)"}, at(10, 0.85));
+      tl.to("#burst", {rotation: 60, duration: 6, ease: "none"}, at(10, 0.85) + 0.8);
+
+      EZ.finish(tl, {tag: false, seriesAt: EZ.b(2) + 0.6});
+      window.__timelines = window.__timelines || {};
+      window.__timelines["cold-open"] = tl;
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Privacy or safety concern
+    url: https://edzola.com
+    about: "Don't open a public issue. Message an EdZola maintainer privately."

@@ -1,0 +1,106 @@
+<!doctype html>
+<!-- ep000 v2 · close · "How we build one".
+     MAP in one breath (Model, Align, Power), the EdZola sign-off, and the next-episode teaser.
+     Times come from narration beats via EZ.b(n)/EZ.at(n, f). -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <link rel="stylesheet" href="brand.css" />
+  <script src="cues.js"></script>
+  <script src="gsap.min.js"></script>
+  <script src="kit.js"></script>
+  <style>
+    #intro { position: absolute; left: 0; top: 190px; width: 1920px; text-align: center; }
+    #intro .h { margin-top: 18px; font-size: 64px; }
+
+    .map { position: absolute; top: 380px; width: 470px; height: 300px; padding: 40px 40px 0; }
+    #m1 { left: 195px; } #m2 { left: 725px; } #m3 { left: 1255px; }
+    .map .row { display: flex; align-items: center; gap: 26px; }
+    .map .let { width: 96px; height: 96px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 60px; color: var(--ink); flex: none; }
+    #m1 .let { background: var(--coral); } #m2 .let { background: var(--teal); } #m3 .let { background: var(--yellow); }
+    .map .word { font-size: 72px; line-height: 1; }
+    #m1 .word { color: var(--coral-deep); } #m2 .word { color: var(--teal-deep); } #m3 .word { color: var(--warning); }
+    .map .line { margin-top: 34px; font-size: 32px; line-height: 1.3; color: var(--ink); }
+    .map .bar { position: absolute; left: 0; bottom: 0; width: 470px; height: 10px; }
+    #m1 .bar { background: var(--coral); } #m2 .bar { background: var(--teal); } #m3 .bar { background: var(--yellow); }
+
+    #brand { position: absolute; left: 0; top: 330px; width: 1920px; text-align: center; }
+    #wordmark { display: block; width: 520px; height: 166px; margin: 0 auto; }
+    #tagline { margin-top: 26px; font-size: 48px; line-height: 1.2; }
+    #floral { position: absolute; left: 1600px; top: 660px; width: 170px; height: 170px; }
+
+    #next { position: absolute; left: 410px; top: 640px; width: 1100px; height: 210px; border-radius: var(--radius);
+      background: var(--peach); padding: 34px 48px; box-shadow: var(--shadow); }
+    #next .kicker { font-size: 22px; }
+    #next .t { margin-top: 14px; font-size: 52px; line-height: 1.15; text-wrap: balance; padding-right: 40px; }
+    #next .arrowr { position: absolute; right: 44px; top: 34px; font-size: 40px; color: var(--coral-deep); font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="close" data-start="0" data-duration="{{DURATION}}"
+       data-width="1920" data-height="1080" data-fps="30">
+    <div id="stage" class="abs" style="inset:0">
+      <div id="intro"><div class="kicker">How we build one</div>
+        <div class="h serif">Three moves.</div></div>
+
+      <div class="map card" id="m1"><div class="row"><div class="let serif">M</div><div class="word serif">Model</div></div>
+        <div class="line">Decide what's worth knowing</div><div class="bar"></div></div>
+      <div class="map card" id="m2"><div class="row"><div class="let serif">A</div><div class="word serif">Align</div></div>
+        <div class="line">Fit how people actually work</div><div class="bar"></div></div>
+      <div class="map card" id="m3"><div class="row"><div class="let serif">P</div><div class="word serif">Power</div></div>
+        <div class="line">Add AI once data is trusted</div><div class="bar"></div></div>
+
+      <div id="brand"><img id="wordmark" src="brand/edzola-wordmark-transparent.png" alt="EdZola" />
+        <div id="tagline" class="serif">Systems built for the world's hardest work.</div></div>
+      <img id="floral" src="brand/floral-mark.svg" alt="" />
+
+      <div id="next"><div class="kicker">Next episode</div><div class="arrowr">→</div>
+        <div class="t serif">Why 80% placement isn't the same as 80% employment</div></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tl = gsap.timeline({paused: true, defaults: {ease: "power2.out"}});
+      var b = EZ.b, e = EZ.e, at = EZ.at;
+
+      gsap.set(["#intro", ".map", ".map .line", "#brand", "#wordmark", "#tagline", "#floral", "#next"], {opacity: 0});
+
+      // b1 "At EdZola, we build these systems in three moves." — set up the three.
+      EZ.rise(tl, "#intro", b(1) + 0.1, {y: 24});
+
+      // "Model... Align... Power..." — each chip on its word, its line a beat later.
+      var cs = EZ.cues.beats[0].captions || [];
+      var tm = [cs[1] ? cs[1].start : at(1, 0.30), cs[2] ? cs[2].start : at(1, 0.47), cs[3] ? cs[3].start + 0.25 : at(1, 0.72)];
+      [1, 2, 3].forEach(function (i) {
+        var t = tm[i - 1];
+        tl.fromTo("#m" + i, {opacity: 0, y: 50, scale: 0.9}, {opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.6)"}, t);
+        EZ.rise(tl, "#m" + i + " .line", t + 0.35, {y: 14, d: 0.5});
+      });
+      tl.to("#intro", {opacity: 0.35, duration: 0.5}, tm[2] + 0.4);
+
+      // End of b1 — MAP compresses upward into a quiet header; the brand arrives.
+      var tc = Math.max(tm[2] + 1.6, e(1) - 0.6);
+      tl.to("#intro", {opacity: 0, y: -40, duration: 0.45, ease: "power2.in"}, tc);
+      tl.to(".map .line", {opacity: 0, duration: 0.3}, tc);
+      tl.to(".map", {height: 176, duration: 0.6, ease: "power2.inOut"}, tc + 0.1);
+      tl.to(".map", {y: -250, scale: 0.6, transformOrigin: "50% 0%", duration: 0.8, ease: "power3.inOut", stagger: 0.06}, tc + 0.1);
+      tl.set("#brand", {opacity: 1}, tc + 0.5);
+      tl.fromTo("#wordmark", {opacity: 0, y: 30, scale: 0.94}, {opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "power3.out"}, tc + 0.5);
+      EZ.rise(tl, "#tagline", tc + 0.95, {y: 20, d: 0.7});
+      tl.fromTo("#floral", {opacity: 0, rotation: -40, scale: 0.6}, {opacity: 0.95, rotation: 0, scale: 1, duration: 0.9, ease: "back.out(1.6)"}, tc + 1.0);
+      tl.to("#floral", {rotation: 90, duration: Math.max(4, EZ.duration - tc - 1.9), ease: "none"}, tc + 1.9);
+
+      // b2 "Next time..." — the teaser card slides up and holds.
+      tl.fromTo("#next", {opacity: 0, y: 90}, {opacity: 1, y: 0, duration: 0.8, ease: "power3.out"}, b(2) + 0.1);
+      tl.fromTo("#next .arrowr", {x: -12}, {x: 6, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 3}, at(2, 0.6));
+
+      EZ.finish(tl, {tag: false});
+      window.__timelines = window.__timelines || {};
+      window.__timelines["close"] = tl;
+    })();
+  </script>
+</body>
+</html>

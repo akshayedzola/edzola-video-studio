@@ -1,0 +1,28 @@
+name: Episode idea
+description: Propose a new video. A maintainer adds accepted ideas to the catalogue so they get an id.
+title: "Idea: <the viewer's question>"
+labels: [idea]
+body:
+  - type: markdown
+    attributes:
+      value: "Check [TRACKER.md](../blob/main/TRACKER.md) and [catalog/episodes.json](../blob/main/catalog/episodes.json) first, so we don't duplicate an existing episode."
+  - type: input
+    id: question
+    attributes: {label: "The viewer's question (this becomes the title)", placeholder: "Why 80% placement isn't 80% employment"}
+    validations: {required: true}
+  - type: dropdown
+    id: series
+    attributes:
+      label: Series
+      options: ["A: Technology for Impact, Explained", "B: How Systems Actually Work", "C: Building EdZola", "S: Sector Field Guides"]
+    validations: {required: true}
+  - type: textarea
+    id: thesis
+    attributes: {label: "Thesis: what the viewer understands afterwards (one sentence)"}
+    validations: {required: true}
+  - type: textarea
+    id: hook
+    attributes: {label: "Ideas for the analogy and the twist (optional)", description: "See docs/13-explainer-formula.md"}
+  - type: textarea
+    id: sources
+    attributes: {label: "Knowledge it draws on", description: "Files in knowledge/, or public sources. No internal documents."}

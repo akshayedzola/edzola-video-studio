@@ -1,0 +1,47 @@
+{
+  "$comment": "Episode templates applied to every sector in knowledge/sectors/sectors.json. {sector} = sector name, {thread} = its data-thread ID, {stage} / {headline} = a lifecycle stage. Add a template here to add 16 episodes at once.",
+  "per_sector": [
+    {
+      "key": "thread",
+      "title": "{sector}: the one ID your whole programme needs",
+      "format": "reveal_invisible_system",
+      "thesis": "Follow one {thread} through the whole journey; that thread is the MIS."
+    },
+    {
+      "key": "measure",
+      "title": "{sector}: what should you actually measure?",
+      "format": "data_storytelling",
+      "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions."
+    },
+    {
+      "key": "excel-to-mis",
+      "title": "{sector}: from spreadsheets to a system",
+      "format": "fictional_case_study",
+      "thesis": "What changes when one record replaces many copies."
+    },
+    {
+      "key": "ai",
+      "title": "{sector}: where AI genuinely helps",
+      "format": "progressive_construction",
+      "thesis": "AI on trusted data, with the prerequisite named for every use."
+    },
+    {
+      "key": "dashboard",
+      "title": "{sector}: the dashboard that drives a decision",
+      "format": "myth_vs_reality",
+      "thesis": "Every chart answers a question someone has to act on."
+    },
+    {
+      "key": "frontline",
+      "title": "{sector}: field data without the burden",
+      "format": "before_after",
+      "thesis": "Every field is a tax on the frontline; design collection around the visit."
+    }
+  ],
+  "per_stage": {
+    "key": "stage",
+    "title": "{stage}: {headline}",
+    "format": "fictional_case_study",
+    "thesis": "The decision this stage serves, the data it needs, and where it breaks."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$comment": "Derived episodes. They are created automatically as issues only after their parent is published, so the queue never fills with work that has no source video yet.",
+  "shorts_per_episode": 3,
+  "shorts_format": "9:16, 45–60 s: moves 1, 5 and 9 of the explainer formula, or one scene that stands alone",
+  "languages": [
+    {"code": "hi", "name": "Hindi", "status": "next"},
+    {"code": "ta", "name": "Tamil", "status": "next"},
+    {"code": "mr", "name": "Marathi", "status": "later"},
+    {"code": "bn", "name": "Bengali", "status": "later"},
+    {"code": "te", "name": "Telugu", "status": "later"},
+    {"code": "kn", "name": "Kannada", "status": "later"}
+  ],
+  "languages_active": ["hi", "ta", "mr"]
+}

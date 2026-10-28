@@ -1,0 +1,53 @@
+/* EdZola Video Studio · HyperFrames scene kit · brand layer.
+   Tokens mirror studio/src/brand/theme.ts and docs/05-visual-language.md. */
+@font-face { font-family: "Fraunces"; src: url("fonts/Fraunces-Variable.ttf") format("truetype"); font-weight: 100 900; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Variable.ttf") format("truetype"); font-weight: 100 900; }
+
+:root {
+  --cream: #fdf8f4; --paper: #ffffff; --peach: #fae8dc;
+  --coral: #e8967a; --coral-deep: #a64c35; --teal: #8ecfca; --teal-deep: #2f6f68;
+  --yellow: #f7c948; --yellow-soft: #fff3cc; --ink: #1a1a1a; --grey: #6b6360; --line: #e6dbd0;
+  --success: #2e6e68; --success-bg: #dcefeb; --warning: #8a6a12; --warning-bg: #fceed0;
+  --danger: #9a3c22; --danger-bg: #f6d9cf;
+  --shadow: 0 2px 6px rgba(26,26,26,.06), 0 18px 40px rgba(26,26,26,.08);
+  --radius: 22px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--cream); color: var(--ink);
+  font-family: "Inter", sans-serif; -webkit-font-smoothing: antialiased; }
+#root { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+
+/* Typography */
+.serif { font-family: "Fraunces", serif; font-variation-settings: "opsz" 48; font-weight: 600; letter-spacing: -0.01em; }
+.kicker { font-weight: 700; font-size: 26px; letter-spacing: .18em; text-transform: uppercase; color: var(--coral-deep); }
+.h1 { font-size: 104px; line-height: 1.05; }
+.h2 { font-size: 76px; line-height: 1.1; }
+.h3 { font-size: 54px; line-height: 1.15; }
+.label { font-size: 30px; font-weight: 600; }
+.small { font-size: 22px; color: var(--grey); }
+.coral { color: var(--coral-deep); } .teal { color: var(--teal-deep); } .muted { color: var(--grey); }
+
+/* Building blocks */
+.abs { position: absolute; }
+.center { left: 50%; top: 50%; transform: translate(-50%, -50%); } /* only on elements GSAP doesn't move */
+.card { background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow); border: 2px solid var(--line); }
+.pill { display: inline-block; padding: 8px 20px; border-radius: 999px; font-weight: 700; font-size: 24px; }
+.pill.programme { background: var(--coral); color: #fff; }
+.pill.me { background: var(--yellow); color: var(--ink); }
+.pill.finance { background: var(--teal); color: var(--ink); }
+.chip { display: inline-block; padding: 10px 22px; border-radius: 14px; background: var(--paper); border: 2px solid var(--line);
+  font-weight: 600; font-size: 26px; box-shadow: var(--shadow); white-space: nowrap; }
+.token { position: absolute; padding: 8px 18px; border-radius: 999px; font-weight: 700; font-size: 20px; color: #fff;
+  background: var(--coral); box-shadow: 0 6px 16px rgba(26,26,26,.15); white-space: nowrap; }
+.strike-line { position: absolute; left: -4%; top: 52%; width: 108%; height: 6px; border-radius: 3px; background: var(--coral-deep);
+  transform-origin: left center; }
+
+/* Chrome added by EZ.finish(): series label, illustrative tag, captions */
+#ez-series { position: absolute; left: 120px; top: 56px; font-size: 20px; font-weight: 600; letter-spacing: .16em;
+  text-transform: uppercase; color: #5e5754; }
+#ez-tag { position: absolute; right: 120px; top: 56px; font-size: 18px; font-weight: 700; letter-spacing: .14em; color: var(--grey); }
+#ez-caption { position: absolute; left: 50%; bottom: 44px; transform: translateX(-50%); max-width: 1500px; padding: 14px 30px;
+  border-radius: 16px; background: rgba(26,26,26,.86); color: var(--cream); font-size: 36px; font-weight: 500;
+  text-align: center; white-space: nowrap; opacity: 0; }
+
+/* Keep scene content out of the caption band: usable area y < 900px */

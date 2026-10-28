@@ -1,0 +1,320 @@
+<!doctype html>
+<!--
+  "The twist" — EdZola Video Studio HyperFrames prototype.
+  Fictional organisation (Sitara Foundation) and fictional, illustrative data only.
+  Data + beat cue times are HyperFrames composition variables; override them with
+  `--variables-file cues.json` at render time (see render.sh / NOTES.md).
+-->
+<html
+  lang="en"
+  data-composition-variables='[
+    {"id":"programme","type":"number","label":"Programme count","default":312},
+    {"id":"me","type":"number","label":"M&E count","default":287},
+    {"id":"finance","type":"number","label":"Finance count","default":341},
+    {"id":"rows","type":"number","label":"Spreadsheet rows","default":500},
+    {"id":"duplicates","type":"number","label":"Duplicate rows","default":37},
+    {"id":"placed","type":"number","label":"Actually placed","default":298},
+    {"id":"tGrid","type":"number","label":"Cue: rows appear (s)","default":2},
+    {"id":"tDupes","type":"number","label":"Cue: duplicates merge (s)","default":5},
+    {"id":"tReveal","type":"number","label":"Cue: real number (s)","default":10},
+    {"id":"tLine","type":"number","label":"Cue: closing line (s)","default":14}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Fraunces";
+        src: url("fonts/Fraunces-Variable.ttf") format("truetype");
+        font-weight: 100 900;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-Variable.ttf") format("truetype");
+        font-weight: 100 900;
+        font-style: normal;
+      }
+      :root {
+        --cream: #fdf8f4;
+        --ink: #1a1a1a;
+        --grey: #6b6360;
+        --coral: #e8967a;
+        --coral-deep: #b4533a;
+        --teal: #8ecfca;
+        --yellow: #f7c948;
+        --peach: #fae8dc;
+        --bar: #e3d5cb;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1920px; height: 1080px; overflow: hidden;
+        background: var(--cream); color: var(--ink);
+        font-family: "Inter", sans-serif;
+      }
+      #root { position: relative; width: 1920px; height: 1080px; }
+      .clip { position: absolute; inset: 0; }
+      .serif {
+        font-family: "Fraunces", serif;
+        font-variation-settings: "opsz" 48, "SOFT" 0, "WONK" 0;
+        font-variant-numeric: lining-nums tabular-nums;
+      }
+
+      /* chrome */
+      #kicker {
+        position: absolute; left: 96px; top: 64px;
+        font-size: 20px; font-weight: 600; letter-spacing: 0.14em;
+        text-transform: uppercase; color: var(--grey);
+      }
+      #illustrative {
+        position: absolute; right: 96px; top: 58px;
+        font-size: 16px; font-weight: 600; letter-spacing: 0.16em;
+        color: var(--grey); border: 1.5px solid #cfc3bb; border-radius: 999px;
+        padding: 8px 16px;
+      }
+
+      /* team cards */
+      #cards {
+        position: absolute; left: 0; top: 390px; width: 1920px;
+        display: flex; justify-content: center; gap: 60px;
+        transform-origin: 50% 0%;
+      }
+      .card {
+        position: relative; width: 440px; height: 300px;
+        background: #fffdfb; border: 1.5px solid #efe2d8; border-radius: 28px;
+        box-shadow: 0 18px 40px -24px rgba(90, 60, 40, 0.28);
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: 18px;
+      }
+      .pill {
+        font-size: 22px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+        padding: 8px 22px; border-radius: 999px;
+      }
+      .pill.programme { background: var(--peach); color: #a64c35; } /* deep coral nudged for WCAG AA on peach */
+      .pill.me { background: #dcefed; color: #2f6f6a; }
+      .pill.finance { background: #fcefc6; color: #654904; }
+      .card .num { font-size: 150px; line-height: 1; font-weight: 500; position: relative; }
+      .strike {
+        position: absolute; left: -14px; right: -14px; top: 54%;
+        height: 8px; border-radius: 4px; background: var(--coral-deep);
+        /* scaleX owned by GSAP (hyperframes lint: gsap_css_transform_conflict) */
+      }
+
+      /* rows grid */
+      #gridLabel {
+        position: absolute; left: 120px; top: 338px;
+        font-size: 20px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+        color: var(--grey);
+      }
+      #grid { position: absolute; left: 120px; top: 382px; width: 1192px; height: 392px; }
+      .bar {
+        position: absolute; width: 40px; height: 10px; border-radius: 5px;
+        background: var(--bar);
+      }
+
+      /* right panel: counter + example cluster */
+      #panel { position: absolute; left: 1400px; top: 330px; width: 420px; }
+      #counter { font-size: 132px; line-height: 1; font-weight: 500; }
+      #counterLabel { position: relative; height: 40px; margin-top: 6px; }
+      #counterLabel span {
+        position: absolute; left: 4px; top: 0;
+        font-size: 30px; font-weight: 500; color: var(--grey);
+      }
+      #counterLabel .real { color: #2f6f6a; font-weight: 600; }
+      #clusterCaption {
+        margin-top: 46px; font-size: 18px; font-weight: 600; letter-spacing: 0.12em;
+        text-transform: uppercase; color: var(--grey);
+      }
+      #cluster { position: relative; height: 200px; margin-top: 16px; }
+      .chip {
+        position: absolute; left: 0;
+        font-size: 26px; font-weight: 500; color: var(--ink);
+        background: #fffdfb; border: 2px solid var(--yellow); border-radius: 14px;
+        padding: 10px 20px; white-space: nowrap;
+        box-shadow: 0 10px 24px -18px rgba(90, 60, 40, 0.4);
+      }
+      #onePerson {
+        position: absolute; left: 4px; top: 74px;
+        font-size: 20px; font-weight: 600; color: #2f6f6a; letter-spacing: 0.04em;
+      }
+
+      /* reveal */
+      #reveal {
+        position: absolute; left: 0; top: 352px; width: 1920px; text-align: center;
+      }
+      #placed { font-size: 250px; line-height: 1; font-weight: 500; color: var(--ink); }
+      #placedLabel {
+        margin-top: 14px; font-size: 30px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--coral-deep);
+      }
+      #closing {
+        position: absolute; left: 0; top: 800px; width: 1920px; text-align: center;
+        font-size: 50px; line-height: 1.25; font-weight: 400;
+      }
+      #closing .l2 { color: var(--coral-deep); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="twist" data-start="0" data-duration="16"
+         data-width="1920" data-height="1080" data-fps="30">
+        <div id="kicker">Sitara Foundation · Learners placed this quarter</div>
+        <div id="illustrative">ILLUSTRATIVE DATA</div>
+
+        <div id="cards">
+          <div class="card"><div class="pill programme">Programme</div>
+            <div class="num serif"><span id="n-programme">312</span><div class="strike"></div></div></div>
+          <div class="card"><div class="pill me">M&amp;E</div>
+            <div class="num serif"><span id="n-me">287</span><div class="strike"></div></div></div>
+          <div class="card"><div class="pill finance">Finance</div>
+            <div class="num serif"><span id="n-finance">341</span><div class="strike"></div></div></div>
+        </div>
+
+        <div id="gridLabel">Combined spreadsheets · one bar per row</div>
+        <div id="grid"></div>
+
+        <div id="panel">
+          <div id="counter" class="serif">500</div>
+          <div id="counterLabel"><span class="rows">rows</span><span class="real">real people</span></div>
+          <div id="clusterCaption">One learner, three rows</div>
+          <div id="cluster" data-layout-allow-overlap>
+            <div class="chip" id="c1" style="top:0">Kavya Sharma</div>
+            <div class="chip" id="c2" style="top:66px">Kavya S.</div>
+            <div class="chip" id="c3" style="top:132px">K. Sharma</div>
+            <div id="onePerson">= 1 person</div>
+          </div>
+        </div>
+
+        <div id="reveal">
+          <div id="placed" class="serif">0</div>
+          <div id="placedLabel">actually placed</div>
+        </div>
+
+        <div id="closing" class="serif">
+          <div class="l1">Each team counted correctly.</div>
+          <div class="l2">They were counting different things.</div>
+        </div>
+    </div>
+
+    <script>
+      (function () {
+        var V = (window.__hyperframes && window.__hyperframes.getVariables)
+          ? window.__hyperframes.getVariables() : {};
+        var num = function (k, d) { var v = Number(V[k]); return isFinite(v) ? v : d; };
+        var D = {
+          programme: num("programme", 312), me: num("me", 287), finance: num("finance", 341),
+          rows: num("rows", 500), dupes: num("duplicates", 37), placed: num("placed", 298),
+          tGrid: num("tGrid", 2), tDupes: num("tDupes", 5), tReveal: num("tReveal", 10), tLine: num("tLine", 14)
+        };
+        document.getElementById("n-programme").textContent = D.programme;
+        document.getElementById("n-me").textContent = D.me;
+        document.getElementById("n-finance").textContent = D.finance;
+
+        // ---- build the rows grid (deterministic; no Math.random) ----
+        var COLS = 25, PITCH_X = 48, PITCH_Y = 20;
+        var grid = document.getElementById("grid");
+        var bars = [];
+        for (var i = 0; i < D.rows; i++) {
+          var b = document.createElement("div");
+          b.className = "bar";
+          var c = i % COLS, r = Math.floor(i / COLS);
+          // slight ragged widths so it reads as spreadsheet rows, not pixels
+          var w = 28 + ((i * 7919) % 13);
+          b.style.left = (c * PITCH_X) + "px";
+          b.style.top = (r * PITCH_Y) + "px";
+          b.style.width = w + "px";
+          b.dataset.x = c * PITCH_X; b.dataset.y = r * PITCH_Y;
+          grid.appendChild(b);
+          bars.push(b);
+        }
+        // seeded LCG to pick duplicates and their twins
+        var seed = 20251020;
+        var rand = function () { seed = (seed * 1664525 + 1013904223) % 4294967296; return seed / 4294967296; };
+        var used = {}, pairs = [];
+        while (pairs.length < D.dupes) {
+          var a = Math.floor(rand() * D.rows), t = Math.floor(rand() * D.rows);
+          if (a === t || used[a] || used[t]) continue;
+          // keep twins reasonably close so the flight reads clearly
+          var dx = Math.abs(bars[a].dataset.x - bars[t].dataset.x), dy = Math.abs(bars[a].dataset.y - bars[t].dataset.y);
+          if (dx > 520 || dy > 220) continue;
+          used[a] = used[t] = true;
+          pairs.push({ dup: bars[a], twin: bars[t] });
+        }
+        var dupEls = pairs.map(function (p) { return p.dup; });
+        var twinEls = pairs.map(function (p) { return p.twin; });
+        var keptEls = bars.filter(function (b) { return dupEls.indexOf(b) < 0; });
+
+        // ---- timeline ----
+        var tl = gsap.timeline({ paused: true, defaults: { ease: "power2.out" } });
+        var setText = function (id, from, to, start, dur, ease) {
+          var o = { v: from }, el = document.getElementById(id);
+          tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: ease || "power2.out",
+            onUpdate: function () { el.textContent = Math.round(o.v); } }, start);
+        };
+
+        // initial states
+        // (initial hidden states use gsap.set outside the paused timeline, per hyperframes lint)
+        gsap.set(["#gridLabel", "#grid", "#panel", "#reveal", "#closing .l1", "#closing .l2"], { opacity: 0 });
+        gsap.set(bars, { opacity: 0, y: 6 });
+        gsap.set(".strike", { scaleX: 0, transformOrigin: "0% 50%" });
+        gsap.set(["#c1", "#c2", "#c3", "#onePerson", "#counterLabel .real", "#clusterCaption"], { opacity: 0 });
+
+        // Beat 1 (0-2s): cards settle in
+        tl.from(".card", { opacity: 0, y: 40, duration: 0.9, stagger: 0.15, ease: "power3.out" }, 0.1);
+
+        // Beat 2 (tGrid): cards rise + shrink; rows grid fills in
+        var g = D.tGrid;
+        tl.to("#cards", { y: -250, scale: 0.5, duration: 1.1, ease: "power3.inOut" }, g);
+        tl.to(["#gridLabel", "#grid", "#panel"], { opacity: 1, duration: 0.6 }, g + 0.6);
+        tl.to(bars, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out",
+          stagger: { each: 1.6 / D.rows, from: "start" } }, g + 0.7);
+        setText("counter", 0, D.rows, g + 0.7, 1.9, "power1.out");
+
+        // Beat 3 (tDupes): duplicates light up, fly into their twins, counter rolls down
+        var d = D.tDupes;
+        tl.to(dupEls.concat(twinEls), { backgroundColor: "#F7C948", duration: 0.4, stagger: 0.008 }, d);
+        tl.to("#clusterCaption", { opacity: 1, duration: 0.5 }, d + 0.2);
+        tl.fromTo(["#c1", "#c2", "#c3"], { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.6, stagger: 0.18 }, d + 0.35);
+        var mergeStart = d + 0.9, mergeEach = 0.9, mergeStagger = 0.06;
+        pairs.forEach(function (p, k) {
+          var at = mergeStart + k * mergeStagger;
+          tl.to(p.dup, {
+            x: p.twin.dataset.x - p.dup.dataset.x, y: p.twin.dataset.y - p.dup.dataset.y,
+            duration: mergeEach, ease: "power2.inOut" }, at);
+          tl.to(p.dup, { opacity: 0, scaleX: 0.6, duration: 0.25, ease: "power1.in" }, at + mergeEach - 0.2);
+          tl.fromTo(p.twin, { scaleY: 1 }, { scaleY: 1.6, duration: 0.15, yoyo: true, repeat: 1, ease: "sine.inOut" }, at + mergeEach - 0.1);
+        });
+        var mergeEnd = mergeStart + (pairs.length - 1) * mergeStagger + mergeEach;
+        setText("counter", D.rows, D.rows - D.dupes, mergeStart + 0.3, mergeEnd - mergeStart - 0.3, "power1.inOut");
+        // example cluster merges in the side panel
+        tl.to(["#c2", "#c3"], { y: function (i) { return -(i + 1) * 66; }, duration: 1.0, ease: "power2.inOut", stagger: 0.1 }, d + 1.9);
+        tl.to(["#c2", "#c3"], { opacity: 0, duration: 0.3 }, d + 2.8);
+        tl.to("#c1", { borderColor: "#8ECFCA", duration: 0.5 }, d + 3.0);
+        tl.to("#onePerson", { opacity: 1, duration: 0.5 }, d + 3.2);
+        // label switch: rows -> real people; survivors settle to teal
+        tl.to("#counterLabel .rows", { opacity: 0, duration: 0.4 }, mergeEnd);
+        tl.to("#counterLabel .real", { opacity: 1, duration: 0.5 }, mergeEnd + 0.2);
+        tl.to(keptEls, { backgroundColor: "#8ECFCA", duration: 0.4, stagger: { each: 0.4 / keptEls.length } }, mergeEnd + 0.1);
+
+        // Beat 4 (tReveal): team numbers struck through, real number rolls up
+        var rv = D.tReveal;
+        tl.to(["#gridLabel", "#grid", "#panel"], { opacity: 0, y: 24, duration: 0.7, ease: "power2.in" }, rv);
+        tl.to([".card .pill", ".card .num span"], { opacity: 0.35, duration: 0.8 }, rv + 0.1);
+        tl.to(".strike", { scaleX: 1, duration: 0.6, stagger: 0.2, ease: "power2.inOut" }, rv + 0.2);
+        tl.fromTo("#reveal", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8 }, rv + 0.8);
+        setText("placed", 0, D.placed, rv + 0.8, 2.4, "power3.out");
+
+        // Beat 5 (tLine): closing line, then hold
+        var ln = D.tLine;
+        tl.fromTo("#closing .l1", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8 }, ln);
+        tl.fromTo("#closing .l2", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8 }, ln + 0.6);
+        tl.set({}, {}, 16); // pin total length
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["twist"] = tl;
+        tl.seek(0);
+      })();
+    </script>
+  </body>
+</html>

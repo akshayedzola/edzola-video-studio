@@ -1,0 +1,3212 @@
+{
+ "generated": "node scripts/catalog.mjs",
+ "episodes": [
+  {
+   "id": "a001-what-is-an-mis",
+   "series": "A",
+   "title": "What is an MIS, really?",
+   "format": "before_after",
+   "thesis": "An MIS is one record per person, shared by everyone, that the work runs through.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/case-studies/sitara-foundation.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a002-software-didnt-fix-data",
+   "series": "A",
+   "title": "Why nonprofits struggle with data even after buying software",
+   "format": "fictional_case_study",
+   "thesis": "The gap is process clarity and ownership, not tools.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md",
+    "knowledge/concepts/points-of-view.md",
+    "knowledge/source-texts/technology-that-sticks/01_mission-rich-systems-poor.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a003-placement-vs-employment",
+   "series": "A",
+   "title": "Why 80% placement isn't 80% employment",
+   "format": "data_storytelling",
+   "thesis": "Placement is a leading indicator; retention is the outcome that matters.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/frameworks/dashboards-and-kpis.md",
+    "knowledge/case-studies/sitara-foundation.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a004-build-buy-customise",
+   "series": "A",
+   "title": "Should your nonprofit build, buy or customise software?",
+   "format": "decision_simulation",
+   "thesis": "Decide on process clarity, capacity and uniqueness, not on features.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md",
+    "knowledge/source-texts/technology-that-sticks/04_problem-first-tool-last.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a005-dashboards-decisions",
+   "series": "A",
+   "title": "Why dashboards don't automatically improve decisions",
+   "format": "myth_vs_reality",
+   "thesis": "A dashboard without a decision is decoration.",
+   "sources": [
+    "knowledge/frameworks/dashboards-and-kpis.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a006-every-field-is-a-tax",
+   "series": "A",
+   "title": "Every field is a tax on the frontline",
+   "format": "data_storytelling",
+   "thesis": "Every data point must earn its place; more data is not better.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a007-data-only-flows-up",
+   "series": "A",
+   "title": "If data only flows up, it's compliance",
+   "format": "reveal_invisible_system",
+   "thesis": "Data must flow back to the people who enter it.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a008-theory-of-change",
+   "series": "A",
+   "title": "Theory of Change in five minutes",
+   "format": "progressive_construction",
+   "thesis": "Activities, outputs, outcomes, impact: the causal story behind a programme.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a009-logframe",
+   "series": "A",
+   "title": "What a logframe is for, and why funders ask for it",
+   "format": "progressive_construction",
+   "thesis": "The Theory of Change is the story; the logframe is the matrix.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a010-output-vs-outcome",
+   "series": "A",
+   "title": "Outputs vs outcomes: the indicator trap",
+   "format": "myth_vs_reality",
+   "thesis": "Counting what you did is not the same as measuring change.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/frameworks/dashboards-and-kpis.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a011-leading-lagging",
+   "series": "A",
+   "title": "Leading and lagging indicators: attendance vs income",
+   "format": "data_storytelling",
+   "thesis": "Early signals let you act before the outcome is lost.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/frameworks/dashboards-and-kpis.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a012-unique-id",
+   "series": "A",
+   "title": "What one unique ID actually fixes",
+   "format": "before_after",
+   "thesis": "One stable ID per person ends duplicates and conflicting counts.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/case-studies/sitara-foundation.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a013-single-source-of-truth",
+   "series": "A",
+   "title": "A single source of truth isn't one file",
+   "format": "myth_vs_reality",
+   "thesis": "It is an agreement: one definition, one ID, one owner per concept.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a014-go-live-start-line",
+   "series": "A",
+   "title": "Go-live is the start line",
+   "format": "fictional_case_study",
+   "thesis": "Adoption begins at go-live; plan for the months after.",
+   "sources": [
+    "knowledge/concepts/points-of-view.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a015-why-staff-stop-using-systems",
+   "series": "A",
+   "title": "Why staff stop using new systems",
+   "format": "fictional_case_study",
+   "thesis": "Adoption is a social process, not a technical event.",
+   "sources": [
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a016-dont-automate-a-messy-kitchen",
+   "series": "A",
+   "title": "Don't automate a messy kitchen",
+   "format": "myth_vs_reality",
+   "thesis": "Automate a confused workflow and you get a confused workflow at scale.",
+   "sources": [
+    "knowledge/concepts/points-of-view.md",
+    "knowledge/frameworks/technology-that-sticks.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a017-three-jobs-of-technology",
+   "series": "A",
+   "title": "Technology has three jobs. Do them in order.",
+   "format": "progressive_construction",
+   "thesis": "Infrastructure, then acceleration, then insight.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md",
+    "knowledge/source-texts/technology-that-sticks/02_three-jobs-in-order.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a018-mission-rich-systems-poor",
+   "series": "A",
+   "title": "Mission-rich, systems-poor",
+   "format": "fictional_case_study",
+   "thesis": "Nonprofits are rich in purpose and short on systems; the gap is structural.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/01_mission-rich-systems-poor.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a019-problem-first-tool-last",
+   "series": "A",
+   "title": "Problem first, tool last",
+   "format": "decision_simulation",
+   "thesis": "Tools feel like progress; problems feel like delay.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/04_problem-first-tool-last.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a020-free-tool-isnt-free",
+   "series": "A",
+   "title": "A free tool nobody uses isn't free",
+   "format": "decision_simulation",
+   "thesis": "The cost of software is mostly the cost of making it stick.",
+   "sources": [
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a021-prototype-week-two",
+   "series": "A",
+   "title": "Why a prototype that fails in week two is a gift",
+   "format": "fictional_case_study",
+   "thesis": "Early mismatch is cheap; late mismatch is expensive.",
+   "sources": [
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a022-stop-rebuilding-the-same-system",
+   "series": "A",
+   "title": "Stop rebuilding the same system",
+   "format": "reveal_invisible_system",
+   "thesis": "Sector patterns repeat; start from them.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/07_stop-rebuilding-the-same-system.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a023-built-for-donors-not-teams",
+   "series": "A",
+   "title": "Built for donors, not teams",
+   "format": "before_after",
+   "thesis": "Systems designed only for compliance fail the frontline.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a024-we-have-a-data-problem",
+   "series": "A",
+   "title": "'We have a data problem' usually isn't",
+   "format": "myth_vs_reality",
+   "thesis": "It is usually a decision, workflow or adoption problem.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a025-baseline-midline-endline",
+   "series": "A",
+   "title": "Baseline, midline, endline: measuring change",
+   "format": "data_storytelling",
+   "thesis": "Measure the same thing before, during and after.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a026-red-amber-green",
+   "series": "A",
+   "title": "Red, amber, green: making targets readable",
+   "format": "progressive_construction",
+   "thesis": "Thresholds turn numbers into decisions.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/frameworks/dashboards-and-kpis.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a027-people-money-evidence",
+   "series": "A",
+   "title": "The three maps of any nonprofit: people, money, evidence",
+   "format": "reveal_invisible_system",
+   "thesis": "Show how people, money and evidence move, and where they meet.",
+   "sources": [
+    "knowledge/frameworks/three-operating-maps.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a028-dpdp-and-nonprofit-data",
+   "series": "A",
+   "title": "What India's DPDP Act means for nonprofit data",
+   "format": "progressive_construction",
+   "thesis": "Consent, purpose and minimisation become legal duties.",
+   "sources": [
+    "knowledge/products/products.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a029-consent-the-field-you-cant-skip",
+   "series": "A",
+   "title": "Consent: the field you can't skip",
+   "format": "fictional_case_study",
+   "thesis": "Consent is a record with a date, a purpose and a way to withdraw.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "a030-is-your-organisation-ready",
+   "series": "A",
+   "title": "Is your organisation ready for a new system?",
+   "format": "decision_simulation",
+   "thesis": "Leadership buy-in, process clarity and realistic sequencing come first.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md",
+    "knowledge/source-texts/technology-that-sticks/03_what-we-cant-do.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b001-ai-voice-agents",
+   "series": "B",
+   "title": "How AI voice agents actually work",
+   "format": "reveal_invisible_system",
+   "thesis": "Speech to text to understanding to the next question, with a human in the loop.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/products/products.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b002-ai-employee-vs-chatbot",
+   "series": "B",
+   "title": "What is an AI employee, and how is it different from a chatbot?",
+   "format": "myth_vs_reality",
+   "thesis": "A chatbot answers; an AI employee does an encoded task end to end, with review.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b003-ai-amplifier-not-purifier",
+   "series": "B",
+   "title": "AI is an amplifier, not a purifier",
+   "format": "myth_vs_reality",
+   "thesis": "AI on messy data produces confident mess.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b004-ai-maturity-ladder",
+   "series": "B",
+   "title": "The AI maturity ladder: from chatbot to organisation-wide",
+   "format": "progressive_construction",
+   "thesis": "Climb one rung at a time: chat, file in/deliverable out, encoded task, scheduled, organisation-wide.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b005-what-is-a-data-model",
+   "series": "B",
+   "title": "What a data model is: entities, fields, relationships",
+   "format": "progressive_construction",
+   "thesis": "Decide the things you track, what you know about them and how they connect.",
+   "sources": [
+    "knowledge/frameworks/entity-library.md",
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b006-how-records-connect",
+   "series": "B",
+   "title": "One-to-many, many-to-many: how records connect",
+   "format": "progressive_construction",
+   "thesis": "Relationships stop you copying the same data into many places.",
+   "sources": [
+    "knowledge/frameworks/entity-library.md",
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b007-master-tables",
+   "series": "B",
+   "title": "Master tables: why dropdowns matter",
+   "format": "before_after",
+   "thesis": "Standard lists make counts comparable.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b008-reading-an-erd",
+   "series": "B",
+   "title": "Reading an entity-relationship diagram",
+   "format": "progressive_construction",
+   "thesis": "Boxes are things; lines are how they relate.",
+   "sources": [
+    "knowledge/frameworks/entity-library.md",
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b009-data-migration",
+   "series": "B",
+   "title": "Moving off spreadsheets: data migration without tears",
+   "format": "fictional_case_study",
+   "thesis": "Clean, map, test, then move; never migrate the mess.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b010-what-uat-is-for",
+   "series": "B",
+   "title": "What user acceptance testing is for",
+   "format": "fictional_case_study",
+   "thesis": "UAT is where real users prove the system fits real work.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b011-how-systems-talk",
+   "series": "B",
+   "title": "How systems talk to each other: APIs in plain words",
+   "format": "reveal_invisible_system",
+   "thesis": "Systems share data through agreed requests, not copy and paste.",
+   "sources": [
+    "knowledge/frameworks/three-operating-maps.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b012-offline-field-data",
+   "series": "B",
+   "title": "Collecting data where there's no internet",
+   "format": "reveal_invisible_system",
+   "thesis": "Capture offline, sync later, resolve conflicts deliberately.",
+   "sources": [
+    "knowledge/frameworks/three-operating-maps.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b013-why-duplicates-happen",
+   "series": "B",
+   "title": "Why duplicates happen, and how systems prevent them",
+   "format": "data_storytelling",
+   "thesis": "Duplicates come from many entry points and no shared ID.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/case-studies/sitara-foundation.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b014-validation-rules",
+   "series": "B",
+   "title": "Validation rules: stopping bad data at the door",
+   "format": "before_after",
+   "thesis": "Rules at entry are cheaper than cleaning later.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b015-roles-and-permissions",
+   "series": "B",
+   "title": "Who sees what: roles and permissions",
+   "format": "reveal_invisible_system",
+   "thesis": "Least privilege protects people and the data about them.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b016-audit-trails",
+   "series": "B",
+   "title": "Audit trails: who changed what, and when",
+   "format": "reveal_invisible_system",
+   "thesis": "Trust in data comes from knowing its history.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b017-stories-at-scale",
+   "series": "B",
+   "title": "Collecting stories at scale: qualitative data",
+   "format": "reveal_invisible_system",
+   "thesis": "Conversations capture the why behind the numbers.",
+   "sources": [
+    "knowledge/products/products.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "b018-where-ai-fits-in-an-mis",
+   "series": "B",
+   "title": "Where AI fits in a nonprofit MIS",
+   "format": "progressive_construction",
+   "thesis": "Collect, build, work smarter, know faster, on trusted data only.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "c001-why-low-code",
+   "series": "C",
+   "title": "Why we build on low-code platforms",
+   "format": "decision_simulation",
+   "thesis": "Speed, ownership and cost of change matter more than custom code.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "c002-inside-impactos",
+   "series": "C",
+   "title": "Inside ImpactOS: how we build an MIS",
+   "format": "product_walkthrough",
+   "thesis": "A structured path from discovery to adoption.",
+   "sources": [
+    "knowledge/products/products.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": true,
+   "kind": "core"
+  },
+  {
+   "id": "c003-map-framework",
+   "series": "C",
+   "title": "MAP: model, align, power with AI",
+   "format": "progressive_construction",
+   "thesis": "Model what is worth knowing, align with real work, add AI on trusted data.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "c004-what-we-cant-do",
+   "series": "C",
+   "title": "Why we tell prospects what we can't do",
+   "format": "myth_vs_reality",
+   "thesis": "Honesty about readiness saves everyone a failed project.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/03_what-we-cant-do.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "c005-when-the-project-hits-a-wall",
+   "series": "C",
+   "title": "When the project hits a wall",
+   "format": "fictional_case_study",
+   "thesis": "A blocker protocol beats blame.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/05_when-the-project-hits-a-wall.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "c006-warmth-is-how-standards-travel",
+   "series": "C",
+   "title": "Warmth is how standards travel",
+   "format": "fictional_case_study",
+   "thesis": "High standards spread through relationships.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/06_warmth-is-how-standards-travel.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "c007-zolabs-survey-to-conversation",
+   "series": "C",
+   "title": "How Zolabs turns a survey into a conversation",
+   "format": "product_walkthrough",
+   "thesis": "A voice conversation collects richer, more honest answers than a form.",
+   "sources": [
+    "knowledge/products/products.md"
+   ],
+   "priority": 2,
+   "product": true,
+   "kind": "core"
+  },
+  {
+   "id": "c008-dozai-placement-verification",
+   "series": "C",
+   "title": "How DozAI verifies placement and retention",
+   "format": "product_walkthrough",
+   "thesis": "Bounded AI follow-ups with human review. Confirm framing with the product owner first.",
+   "sources": [
+    "knowledge/products/products.md"
+   ],
+   "priority": 3,
+   "product": true,
+   "kind": "core"
+  },
+  {
+   "id": "c009-isom-explained",
+   "series": "C",
+   "title": "ISOM: an open operating model for skilling nonprofits",
+   "format": "progressive_construction",
+   "thesis": "Shared stages and SOPs so every skilling nonprofit need not start from zero.",
+   "sources": [
+    "knowledge/frameworks/three-operating-maps.md",
+    "knowledge/products/products.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "c010-inside-a-discovery-call",
+   "series": "C",
+   "title": "What happens in a discovery call",
+   "format": "fictional_case_study",
+   "thesis": "We ask about your Theory of Change before any tool.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "c011-patterns-across-sectors",
+   "series": "C",
+   "title": "The patterns we see across 16 sectors",
+   "format": "reveal_invisible_system",
+   "thesis": "Every sector has one data thread that holds it together.",
+   "sources": [
+    "knowledge/sectors/README.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "c012-how-we-make-these-videos",
+   "series": "C",
+   "title": "How we make these videos",
+   "format": "reveal_invisible_system",
+   "thesis": "Structured storyboards, open tools and human review.",
+   "sources": [
+    "docs/13-explainer-formula.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "core"
+  },
+  {
+   "id": "s01-education-thread",
+   "series": "S",
+   "sector": "Education",
+   "title": "Education: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Student ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/01-education.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s01-education-measure",
+   "series": "S",
+   "sector": "Education",
+   "title": "Education: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/01-education.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s01-education-excel-to-mis",
+   "series": "S",
+   "sector": "Education",
+   "title": "Education: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/01-education.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s01-education-ai",
+   "series": "S",
+   "sector": "Education",
+   "title": "Education: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/01-education.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s01-education-dashboard",
+   "series": "S",
+   "sector": "Education",
+   "title": "Education: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/01-education.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s01-education-frontline",
+   "series": "S",
+   "sector": "Education",
+   "title": "Education: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/01-education.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s01-education-stage1-outreach-enrolment",
+   "series": "S",
+   "sector": "Education",
+   "title": "Outreach & Enrolment: Find every out-of-school child before the academic year starts",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/01-education.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s01-education-stage2-baseline-grouping",
+   "series": "S",
+   "sector": "Education",
+   "title": "Baseline & Grouping: Group children by what they can read, not their grade",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/01-education.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s01-education-stage3-instruction-support",
+   "series": "S",
+   "sector": "Education",
+   "title": "Instruction & Support: Track attendance and classroom practice while there's still time",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/01-education.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s01-education-stage4-progress-transition",
+   "series": "S",
+   "sector": "Education",
+   "title": "Progress & Transition: Measure learning gains and follow children into the next school",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/01-education.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s02-youth-employability-thread",
+   "series": "S",
+   "sector": "Youth Development & Employability",
+   "title": "Youth Development & Employability: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Candidate ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/02-youth-employability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s02-youth-employability-measure",
+   "series": "S",
+   "sector": "Youth Development & Employability",
+   "title": "Youth Development & Employability: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/02-youth-employability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s02-youth-employability-excel-to-mis",
+   "series": "S",
+   "sector": "Youth Development & Employability",
+   "title": "Youth Development & Employability: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/02-youth-employability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s02-youth-employability-ai",
+   "series": "S",
+   "sector": "Youth Development & Employability",
+   "title": "Youth Development & Employability: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/02-youth-employability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s02-youth-employability-dashboard",
+   "series": "S",
+   "sector": "Youth Development & Employability",
+   "title": "Youth Development & Employability: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/02-youth-employability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s02-youth-employability-frontline",
+   "series": "S",
+   "sector": "Youth Development & Employability",
+   "title": "Youth Development & Employability: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/02-youth-employability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s02-youth-employability-stage1-mobilisation-selection",
+   "series": "S",
+   "sector": "Youth Development & Employability",
+   "title": "Mobilisation & Selection: Mobilise youth who'll finish the batch, not just fill it",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/02-youth-employability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s02-youth-employability-stage2-skills-training",
+   "series": "S",
+   "sector": "Youth Development & Employability",
+   "title": "Skills Training: Catch batch dropouts in week two, not at certification",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/02-youth-employability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s02-youth-employability-stage3-job-readiness-placement",
+   "series": "S",
+   "sector": "Youth Development & Employability",
+   "title": "Job Readiness & Placement: Match candidates to real openings, then verify they joined",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/02-youth-employability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s02-youth-employability-stage4-retention-alumni",
+   "series": "S",
+   "sector": "Youth Development & Employability",
+   "title": "Retention & Alumni: Track who's still employed at 3, 6 and 12 months",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/02-youth-employability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s03-livelihoods-thread",
+   "series": "S",
+   "sector": "Livelihoods & Economic Empowerment",
+   "title": "Livelihoods & Economic Empowerment: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Household ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/03-livelihoods.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s03-livelihoods-measure",
+   "series": "S",
+   "sector": "Livelihoods & Economic Empowerment",
+   "title": "Livelihoods & Economic Empowerment: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/03-livelihoods.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s03-livelihoods-excel-to-mis",
+   "series": "S",
+   "sector": "Livelihoods & Economic Empowerment",
+   "title": "Livelihoods & Economic Empowerment: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/03-livelihoods.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s03-livelihoods-ai",
+   "series": "S",
+   "sector": "Livelihoods & Economic Empowerment",
+   "title": "Livelihoods & Economic Empowerment: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/03-livelihoods.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s03-livelihoods-dashboard",
+   "series": "S",
+   "sector": "Livelihoods & Economic Empowerment",
+   "title": "Livelihoods & Economic Empowerment: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/03-livelihoods.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s03-livelihoods-frontline",
+   "series": "S",
+   "sector": "Livelihoods & Economic Empowerment",
+   "title": "Livelihoods & Economic Empowerment: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/03-livelihoods.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s03-livelihoods-stage1-targeting-mobilisation",
+   "series": "S",
+   "sector": "Livelihoods & Economic Empowerment",
+   "title": "Targeting & Mobilisation: Reach the ultra-poor households that village lists keep missing",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/03-livelihoods.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s03-livelihoods-stage2-capacity-building",
+   "series": "S",
+   "sector": "Livelihoods & Economic Empowerment",
+   "title": "Capacity Building: Build savings habits and a business plan before the asset",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/03-livelihoods.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s03-livelihoods-stage3-asset-enterprise-support",
+   "series": "S",
+   "sector": "Livelihoods & Economic Empowerment",
+   "title": "Asset & Enterprise Support: Track every seed grant and goat from purchase to income",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/03-livelihoods.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s03-livelihoods-stage4-coaching-graduation",
+   "series": "S",
+   "sector": "Livelihoods & Economic Empowerment",
+   "title": "Coaching & Graduation: Coach every household until it meets graduation criteria",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/03-livelihoods.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s04-health-thread",
+   "series": "S",
+   "sector": "Health & Wellbeing",
+   "title": "Health & Wellbeing: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Patient ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/04-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s04-health-measure",
+   "series": "S",
+   "sector": "Health & Wellbeing",
+   "title": "Health & Wellbeing: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/04-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s04-health-excel-to-mis",
+   "series": "S",
+   "sector": "Health & Wellbeing",
+   "title": "Health & Wellbeing: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/04-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s04-health-ai",
+   "series": "S",
+   "sector": "Health & Wellbeing",
+   "title": "Health & Wellbeing: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/04-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s04-health-dashboard",
+   "series": "S",
+   "sector": "Health & Wellbeing",
+   "title": "Health & Wellbeing: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/04-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s04-health-frontline",
+   "series": "S",
+   "sector": "Health & Wellbeing",
+   "title": "Health & Wellbeing: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/04-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s04-health-stage1-outreach-screening",
+   "series": "S",
+   "sector": "Health & Wellbeing",
+   "title": "Outreach & Screening: Active case finding that reaches the houses the facility never sees",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/04-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s04-health-stage2-diagnosis-enrolment",
+   "series": "S",
+   "sector": "Health & Wellbeing",
+   "title": "Diagnosis & Enrolment: Close the gap between a positive sputum and a started regimen",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/04-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s04-health-stage3-treatment-care",
+   "series": "S",
+   "sector": "Health & Wellbeing",
+   "title": "Treatment & Care: Doses observed, side effects caught, patients kept on regimen",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/04-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s04-health-stage4-follow-up-outcomes",
+   "series": "S",
+   "sector": "Health & Wellbeing",
+   "title": "Follow-up & Outcomes: Trace every missed dose and record an outcome for everyone",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/04-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s05-mental-health-thread",
+   "series": "S",
+   "sector": "Mental Health",
+   "title": "Mental Health: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Client ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/05-mental-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s05-mental-health-measure",
+   "series": "S",
+   "sector": "Mental Health",
+   "title": "Mental Health: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/05-mental-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s05-mental-health-excel-to-mis",
+   "series": "S",
+   "sector": "Mental Health",
+   "title": "Mental Health: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/05-mental-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s05-mental-health-ai",
+   "series": "S",
+   "sector": "Mental Health",
+   "title": "Mental Health: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/05-mental-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s05-mental-health-dashboard",
+   "series": "S",
+   "sector": "Mental Health",
+   "title": "Mental Health: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/05-mental-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s05-mental-health-frontline",
+   "series": "S",
+   "sector": "Mental Health",
+   "title": "Mental Health: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/05-mental-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s05-mental-health-stage1-awareness-screening",
+   "series": "S",
+   "sector": "Mental Health",
+   "title": "Awareness & Screening: Screening for depression in villages where nobody says 'depression'",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/05-mental-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s05-mental-health-stage2-assessment-enrolment",
+   "series": "S",
+   "sector": "Mental Health",
+   "title": "Assessment & Enrolment: An intake that feels safe and gets risk right",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/05-mental-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s05-mental-health-stage3-therapy-delivery",
+   "series": "S",
+   "sector": "Mental Health",
+   "title": "Therapy Delivery: Keeping IPT-G and HAP sessions faithful, attended and supervised",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/05-mental-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s05-mental-health-stage4-monitoring-follow-up",
+   "series": "S",
+   "sector": "Mental Health",
+   "title": "Monitoring & Follow-up: Knowing who stays well at six months, and who's slipping",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/05-mental-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s06-maternal-child-health-thread",
+   "series": "S",
+   "sector": "Maternal & Child Health",
+   "title": "Maternal & Child Health: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Mother ID + Child ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/06-maternal-child-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s06-maternal-child-health-measure",
+   "series": "S",
+   "sector": "Maternal & Child Health",
+   "title": "Maternal & Child Health: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/06-maternal-child-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s06-maternal-child-health-excel-to-mis",
+   "series": "S",
+   "sector": "Maternal & Child Health",
+   "title": "Maternal & Child Health: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/06-maternal-child-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s06-maternal-child-health-ai",
+   "series": "S",
+   "sector": "Maternal & Child Health",
+   "title": "Maternal & Child Health: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/06-maternal-child-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s06-maternal-child-health-dashboard",
+   "series": "S",
+   "sector": "Maternal & Child Health",
+   "title": "Maternal & Child Health: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/06-maternal-child-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s06-maternal-child-health-frontline",
+   "series": "S",
+   "sector": "Maternal & Child Health",
+   "title": "Maternal & Child Health: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/06-maternal-child-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s06-maternal-child-health-stage1-pregnancy-registration",
+   "series": "S",
+   "sector": "Maternal & Child Health",
+   "title": "Pregnancy Registration: Register in the first trimester, or miss the window",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/06-maternal-child-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s06-maternal-child-health-stage2-antenatal-care",
+   "series": "S",
+   "sector": "Maternal & Child Health",
+   "title": "Antenatal Care: Four ANC visits that actually check BP, haemoglobin and danger signs",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/06-maternal-child-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s06-maternal-child-health-stage3-delivery-referral",
+   "series": "S",
+   "sector": "Maternal & Child Health",
+   "title": "Delivery & Referral: Getting her to the right facility before labour turns into emergency",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/06-maternal-child-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s06-maternal-child-health-stage4-postnatal-child-follow-up",
+   "series": "S",
+   "sector": "Maternal & Child Health",
+   "title": "Postnatal & Child Follow-up: The first 42 days, then every vaccine and weight to one year",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/06-maternal-child-health.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s07-child-protection-thread",
+   "series": "S",
+   "sector": "Child Rights & Protection",
+   "title": "Child Rights & Protection: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Child Case ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/07-child-protection.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s07-child-protection-measure",
+   "series": "S",
+   "sector": "Child Rights & Protection",
+   "title": "Child Rights & Protection: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/07-child-protection.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s07-child-protection-excel-to-mis",
+   "series": "S",
+   "sector": "Child Rights & Protection",
+   "title": "Child Rights & Protection: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/07-child-protection.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s07-child-protection-ai",
+   "series": "S",
+   "sector": "Child Rights & Protection",
+   "title": "Child Rights & Protection: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/07-child-protection.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s07-child-protection-dashboard",
+   "series": "S",
+   "sector": "Child Rights & Protection",
+   "title": "Child Rights & Protection: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/07-child-protection.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s07-child-protection-frontline",
+   "series": "S",
+   "sector": "Child Rights & Protection",
+   "title": "Child Rights & Protection: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/07-child-protection.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s07-child-protection-stage1-identification-reporting",
+   "series": "S",
+   "sector": "Child Rights & Protection",
+   "title": "Identification & Reporting: From a 1098 call to a verified case in hours",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/07-child-protection.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s07-child-protection-stage2-rescue-case-assessment",
+   "series": "S",
+   "sector": "Child Rights & Protection",
+   "title": "Rescue & Case Assessment: Produce before the CWC with the facts already assembled",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/07-child-protection.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s07-child-protection-stage3-care-rehabilitation",
+   "series": "S",
+   "sector": "Child Rights & Protection",
+   "title": "Care & Rehabilitation: Care plans that get reviewed, not filed and forgotten",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/07-child-protection.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s07-child-protection-stage4-restoration-follow-up",
+   "series": "S",
+   "sector": "Child Rights & Protection",
+   "title": "Restoration & Follow-up: Knowing the child is still safe a year after going home",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/07-child-protection.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s08-gender-thread",
+   "series": "S",
+   "sector": "Gender Equality & Women's Empowerment",
+   "title": "Gender Equality & Women's Empowerment: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Member ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/08-gender.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s08-gender-measure",
+   "series": "S",
+   "sector": "Gender Equality & Women's Empowerment",
+   "title": "Gender Equality & Women's Empowerment: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/08-gender.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s08-gender-excel-to-mis",
+   "series": "S",
+   "sector": "Gender Equality & Women's Empowerment",
+   "title": "Gender Equality & Women's Empowerment: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/08-gender.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s08-gender-ai",
+   "series": "S",
+   "sector": "Gender Equality & Women's Empowerment",
+   "title": "Gender Equality & Women's Empowerment: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/08-gender.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s08-gender-dashboard",
+   "series": "S",
+   "sector": "Gender Equality & Women's Empowerment",
+   "title": "Gender Equality & Women's Empowerment: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/08-gender.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s08-gender-frontline",
+   "series": "S",
+   "sector": "Gender Equality & Women's Empowerment",
+   "title": "Gender Equality & Women's Empowerment: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/08-gender.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s08-gender-stage1-mobilisation-enrolment",
+   "series": "S",
+   "sector": "Gender Equality & Women's Empowerment",
+   "title": "Mobilisation & Enrolment: Reaching the women the last programme left out",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/08-gender.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s08-gender-stage2-rights-skills-building",
+   "series": "S",
+   "sector": "Gender Equality & Women's Empowerment",
+   "title": "Rights & Skills Building: Sessions women keep coming back to, and why",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/08-gender.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s08-gender-stage3-economic-support-linkages",
+   "series": "S",
+   "sector": "Gender Equality & Women's Empowerment",
+   "title": "Economic & Support Linkages: Savings, credit and GBV referrals women can actually use",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/08-gender.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s08-gender-stage4-graduation-leadership",
+   "series": "S",
+   "sector": "Gender Equality & Women's Empowerment",
+   "title": "Graduation & Leadership: Proving shifts in voice, mobility and control after graduation",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/08-gender.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s09-disability-thread",
+   "series": "S",
+   "sector": "Disability & Inclusion",
+   "title": "Disability & Inclusion: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Person ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/09-disability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s09-disability-measure",
+   "series": "S",
+   "sector": "Disability & Inclusion",
+   "title": "Disability & Inclusion: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/09-disability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s09-disability-excel-to-mis",
+   "series": "S",
+   "sector": "Disability & Inclusion",
+   "title": "Disability & Inclusion: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/09-disability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s09-disability-ai",
+   "series": "S",
+   "sector": "Disability & Inclusion",
+   "title": "Disability & Inclusion: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/09-disability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s09-disability-dashboard",
+   "series": "S",
+   "sector": "Disability & Inclusion",
+   "title": "Disability & Inclusion: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/09-disability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s09-disability-frontline",
+   "series": "S",
+   "sector": "Disability & Inclusion",
+   "title": "Disability & Inclusion: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/09-disability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s09-disability-stage1-identification-screening",
+   "series": "S",
+   "sector": "Disability & Inclusion",
+   "title": "Identification & Screening: Finding the persons with disabilities the census never counted",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/09-disability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s09-disability-stage2-assessment-planning",
+   "series": "S",
+   "sector": "Disability & Inclusion",
+   "title": "Assessment & Planning: UDID, a functional assessment, and a plan the person wrote",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/09-disability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s09-disability-stage3-therapy-skilling",
+   "series": "S",
+   "sector": "Disability & Inclusion",
+   "title": "Therapy & Skilling: Therapy, devices and skills measured against the person's goals",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/09-disability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s09-disability-stage4-inclusion-follow-up",
+   "series": "S",
+   "sector": "Disability & Inclusion",
+   "title": "Inclusion & Follow-up: Placed is a start. Still there after a year is inclusion.",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/09-disability.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s10-justice-thread",
+   "series": "S",
+   "sector": "Human Rights & Access to Justice",
+   "title": "Human Rights & Access to Justice: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Case ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/10-justice.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s10-justice-measure",
+   "series": "S",
+   "sector": "Human Rights & Access to Justice",
+   "title": "Human Rights & Access to Justice: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/10-justice.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s10-justice-excel-to-mis",
+   "series": "S",
+   "sector": "Human Rights & Access to Justice",
+   "title": "Human Rights & Access to Justice: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/10-justice.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s10-justice-ai",
+   "series": "S",
+   "sector": "Human Rights & Access to Justice",
+   "title": "Human Rights & Access to Justice: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/10-justice.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s10-justice-dashboard",
+   "series": "S",
+   "sector": "Human Rights & Access to Justice",
+   "title": "Human Rights & Access to Justice: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/10-justice.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s10-justice-frontline",
+   "series": "S",
+   "sector": "Human Rights & Access to Justice",
+   "title": "Human Rights & Access to Justice: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/10-justice.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s10-justice-stage1-awareness-intake",
+   "series": "S",
+   "sector": "Human Rights & Access to Justice",
+   "title": "Awareness & Intake: Legal literacy camps that turn into registered grievances",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/10-justice.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s10-justice-stage2-case-assessment-documentation",
+   "series": "S",
+   "sector": "Human Rights & Access to Justice",
+   "title": "Case Assessment & Documentation: Building the evidence file before the first hearing",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/10-justice.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s10-justice-stage3-resolution-representation",
+   "series": "S",
+   "sector": "Human Rights & Access to Justice",
+   "title": "Resolution & Representation: Every hearing, adjournment and next date on one record",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/10-justice.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s10-justice-stage4-follow-up-systemic-advocacy",
+   "series": "S",
+   "sector": "Human Rights & Access to Justice",
+   "title": "Follow-up & Systemic Advocacy: Enforced remedies and case data that change policy",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/10-justice.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s11-environment-thread",
+   "series": "S",
+   "sector": "Environment & Climate",
+   "title": "Environment & Climate: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Commons Parcel ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/11-environment.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s11-environment-measure",
+   "series": "S",
+   "sector": "Environment & Climate",
+   "title": "Environment & Climate: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/11-environment.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s11-environment-excel-to-mis",
+   "series": "S",
+   "sector": "Environment & Climate",
+   "title": "Environment & Climate: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/11-environment.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s11-environment-ai",
+   "series": "S",
+   "sector": "Environment & Climate",
+   "title": "Environment & Climate: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/11-environment.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s11-environment-dashboard",
+   "series": "S",
+   "sector": "Environment & Climate",
+   "title": "Environment & Climate: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/11-environment.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s11-environment-frontline",
+   "series": "S",
+   "sector": "Environment & Climate",
+   "title": "Environment & Climate: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/11-environment.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s11-environment-stage1-mobilisation-baseline",
+   "series": "S",
+   "sector": "Environment & Climate",
+   "title": "Mobilisation & Baseline: Map the commons with the village before anyone draws a polygon",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/11-environment.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s11-environment-stage2-planning-governance",
+   "series": "S",
+   "sector": "Environment & Climate",
+   "title": "Planning & Governance: Micro-plans the gram sabha wrote, with rules it will enforce",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/11-environment.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s11-environment-stage3-restoration-implementation",
+   "series": "S",
+   "sector": "Environment & Climate",
+   "title": "Restoration Implementation: Every sapling and trench logged with species, GPS and wage",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/11-environment.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s11-environment-stage4-monitoring-stewardship",
+   "series": "S",
+   "sector": "Environment & Climate",
+   "title": "Monitoring & Stewardship: Year-three survival rates and institutions that run without us",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/11-environment.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s12-waste-thread",
+   "series": "S",
+   "sector": "Waste Management",
+   "title": "Waste Management: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Worker ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/12-waste.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s12-waste-measure",
+   "series": "S",
+   "sector": "Waste Management",
+   "title": "Waste Management: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/12-waste.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s12-waste-excel-to-mis",
+   "series": "S",
+   "sector": "Waste Management",
+   "title": "Waste Management: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/12-waste.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s12-waste-ai",
+   "series": "S",
+   "sector": "Waste Management",
+   "title": "Waste Management: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/12-waste.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s12-waste-dashboard",
+   "series": "S",
+   "sector": "Waste Management",
+   "title": "Waste Management: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/12-waste.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s12-waste-frontline",
+   "series": "S",
+   "sector": "Waste Management",
+   "title": "Waste Management: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/12-waste.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s12-waste-stage1-worker-enumeration-onboarding",
+   "series": "S",
+   "sector": "Waste Management",
+   "title": "Worker Enumeration & Onboarding: Count the waste pickers before the city counts them out",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/12-waste.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s12-waste-stage2-collection-segregation",
+   "series": "S",
+   "sector": "Waste Management",
+   "title": "Collection & Segregation: Kilos per ward, by stream, weighed at the gate every shift",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/12-waste.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s12-waste-stage3-processing-sale",
+   "series": "S",
+   "sector": "Waste Management",
+   "title": "Processing & Sale: From baled PET to EPR certificate, every tonne traceable",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/12-waste.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s12-waste-stage4-welfare-impact-tracking",
+   "series": "S",
+   "sector": "Waste Management",
+   "title": "Welfare & Impact Tracking: Income, insurance and the tonnes waste pickers kept out of landfill",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/12-waste.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s13-food-systems-thread",
+   "series": "S",
+   "sector": "Food Systems",
+   "title": "Food Systems: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Enrolment ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/13-food-systems.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s13-food-systems-measure",
+   "series": "S",
+   "sector": "Food Systems",
+   "title": "Food Systems: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/13-food-systems.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s13-food-systems-excel-to-mis",
+   "series": "S",
+   "sector": "Food Systems",
+   "title": "Food Systems: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/13-food-systems.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s13-food-systems-ai",
+   "series": "S",
+   "sector": "Food Systems",
+   "title": "Food Systems: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/13-food-systems.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s13-food-systems-dashboard",
+   "series": "S",
+   "sector": "Food Systems",
+   "title": "Food Systems: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/13-food-systems.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s13-food-systems-frontline",
+   "series": "S",
+   "sector": "Food Systems",
+   "title": "Food Systems: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/13-food-systems.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s13-food-systems-stage1-enrolment-needs-mapping",
+   "series": "S",
+   "sector": "Food Systems",
+   "title": "Enrolment & Needs Mapping: Registering farmers before planting, households before the lean season",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/13-food-systems.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s13-food-systems-stage2-sourcing-production",
+   "series": "S",
+   "sector": "Food Systems",
+   "title": "Sourcing & Production: Inputs on time, surplus rescued, kitchens cooking to count",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/13-food-systems.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s13-food-systems-stage3-distribution-delivery",
+   "series": "S",
+   "sector": "Food Systems",
+   "title": "Distribution & Delivery: Last-mile delivery that arrives before planting or before lunch",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/13-food-systems.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s13-food-systems-stage4-outcome-monitoring",
+   "series": "S",
+   "sector": "Food Systems",
+   "title": "Outcome Monitoring: Yield per acre, repayment and nutrition, measured every season",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/13-food-systems.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s14-community-development-thread",
+   "series": "S",
+   "sector": "Community Development",
+   "title": "Community Development: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Village ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/14-community-development.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s14-community-development-measure",
+   "series": "S",
+   "sector": "Community Development",
+   "title": "Community Development: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/14-community-development.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s14-community-development-excel-to-mis",
+   "series": "S",
+   "sector": "Community Development",
+   "title": "Community Development: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/14-community-development.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s14-community-development-ai",
+   "series": "S",
+   "sector": "Community Development",
+   "title": "Community Development: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/14-community-development.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s14-community-development-dashboard",
+   "series": "S",
+   "sector": "Community Development",
+   "title": "Community Development: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/14-community-development.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s14-community-development-frontline",
+   "series": "S",
+   "sector": "Community Development",
+   "title": "Community Development: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/14-community-development.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s14-community-development-stage1-community-entry-mobilisation",
+   "series": "S",
+   "sector": "Community Development",
+   "title": "Community Entry & Mobilisation: Enumerate every household, including the hamlet past the river",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/14-community-development.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s14-community-development-stage2-participatory-planning",
+   "series": "S",
+   "sector": "Community Development",
+   "title": "Participatory Planning: Record every priority the gram sabha raised, and what happened",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/14-community-development.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s14-community-development-stage3-implementation-delivery",
+   "series": "S",
+   "sector": "Community Development",
+   "title": "Implementation & Delivery: Track works, funds and scheme money in one ledger",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/14-community-development.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s14-community-development-stage4-handover-sustainability",
+   "series": "S",
+   "sector": "Community Development",
+   "title": "Handover & Sustainability: Keep the water flowing five years after handover",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/14-community-development.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s15-media-thread",
+   "series": "S",
+   "sector": "Media & Journalism",
+   "title": "Media & Journalism: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Story ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/15-media.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s15-media-measure",
+   "series": "S",
+   "sector": "Media & Journalism",
+   "title": "Media & Journalism: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/15-media.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s15-media-excel-to-mis",
+   "series": "S",
+   "sector": "Media & Journalism",
+   "title": "Media & Journalism: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/15-media.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s15-media-ai",
+   "series": "S",
+   "sector": "Media & Journalism",
+   "title": "Media & Journalism: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/15-media.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s15-media-dashboard",
+   "series": "S",
+   "sector": "Media & Journalism",
+   "title": "Media & Journalism: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/15-media.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s15-media-frontline",
+   "series": "S",
+   "sector": "Media & Journalism",
+   "title": "Media & Journalism: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/15-media.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s15-media-stage1-sourcing-newsgathering",
+   "series": "S",
+   "sector": "Media & Journalism",
+   "title": "Sourcing & Newsgathering: Build a stringer network the story budget can count on",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/15-media.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s15-media-stage2-production-verification",
+   "series": "S",
+   "sector": "Media & Journalism",
+   "title": "Production & Verification: Verdicts that survive a legal notice, in every language",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/15-media.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s15-media-stage3-distribution-engagement",
+   "series": "S",
+   "sector": "Media & Journalism",
+   "title": "Distribution & Engagement: Publish where readers are: web, WhatsApp, radio and village screenings",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/15-media.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s15-media-stage4-impact-audience-tracking",
+   "series": "S",
+   "sector": "Media & Journalism",
+   "title": "Impact & Audience Tracking: Reach versus impact: the story that got the handpump fixed",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/15-media.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s16-arts-thread",
+   "series": "S",
+   "sector": "Arts & Culture",
+   "title": "Arts & Culture: the one ID your whole programme needs",
+   "format": "reveal_invisible_system",
+   "thesis": "Follow one Artist ID through the whole journey; that thread is the MIS.",
+   "sources": [
+    "knowledge/sectors/16-arts.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s16-arts-measure",
+   "series": "S",
+   "sector": "Arts & Culture",
+   "title": "Arts & Culture: what should you actually measure?",
+   "format": "data_storytelling",
+   "thesis": "Separate outputs from outcomes, and pick indicators that drive decisions.",
+   "sources": [
+    "knowledge/sectors/16-arts.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s16-arts-excel-to-mis",
+   "series": "S",
+   "sector": "Arts & Culture",
+   "title": "Arts & Culture: from spreadsheets to a system",
+   "format": "fictional_case_study",
+   "thesis": "What changes when one record replaces many copies.",
+   "sources": [
+    "knowledge/sectors/16-arts.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s16-arts-ai",
+   "series": "S",
+   "sector": "Arts & Culture",
+   "title": "Arts & Culture: where AI genuinely helps",
+   "format": "progressive_construction",
+   "thesis": "AI on trusted data, with the prerequisite named for every use.",
+   "sources": [
+    "knowledge/sectors/16-arts.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s16-arts-dashboard",
+   "series": "S",
+   "sector": "Arts & Culture",
+   "title": "Arts & Culture: the dashboard that drives a decision",
+   "format": "myth_vs_reality",
+   "thesis": "Every chart answers a question someone has to act on.",
+   "sources": [
+    "knowledge/sectors/16-arts.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s16-arts-frontline",
+   "series": "S",
+   "sector": "Arts & Culture",
+   "title": "Arts & Culture: field data without the burden",
+   "format": "before_after",
+   "thesis": "Every field is a tax on the frontline; design collection around the visit.",
+   "sources": [
+    "knowledge/sectors/16-arts.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s16-arts-stage1-open-call-selection",
+   "series": "S",
+   "sector": "Arts & Culture",
+   "title": "Open Call & Selection: Open calls that reach beyond the usual metros and networks",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/16-arts.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s16-arts-stage2-creation-capacity-support",
+   "series": "S",
+   "sector": "Arts & Culture",
+   "title": "Creation & Capacity Support: Residencies, mentorship and rehearsals tracked without policing the process",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/16-arts.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s16-arts-stage3-presentation-audience",
+   "series": "S",
+   "sector": "Arts & Culture",
+   "title": "Presentation & Audience: Who came, who came back, and who we still don't reach",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/16-arts.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  },
+  {
+   "id": "s16-arts-stage4-documentation-alumni",
+   "series": "S",
+   "sector": "Arts & Culture",
+   "title": "Documentation & Alumni: An archive you can search, and alumni careers you can show",
+   "format": "fictional_case_study",
+   "thesis": "The decision this stage serves, the data it needs, and where it breaks.",
+   "sources": [
+    "knowledge/sectors/16-arts.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 3,
+   "product": false,
+   "kind": "sector"
+  }
+ ]
+}

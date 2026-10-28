@@ -1,0 +1,341 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edzola.com/video-studio/storyboard.schema.json",
+  "title": "EdZola Video Studio storyboard",
+  "description": "Machine-readable instructional storyboard. Content (narration beats) is separate from visual treatment (template + props + cue actions). See docs/04-storyboard-spec.md.",
+  "type": "object",
+  "required": [
+    "video_id",
+    "title",
+    "series",
+    "audience",
+    "learning_outcome",
+    "format",
+    "status",
+    "voice",
+    "scenes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "video_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "series": {
+      "type": "string",
+      "description": "Series label shown top-left, e.g. 'Technology for Impact, Explained'"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "learning_outcome": {
+      "type": "string",
+      "description": "What the viewer understands afterwards. One sentence."
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "before_after",
+        "decision_simulation",
+        "reveal_invisible_system",
+        "data_storytelling",
+        "fictional_case_study",
+        "product_walkthrough",
+        "myth_vs_reality",
+        "progressive_construction"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "in_review",
+        "approved",
+        "published"
+      ]
+    },
+    "aspect": {
+      "type": "string",
+      "enum": [
+        "16:9",
+        "9:16",
+        "1:1"
+      ],
+      "default": "16:9"
+    },
+    "captions": {
+      "type": "string",
+      "enum": [
+        "burned",
+        "sidecar"
+      ],
+      "default": "burned"
+    },
+    "music": {
+      "type": "string",
+      "description": "File in assets/music/ (licensed), or 'procedural:<style>' for the built-in synthesised bed. Ducked under narration."
+    },
+    "voice": {
+      "type": "object",
+      "required": [
+        "engine",
+        "voice"
+      ],
+      "properties": {
+        "engine": {
+          "type": "string",
+          "enum": [
+            "kokoro",
+            "chatterbox",
+            "qwen",
+            "macos-say"
+          ]
+        },
+        "voice": {
+          "type": "string"
+        },
+        "speed": {
+          "type": "number",
+          "minimum": 0.7,
+          "maximum": 1.3
+        },
+        "lang": {
+          "type": "string",
+          "default": "en-gb"
+        },
+        "persona": {
+          "type": "string",
+          "description": "Narrator description (qwen VoiceDesign)."
+        },
+        "speaker": {
+          "type": "string",
+          "description": "Named speaker (qwen CustomVoice)."
+        },
+        "reference": {
+          "type": "string",
+          "description": "Reference clip for voice cloning (chatterbox). Requires written consent."
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "Knowledge files this episode draws on (paths relative to the studio root).",
+      "items": {
+        "type": "string"
+      }
+    },
+    "claims": {
+      "type": "array",
+      "description": "Every factual claim or statistic used, with evidence. Empty if the episode uses only fictional/illustrative data.",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim",
+          "status"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "edzola_opinion",
+              "needs_evidence",
+              "illustrative"
+            ]
+          }
+        }
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "template",
+          "beats"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "type": {
+            "type": "string",
+            "description": "Pedagogical role: hook, problem_reveal, system_simulation, data_storytelling, concept_build, myth_vs_reality, framework, takeaway, outro..."
+          },
+          "chapter": {
+            "type": "string",
+            "description": "YouTube chapter title starting at this scene."
+          },
+          "template": {
+            "type": "string",
+            "description": "revideo: template from studio/templates.manifest.json. hyperframes: a descriptive pattern name."
+          },
+          "props": {
+            "type": "object"
+          },
+          "lead_in": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Silence before first beat (s). Default 0.6"
+          },
+          "hold": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Silence after last beat (s). Default 0.9"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Teaching intent / director notes. Not rendered."
+          },
+          "beats": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "text"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "description": "Narration as captioned. Short spoken sentences."
+                },
+                "say": {
+                  "type": "string",
+                  "description": "Optional spoken override for TTS (numbers, acronyms)."
+                },
+                "pause": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Silence after this beat (s). Default 0.35"
+                },
+                "do": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "action"
+                    ],
+                    "properties": {
+                      "action": {
+                        "type": "string"
+                      },
+                      "at": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "delay": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                },
+                "voice": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "pace": {
+                      "type": "number",
+                      "minimum": 0.75,
+                      "maximum": 1.3,
+                      "description": "Speaking pace multiplier."
+                    },
+                    "energy": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1,
+                      "description": "0 calm \u2026 1 excited (chatterbox exaggeration)."
+                    },
+                    "direction": {
+                      "type": "string",
+                      "description": "Acting note, e.g. 'Slow and deliberate, each phrase landing.' (qwen instruct)."
+                    },
+                    "seed": {
+                      "type": "integer",
+                      "description": "Take number: change it to get a different delivery of the same line (chatterbox)."
+                    }
+                  }
+                },
+                "sfx": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "name"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "enum": [
+                          "tick",
+                          "pop",
+                          "whoosh",
+                          "swish",
+                          "thud",
+                          "chime",
+                          "rise",
+                          "ping",
+                          "error",
+                          "strike",
+                          "scribble"
+                        ]
+                      },
+                      "at": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 6,
+                        "description": "Fraction of the beat's spoken length (0 = start, 1 = end, >1 = into the pause after it)."
+                      },
+                      "gain": {
+                        "type": "number",
+                        "description": "dB offset"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "composition": {
+            "type": "string",
+            "description": "hyperframes renderer: HTML composition path relative to the episode folder."
+          },
+          "visual": {
+            "type": "string",
+            "description": "Visual direction for the scene designer: what appears on which beat."
+          }
+        }
+      }
+    },
+    "renderer": {
+      "type": "string",
+      "enum": [
+        "revideo",
+        "hyperframes"
+      ],
+      "default": "revideo",
+      "description": "revideo: scenes use studio templates. hyperframes: each scene is an HTML composition (scene.composition) timed by beat variables."
+    }
+  }
+}

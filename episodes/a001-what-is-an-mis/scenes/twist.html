@@ -1,0 +1,240 @@
+<!doctype html>
+<!-- ep000 v2 · twist · "Each team counted correctly".
+     Adapted from experiments/hyperframes/index.html: 500-row grid, 37 duplicates merge,
+     463 real people, 298 placed. Every narrated event is positioned with EZ.b/EZ.at.
+     Fictional organisation (Sitara Foundation), illustrative data only. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <link rel="stylesheet" href="brand.css" />
+  <script src="cues.js"></script>
+  <script src="gsap.min.js"></script>
+  <script src="kit.js"></script>
+  <style>
+    .num-font { font-variant-numeric: lining-nums tabular-nums; }
+
+    /* Team cards: big on b1, compact strip from b2 (size animated by GSAP). */
+    #cards { position: absolute; left: 120px; top: 250px; width: 1680px; display: flex; justify-content: center; gap: 60px; }
+    .tcard { position: relative; width: 480px; height: 380px; background: var(--paper); border: 2px solid var(--line);
+      border-radius: 28px; box-shadow: var(--shadow); display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 22px; overflow: hidden; }
+    .tcard .band { position: absolute; left: 0; top: 0; width: 100%; height: 12px; }
+    .tpill { font-size: 24px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 8px 22px; border-radius: 999px; }
+    .tpill.programme { background: var(--peach); color: var(--coral-deep); }
+    .tpill.me { background: var(--yellow-soft); color: #654904; }
+    .tpill.finance { background: var(--success-bg); color: var(--teal-deep); }
+    .tnum { position: relative; font-size: 200px; line-height: 1; }
+    /* Compact strip (b2 onwards): the big cards shrink into these. */
+    .ccard { position: absolute; top: 104px; width: 400px; height: 130px; background: var(--paper); border: 2px solid var(--line);
+      border-radius: 22px; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: space-between;
+      padding: 0 30px 0 28px; gap: 18px; overflow: hidden; }
+    .ccard .band { position: absolute; left: 0; top: 0; width: 10px; height: 100%; }
+    .ccard .tpill { font-size: 22px; padding: 7px 18px; }
+    .cnum { position: relative; font-size: 84px; line-height: 1; }
+    .cnum .strike-line { height: 8px; border-radius: 4px; }
+    #cc1 { left: 330px; } #cc2 { left: 760px; } #cc3 { left: 1190px; }
+
+    /* Rows grid */
+    #gridLabel { position: absolute; left: 120px; top: 296px; font-size: 22px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--grey); }
+    #grid { position: absolute; left: 120px; top: 340px; width: 1180px; height: 530px; }
+    .bar { position: absolute; height: 13px; border-radius: 7px; background: #e3d5cb; }
+
+    /* Right panel: counter + Kavya cluster */
+    #panel { position: absolute; left: 1380px; top: 290px; width: 420px; height: 580px; }
+    #counter { font-size: 190px; line-height: 1; }
+    #counterLabel { position: relative; height: 46px; margin-top: 8px; }
+    #counterLabel span { position: absolute; left: 6px; top: 0; font-size: 36px; font-weight: 600; color: var(--grey); white-space: nowrap; }
+    #counterLabel .real { color: var(--teal-deep); }
+    #clusterCaption { position: absolute; left: 0; top: 300px; font-size: 22px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--grey); }
+    #cluster { position: absolute; left: 0; top: 344px; width: 420px; height: 230px; }
+    #cluster .chip { position: absolute; left: 0; font-size: 30px; border-color: var(--yellow); border-width: 3px; }
+    #onePerson { position: absolute; left: 6px; top: 86px; font-size: 26px; font-weight: 700; color: var(--teal-deep); }
+
+    /* Reveal */
+    #reveal { position: absolute; left: 120px; top: 300px; width: 1680px; text-align: center; }
+    #placed { font-size: 360px; line-height: 1; color: var(--coral-deep); }
+    #placedLabel { margin-top: 18px; font-size: 38px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--coral-deep); }
+    #notLine { position: absolute; left: 120px; top: 790px; width: 1680px; text-align: center; font-size: 46px; color: var(--grey); }
+    #notLine b { color: var(--ink); font-weight: 600; }
+
+    #closing { position: absolute; left: 120px; top: 410px; width: 1680px; text-align: center; }
+    #closing .l1 { font-size: 92px; line-height: 1.15; }
+    #closing .l2 { font-size: 94px; line-height: 1.15; margin-top: 18px; white-space: nowrap; color: var(--coral-deep); font-style: italic; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="twist" data-start="0" data-duration="{{DURATION}}"
+       data-width="1920" data-height="1080" data-fps="30">
+    <div id="stage" class="abs" style="inset:0">
+      <div id="cards">
+        <div class="tcard" id="tc1"><div class="band" style="background:var(--coral)"></div>
+          <div class="tpill programme">Programme</div>
+          <div class="tnum serif num-font">312</div></div>
+        <div class="tcard" id="tc2"><div class="band" style="background:var(--yellow)"></div>
+          <div class="tpill me">M&amp;E</div>
+          <div class="tnum serif num-font">287</div></div>
+        <div class="tcard" id="tc3"><div class="band" style="background:var(--teal)"></div>
+          <div class="tpill finance">Finance</div>
+          <div class="tnum serif num-font">341</div></div>
+      </div>
+      <div class="ccard" id="cc1"><div class="band" style="background:var(--coral)"></div>
+        <div class="tpill programme">Programme</div><div class="cnum serif num-font">312<div class="strike-line"></div></div></div>
+      <div class="ccard" id="cc2"><div class="band" style="background:var(--yellow)"></div>
+        <div class="tpill me">M&amp;E</div><div class="cnum serif num-font">287<div class="strike-line"></div></div></div>
+      <div class="ccard" id="cc3"><div class="band" style="background:var(--teal)"></div>
+        <div class="tpill finance">Finance</div><div class="cnum serif num-font">341<div class="strike-line"></div></div></div>
+
+      <div id="gridLabel">All three sheets, lined up · one bar per row</div>
+      <div id="grid"></div>
+
+      <div id="panel">
+        <div id="counter" class="serif num-font">0</div>
+        <div id="counterLabel"><span class="rows">rows</span><span class="real">real people</span></div>
+        <div id="clusterCaption">One learner, three rows</div>
+        <div id="cluster" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div class="chip" id="c1" style="top:0">Kavya Sharma</div>
+          <div class="chip" id="c2" style="top:78px">Kavya S.</div>
+          <div class="chip" id="c3" style="top:156px">K. Sharma</div>
+          <div id="onePerson">= 1 person</div>
+        </div>
+      </div>
+
+      <div id="reveal">
+        <div id="placed" class="serif num-font">0</div>
+        <div id="placedLabel">actually placed</div>
+      </div>
+      <div id="notLine" class="serif">Not <b>312</b>. Not <b>287</b>. Not <b>341</b>.</div>
+
+      <div id="closing" class="serif">
+        <div class="l1">Each team counted correctly.</div>
+        <div class="l2">They were counting different things.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tl = gsap.timeline({paused: true, defaults: {ease: "power2.out"}});
+      var b = EZ.b, e = EZ.e, at = EZ.at;
+      var ROWS = 500, DUPES = 37, PLACED = 298;
+
+      // ---- the rows grid (deterministic) ----
+      var COLS = 20, PX = 59, PY = 21;
+      var grid = document.getElementById("grid"), bars = [];
+      for (var i = 0; i < ROWS; i++) {
+        var el = document.createElement("div");
+        el.className = "bar";
+        var c = i % COLS, r = Math.floor(i / COLS);
+        el.style.left = (c * PX) + "px";
+        el.style.top = (r * PY) + "px";
+        el.style.width = (36 + ((i * 7919) % 15)) + "px";
+        el.dataset.x = c * PX; el.dataset.y = r * PY;
+        grid.appendChild(el); bars.push(el);
+      }
+      // 37 duplicate rows, each paired with a nearby twin.
+      var used = {}, pairs = [], guard = 0;
+      while (pairs.length < DUPES && guard++ < 20000) {
+        var a = Math.floor(EZ.rand() * ROWS), t = Math.floor(EZ.rand() * ROWS);
+        if (a === t || used[a] || used[t]) continue;
+        var dx = Math.abs(bars[a].dataset.x - bars[t].dataset.x), dy = Math.abs(bars[a].dataset.y - bars[t].dataset.y);
+        if (dx > 560 || dy > 230 || dx + dy < 120) continue;
+        used[a] = used[t] = true;
+        pairs.push({dup: bars[a], twin: bars[t]});
+      }
+      var dupEls = pairs.map(function (p) { return p.dup; });
+      var twinEls = pairs.map(function (p) { return p.twin; });
+      var kept = bars.filter(function (x) { return dupEls.indexOf(x) < 0; });   // 463 real people
+      // 298 of them were actually placed (deterministic shuffle).
+      var idx = kept.map(function (_, k) { return k; });
+      for (var k = idx.length - 1; k > 0; k--) { var j = Math.floor(EZ.rand() * (k + 1)); var tmp = idx[k]; idx[k] = idx[j]; idx[j] = tmp; }
+      var placedSet = {}; idx.slice(0, PLACED).forEach(function (n) { placedSet[n] = true; });
+      var placedEls = kept.filter(function (_, n) { return placedSet[n]; });
+      var notPlaced = kept.filter(function (_, n) { return !placedSet[n]; });
+
+      // ---- hidden start states (outside the timeline) ----
+      gsap.set([".tcard", ".ccard", "#gridLabel", "#panel", "#reveal", "#notLine", "#closing .l1", "#closing .l2",
+                "#c1", "#c2", "#c3", "#onePerson", "#clusterCaption", "#counterLabel .real", "#counterLabel .rows"], {opacity: 0});
+      gsap.set(bars, {opacity: 0, y: 8});
+      gsap.set(".strike-line", {scaleX: 0});
+
+      // b1 "Here's what actually happened." — the three answers, big.
+      EZ.rise(tl, ".tcard", b(1), {y: 50, d: 0.8, stagger: 0.14});
+
+      // b2 "Line up all three sheets… five hundred rows."
+      var g = b(2);
+      // Big cards shrink and fly up into the compact strip (crossfade at the end of the move).
+      [0, 1, 2].forEach(function (n) {
+        var bigCx = 420 + n * 540, smallCx = 530 + n * 430;
+        tl.to("#tc" + (n + 1), {x: smallCx - bigCx, y: 169 - 440, scale: 0.36, duration: 0.85, ease: "power3.inOut"}, g);
+        tl.to("#tc" + (n + 1), {opacity: 0, duration: 0.25}, g + 0.6);
+      });
+      tl.to(".ccard", {opacity: 1, duration: 0.3}, g + 0.6);
+      tl.to(["#gridLabel", "#panel", "#counterLabel .rows"], {opacity: 1, duration: 0.5}, g + 0.5);
+      var fill = Math.max(1.2, (e(2) - g) - 1.0);
+      tl.to(bars, {opacity: 1, y: 0, duration: 0.4, stagger: {each: fill / ROWS}}, g + 0.6);
+      EZ.count(tl, "#counter", 0, ROWS, g + 0.6, fill + 0.2, function (n) { return Math.round(n); });
+
+      // b3 "But thirty-seven of them are the same people…" — glow, fly into twins; Kavya merges.
+      var d = b(3);
+      tl.to(dupEls.concat(twinEls), {backgroundColor: "#f7c948", duration: 0.35, stagger: 0.006}, d);
+      tl.to("#clusterCaption", {opacity: 1, duration: 0.4}, d + 0.1);
+      tl.fromTo(["#c1", "#c2", "#c3"], {opacity: 0, x: -20}, {opacity: 1, x: 0, duration: 0.5, stagger: 0.15}, d + 0.2);
+      var mStart = at(3, 0.3), mEach = 0.8;
+      var mStag = Math.min(0.06, Math.max(0.02, (e(3) - mStart - mEach - 0.2) / DUPES));
+      pairs.forEach(function (p, n) {
+        var t0 = mStart + n * mStag;
+        tl.to(p.dup, {x: p.twin.dataset.x - p.dup.dataset.x, y: p.twin.dataset.y - p.dup.dataset.y,
+          duration: mEach, ease: "power2.inOut"}, t0);
+        tl.to(p.dup, {opacity: 0, duration: 0.2, ease: "power1.in"}, t0 + mEach - 0.15);
+        tl.fromTo(p.twin, {scaleY: 1}, {scaleY: 1.7, duration: 0.14, yoyo: true, repeat: 1, ease: "sine.inOut"}, t0 + mEach - 0.08);
+      });
+      // Kavya Sharma / Kavya S. / K. Sharma become one chip.
+      tl.to("#c2", {y: -78, duration: 0.8, ease: "power2.inOut"}, at(3, 0.55));
+      tl.to("#c3", {y: -156, duration: 0.8, ease: "power2.inOut"}, at(3, 0.55) + 0.08);
+      tl.to(["#c2", "#c3"], {opacity: 0, duration: 0.25}, at(3, 0.55) + 0.75);
+      tl.to("#c1", {borderColor: "#8ecfca", duration: 0.4}, at(3, 0.55) + 0.8);
+      EZ.pulse(tl, "#c1", at(3, 0.55) + 0.8, 1.08);
+      tl.to("#onePerson", {opacity: 1, duration: 0.4}, at(3, 0.55) + 1.0);
+
+      // b4 "Merge them… four hundred and sixty-three real people."
+      tl.to(twinEls, {backgroundColor: "#e3d5cb", duration: 0.4}, b(4));
+      EZ.count(tl, "#counter", ROWS, ROWS - DUPES, at(4, 0.35), Math.max(1.2, (e(4) - b(4)) * 0.45), function (n) { return Math.round(n); });
+      tl.to("#counterLabel .rows", {opacity: 0, duration: 0.3}, at(4, 0.6));
+      tl.to("#counterLabel .real", {opacity: 1, duration: 0.4}, at(4, 0.6) + 0.15);
+      tl.to(kept, {backgroundColor: "#8ecfca", duration: 0.4, stagger: {each: 0.5 / kept.length}}, at(4, 0.6));
+
+      // b5 "Now count who was actually placed." — grid dims except placed rows (coral).
+      tl.to("#clusterCaption, #cluster", {opacity: 0.25, duration: 0.5}, b(5));
+      tl.to(notPlaced, {opacity: 0.18, backgroundColor: "#e3d5cb", duration: 0.6}, b(5) + 0.1);
+      tl.to(placedEls, {backgroundColor: "#e8967a", duration: 0.4, stagger: {each: 0.9 / placedEls.length}}, b(5) + 0.2);
+      tl.to("#gridLabel", {opacity: 0, duration: 0.3}, b(5));
+
+      // b6 "Two hundred and ninety-eight." — the real number, huge; team cards struck through.
+      var rv = b(6);
+      tl.to(["#grid", "#panel"], {opacity: 0, y: 20, duration: 0.45, ease: "power2.in"}, rv - 0.25);
+      tl.fromTo("#reveal", {opacity: 0, y: 30}, {opacity: 1, y: 0, duration: 0.6}, rv);
+      EZ.count(tl, "#placed", 0, PLACED, rv, Math.max(1.0, (e(6) - rv) * 0.6), function (n) { return Math.round(n); });
+      [1, 2, 3].forEach(function (n) { EZ.strike(tl, "#cc" + n, at(6, 0.45) + (n - 1) * 0.15); });
+      tl.to([".ccard .tpill", ".cnum"], {opacity: 0.4, duration: 0.5}, at(6, 0.5));
+
+      // b7 "None of the three numbers was right."
+      EZ.rise(tl, "#notLine", b(7) + 0.1, {y: 20, d: 0.6});
+      EZ.shake(tl, ".ccard", at(7, 0.5));
+
+      // b8 "Each team counted correctly. They were just counting different things."
+      tl.to(["#reveal", "#notLine"], {opacity: 0, y: -24, duration: 0.5, ease: "power2.in"}, b(8));
+      tl.to(".strike-line", {opacity: 0, duration: 0.5}, at(8, 0.25));
+      tl.to([".ccard .tpill", ".cnum"], {opacity: 1, duration: 0.5}, at(8, 0.25));
+      EZ.rise(tl, "#closing .l1", at(8, 0.25), {y: 30, d: 0.8});
+      tl.fromTo("#closing .l2", {opacity: 0, y: 30, scale: 0.96}, {opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "back.out(1.6)"}, at(8, 0.58));
+
+      EZ.finish(tl, {tag: true});
+      window.__timelines = window.__timelines || {};
+      window.__timelines["twist"] = tl;
+    })();
+  </script>
+</body>
+</html>

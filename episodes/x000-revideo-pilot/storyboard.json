@@ -1,0 +1,726 @@
+{
+  "$schema": "../../schemas/storyboard.schema.json",
+  "video_id": "x000-revideo-pilot",
+  "title": "What is an MIS, really?",
+  "series": "Technology for Impact, Explained",
+  "audience": "Nonprofit programme leaders and M&E heads who have bought software but still fight over reports",
+  "learning_outcome": "An MIS is the shared system of record, workflows and reports that makes every team's numbers agree, not a dashboard on top of spreadsheets.",
+  "format": "before_after",
+  "status": "in_review",
+  "aspect": "16:9",
+  "captions": "burned",
+  "voice": {
+    "engine": "kokoro",
+    "voice": "bf_emma",
+    "speed": 1.0,
+    "lang": "en-gb"
+  },
+  "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/concepts/points-of-view.md",
+    "knowledge/case-studies/sitara-foundation.md"
+  ],
+  "claims": [
+    {
+      "claim": "Sitara Foundation, its learners and every number shown",
+      "status": "illustrative"
+    },
+    {
+      "claim": "A dashboard without a decision is decoration",
+      "source": "knowledge/frameworks/map-framework.md",
+      "status": "edzola_opinion"
+    },
+    {
+      "claim": "MAP: Model, Align, Power with AI",
+      "source": "knowledge/frameworks/map-framework.md",
+      "status": "edzola_opinion"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "chapter": "Three teams, three spreadsheets",
+      "template": "TitleHook",
+      "notes": "Open on the viewer's lived frustration, not on a definition. No logo intro.",
+      "props": {
+        "kicker": "Episode 0 · What is an MIS, really?",
+        "title": "Why does every report start an argument?",
+        "highlight": "argument",
+        "subtitle": "You bought software. The numbers still don't agree."
+      },
+      "beats": [
+        {
+          "text": "Your nonprofit bought software two years ago.",
+          "do": [
+            {
+              "action": "show-kicker"
+            },
+            {
+              "action": "show-accent",
+              "at": 0.3
+            }
+          ]
+        },
+        {
+          "text": "So why does every quarterly report still start an argument?",
+          "do": [
+            {
+              "action": "show-title"
+            },
+            {
+              "action": "show-subtitle",
+              "at": 0.85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fragmented-records",
+      "type": "problem_reveal",
+      "template": "Spreadsheets",
+      "notes": "Make fragmentation visible: the SAME learner in three sheets, spelled three ways, then watch the copies drift apart. Visual must carry the reasoning.",
+      "props": {
+        "org": {
+          "name": "Sitara Foundation",
+          "sub": "A fictional skilling nonprofit · 500 learners"
+        },
+        "tag": "Illustrative data",
+        "sheets": [
+          {
+            "team": "Programme",
+            "tone": "coral",
+            "columns": [
+              "Learner",
+              "Batch",
+              "Status"
+            ],
+            "rows": [
+              [
+                "Rahul V.",
+                "B-14",
+                "Placed"
+              ],
+              [
+                "Kavya Sharma",
+                "B-14",
+                "Training"
+              ],
+              [
+                "Anita D.",
+                "B-15",
+                "Training"
+              ],
+              [
+                "Imran K.",
+                "B-15",
+                "Dropped"
+              ]
+            ]
+          },
+          {
+            "team": "Finance",
+            "tone": "teal",
+            "columns": [
+              "Name",
+              "Stipend",
+              "Paid"
+            ],
+            "rows": [
+              [
+                "Anita Das",
+                "₹2,000",
+                "Yes"
+              ],
+              [
+                "Rahul Verma",
+                "₹2,000",
+                "Yes"
+              ],
+              [
+                "Kavya S.",
+                "₹2,000",
+                "Yes"
+              ],
+              [
+                "Imran Khan",
+                "₹2,000",
+                "No"
+              ]
+            ]
+          },
+          {
+            "team": "M&E",
+            "tone": "yellow",
+            "columns": [
+              "Participant",
+              "Stage",
+              "Follow-up"
+            ],
+            "rows": [
+              [
+                "R. Verma",
+                "Placed",
+                "Day 30"
+              ],
+              [
+                "A. Das",
+                "Training",
+                "—"
+              ],
+              [
+                "I. Khan",
+                "Exited",
+                "—"
+              ],
+              [
+                "K. Sharma",
+                "Training",
+                "—"
+              ]
+            ]
+          }
+        ]
+      },
+      "beats": [
+        {
+          "text": "Meet Sitara Foundation. A fictional skilling nonprofit with five hundred learners.",
+          "do": [
+            {
+              "action": "show-org"
+            }
+          ]
+        },
+        {
+          "text": "The programme team keeps one spreadsheet.",
+          "do": [
+            {
+              "action": "show-sheet",
+              "sheet": 0
+            }
+          ]
+        },
+        {
+          "text": "Finance keeps another. M&E keeps a third.",
+          "do": [
+            {
+              "action": "show-sheet",
+              "sheet": 1
+            },
+            {
+              "action": "show-sheet",
+              "sheet": 2,
+              "at": 0.55
+            }
+          ]
+        },
+        {
+          "text": "Now follow one learner. She shows up in all three, spelled three different ways.",
+          "pause": 0.6,
+          "do": [
+            {
+              "action": "highlight",
+              "rows": [
+                1,
+                2,
+                3
+              ],
+              "at": 0.35
+            }
+          ]
+        },
+        {
+          "text": "Each team updates its own copy.",
+          "do": [
+            {
+              "action": "pulse-sheets"
+            }
+          ]
+        },
+        {
+          "text": "The programme team updates her status to placed.",
+          "do": [
+            {
+              "action": "set-cell",
+              "sheet": 0,
+              "row": 1,
+              "col": 2,
+              "value": "Placed",
+              "tone": "success",
+              "at": 0.5
+            }
+          ]
+        },
+        {
+          "text": "M&E still has her in training.",
+          "do": [
+            {
+              "action": "set-cell",
+              "sheet": 2,
+              "row": 3,
+              "col": 1,
+              "value": "Training",
+              "tone": "warning",
+              "at": 0.5
+            }
+          ]
+        },
+        {
+          "text": "And Finance has stopped her stipend.",
+          "do": [
+            {
+              "action": "set-cell",
+              "sheet": 1,
+              "row": 2,
+              "col": 2,
+              "value": "Stopped",
+              "tone": "danger",
+              "at": 0.5
+            }
+          ]
+        },
+        {
+          "text": "Three versions of one person. None of them wrong on its own.",
+          "pause": 0.5,
+          "do": [
+            {
+              "action": "flag",
+              "text": "1 learner · 3 versions of the truth",
+              "tone": "danger",
+              "at": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "report-conflict",
+      "type": "data_storytelling",
+      "chapter": "Which number goes to the funder?",
+      "template": "MetricConflict",
+      "notes": "Scale the single-record problem up to the indicator a funder sees.",
+      "props": {
+        "label": "Learners placed this quarter",
+        "values": [
+          {
+            "team": "Programme",
+            "value": "312",
+            "tone": "coral"
+          },
+          {
+            "team": "M&E",
+            "value": "287",
+            "tone": "yellow"
+          },
+          {
+            "team": "Finance",
+            "value": "341",
+            "tone": "teal"
+          }
+        ],
+        "question": "Which number goes to the funder?"
+      },
+      "beats": [
+        {
+          "text": "Multiply that by five hundred learners, and the quarterly report has a problem.",
+          "do": [
+            {
+              "action": "show-label",
+              "at": 0.4
+            }
+          ]
+        },
+        {
+          "text": "Programme says 312.",
+          "say": "Programme says three hundred and twelve.",
+          "do": [
+            {
+              "action": "show-value",
+              "i": 0
+            }
+          ]
+        },
+        {
+          "text": "M&E says 287.",
+          "say": "M&E says two hundred and eighty-seven.",
+          "do": [
+            {
+              "action": "show-value",
+              "i": 1
+            }
+          ]
+        },
+        {
+          "text": "Finance says 341.",
+          "say": "Finance says three hundred and forty-one.",
+          "do": [
+            {
+              "action": "show-value",
+              "i": 2
+            }
+          ]
+        },
+        {
+          "text": "So which number goes to the funder?",
+          "pause": 0.6,
+          "do": [
+            {
+              "action": "question"
+            },
+            {
+              "action": "shake",
+              "at": 0.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "system-of-record",
+      "type": "concept_build",
+      "chapter": "What an MIS actually is",
+      "template": "ConceptBuild",
+      "notes": "Progressive construction: build the MIS from its parts so the definition is earned, not stated. Frame label lands last.",
+      "props": {
+        "title": "One system of record",
+        "nodes": [
+          {
+            "id": "record",
+            "label": "One learner record",
+            "sub": "One ID, shared by every team",
+            "x": -560,
+            "y": 0,
+            "w": 340,
+            "h": 150,
+            "tone": "coral"
+          },
+          {
+            "id": "enrol",
+            "label": "Enrolment",
+            "x": -60,
+            "y": -170,
+            "w": 240,
+            "h": 100,
+            "tone": "teal"
+          },
+          {
+            "id": "train",
+            "label": "Training",
+            "x": 250,
+            "y": -170,
+            "w": 240,
+            "h": 100,
+            "tone": "teal"
+          },
+          {
+            "id": "place",
+            "label": "Placement",
+            "x": 560,
+            "y": -170,
+            "w": 240,
+            "h": 100,
+            "tone": "teal"
+          },
+          {
+            "id": "reports",
+            "label": "Reports",
+            "sub": "Same data, same numbers",
+            "x": 100,
+            "y": 170,
+            "w": 300,
+            "h": 120,
+            "tone": "yellow"
+          },
+          {
+            "id": "decisions",
+            "label": "Decisions",
+            "sub": "Who needs support next",
+            "x": 520,
+            "y": 170,
+            "w": 320,
+            "h": 120,
+            "tone": "coral"
+          }
+        ],
+        "edges": [
+          {
+            "from": "record",
+            "to": "enrol"
+          },
+          {
+            "from": "enrol",
+            "to": "train"
+          },
+          {
+            "from": "train",
+            "to": "place"
+          },
+          {
+            "from": "record",
+            "to": "reports"
+          },
+          {
+            "from": "reports",
+            "to": "decisions"
+          }
+        ],
+        "frame": {
+          "label": "MIS",
+          "pad": 46
+        }
+      },
+      "beats": [
+        {
+          "text": "This is the problem a management information system solves.",
+          "do": [
+            {
+              "action": "show-title"
+            }
+          ]
+        },
+        {
+          "text": "It starts with one record per learner. One ID, shared by every team.",
+          "do": [
+            {
+              "action": "show-node",
+              "id": "record",
+              "at": 0.15
+            }
+          ]
+        },
+        {
+          "text": "Then the work itself runs through it. Enrolment, training, placement.",
+          "do": [
+            {
+              "action": "show-edge",
+              "from": "record",
+              "to": "enrol",
+              "at": 0.45
+            },
+            {
+              "action": "show-node",
+              "id": "enrol",
+              "at": 0.5
+            },
+            {
+              "action": "show-edge",
+              "from": "enrol",
+              "to": "train",
+              "at": 0.65
+            },
+            {
+              "action": "show-node",
+              "id": "train",
+              "at": 0.7
+            },
+            {
+              "action": "show-edge",
+              "from": "train",
+              "to": "place",
+              "at": 0.85
+            },
+            {
+              "action": "show-node",
+              "id": "place",
+              "at": 0.88
+            }
+          ]
+        },
+        {
+          "text": "Reports come from that same data, so every team's numbers agree.",
+          "do": [
+            {
+              "action": "show-edge",
+              "from": "record",
+              "to": "reports",
+              "at": 0.1
+            },
+            {
+              "action": "show-node",
+              "id": "reports",
+              "at": 0.2
+            }
+          ]
+        },
+        {
+          "text": "And those numbers feed real decisions, like which learners need support this week.",
+          "do": [
+            {
+              "action": "show-edge",
+              "from": "reports",
+              "to": "decisions",
+              "at": 0.3
+            },
+            {
+              "action": "show-node",
+              "id": "decisions",
+              "at": 0.4
+            }
+          ]
+        },
+        {
+          "text": "That whole system, working together, is the MIS.",
+          "pause": 0.6,
+          "do": [
+            {
+              "action": "show-frame",
+              "at": 0.2
+            },
+            {
+              "action": "pulse",
+              "ids": [
+                "record",
+                "reports",
+                "decisions"
+              ],
+              "at": 0.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "myth",
+      "type": "myth_vs_reality",
+      "template": "Statement",
+      "notes": "Dismantle the most common misconception. EdZola POV from MAP.",
+      "props": {
+        "myth": "An MIS is a dashboard.",
+        "mythLabel": "Common belief",
+        "reality": "A dashboard without a decision is decoration.",
+        "realityLabel": "What we've learned",
+        "highlight": "decoration"
+      },
+      "beats": [
+        {
+          "text": "Many teams think an MIS is a dashboard.",
+          "do": [
+            {
+              "action": "show-myth"
+            }
+          ]
+        },
+        {
+          "text": "But a dashboard without a decision is decoration.",
+          "pause": 0.6,
+          "do": [
+            {
+              "action": "strike",
+              "at": 0.05
+            },
+            {
+              "action": "show-reality",
+              "at": 0.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "map",
+      "type": "framework",
+      "chapter": "How we build one: MAP",
+      "template": "FrameworkSteps",
+      "notes": "Practical takeaway. Keep the AI line honest: AI after trusted data.",
+      "props": {
+        "kicker": "The EdZola MAP framework",
+        "title": "Three moves to a system that sticks",
+        "steps": [
+          {
+            "letter": "M",
+            "title": "Model",
+            "text": "Decide what's worth knowing",
+            "tone": "coral"
+          },
+          {
+            "letter": "A",
+            "title": "Align",
+            "text": "Fit the system to how people actually work",
+            "tone": "teal"
+          },
+          {
+            "letter": "P",
+            "title": "Power",
+            "text": "Add AI once the data can be trusted",
+            "tone": "yellow"
+          }
+        ]
+      },
+      "beats": [
+        {
+          "text": "At EdZola, we build these systems in three moves.",
+          "do": [
+            {
+              "action": "show-title"
+            }
+          ]
+        },
+        {
+          "text": "Model what's worth knowing.",
+          "do": [
+            {
+              "action": "show-step",
+              "i": 0
+            }
+          ]
+        },
+        {
+          "text": "Align the system with how people actually work.",
+          "do": [
+            {
+              "action": "show-step",
+              "i": 1
+            }
+          ]
+        },
+        {
+          "text": "And power it with AI, only once the data can be trusted.",
+          "pause": 0.5,
+          "do": [
+            {
+              "action": "show-step",
+              "i": 2
+            },
+            {
+              "action": "pulse-step",
+              "i": 2,
+              "at": 0.75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outro",
+      "type": "outro",
+      "template": "EndCard",
+      "hold": 1.6,
+      "props": {
+        "tagline": "Systems built for the world's hardest work.",
+        "next": {
+          "label": "Next episode",
+          "title": "Why 80% placement isn't the same as 80% employment"
+        }
+      },
+      "beats": [
+        {
+          "text": "Next time: why an eighty percent placement rate might not mean what you think.",
+          "do": [
+            {
+              "action": "show-logo"
+            },
+            {
+              "action": "show-tagline",
+              "at": 0.25
+            },
+            {
+              "action": "show-next",
+              "at": 0.5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

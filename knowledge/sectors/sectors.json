@@ -1,0 +1,482 @@
+[
+ {
+  "file": "01-education.md",
+  "sector": "Education",
+  "tagline": "Know which child can read, and which one quietly stopped coming.",
+  "slug": "education",
+  "group": "svc",
+  "stages": [
+   {
+    "slug": "outreach-enrolment",
+    "name": "Outreach & Enrolment",
+    "headline": "Find every out-of-school child before the academic year starts"
+   },
+   {
+    "slug": "baseline-grouping",
+    "name": "Baseline & Grouping",
+    "headline": "Group children by what they can read, not their grade"
+   },
+   {
+    "slug": "instruction-support",
+    "name": "Instruction & Support",
+    "headline": "Track attendance and classroom practice while there's still time"
+   },
+   {
+    "slug": "progress-transition",
+    "name": "Progress & Transition",
+    "headline": "Measure learning gains and follow children into the next school"
+   }
+  ],
+  "thread_id": "Student ID"
+ },
+ {
+  "file": "02-youth-employability.md",
+  "sector": "Youth Development & Employability",
+  "tagline": "Placement letters are easy. Month-six retention is the real test.",
+  "slug": "youth-employability",
+  "group": "svc",
+  "stages": [
+   {
+    "slug": "mobilisation-selection",
+    "name": "Mobilisation & Selection",
+    "headline": "Mobilise youth who'll finish the batch, not just fill it"
+   },
+   {
+    "slug": "skills-training",
+    "name": "Skills Training",
+    "headline": "Catch batch dropouts in week two, not at certification"
+   },
+   {
+    "slug": "job-readiness-placement",
+    "name": "Job Readiness & Placement",
+    "headline": "Match candidates to real openings, then verify they joined"
+   },
+   {
+    "slug": "retention-alumni",
+    "name": "Retention & Alumni",
+    "headline": "Track who's still employed at 3, 6 and 12 months"
+   }
+  ],
+  "thread_id": "Candidate ID"
+ },
+ {
+  "file": "03-livelihoods.md",
+  "sector": "Livelihoods & Economic Empowerment",
+  "tagline": "From wealth ranking to graduation, know which households actually moved.",
+  "slug": "livelihoods",
+  "group": "svc",
+  "stages": [
+   {
+    "slug": "targeting-mobilisation",
+    "name": "Targeting & Mobilisation",
+    "headline": "Reach the ultra-poor households that village lists keep missing"
+   },
+   {
+    "slug": "capacity-building",
+    "name": "Capacity Building",
+    "headline": "Build savings habits and a business plan before the asset"
+   },
+   {
+    "slug": "asset-enterprise-support",
+    "name": "Asset & Enterprise Support",
+    "headline": "Track every seed grant and goat from purchase to income"
+   },
+   {
+    "slug": "coaching-graduation",
+    "name": "Coaching & Graduation",
+    "headline": "Coach every household until it meets graduation criteria"
+   }
+  ],
+  "thread_id": "Household ID"
+ },
+ {
+  "file": "04-health.md",
+  "sector": "Health & Wellbeing",
+  "tagline": "From the household visit to cured: every patient counted, none lost.",
+  "slug": "health",
+  "group": "svc",
+  "stages": [
+   {
+    "slug": "outreach-screening",
+    "name": "Outreach & Screening",
+    "headline": "Active case finding that reaches the houses the facility never sees"
+   },
+   {
+    "slug": "diagnosis-enrolment",
+    "name": "Diagnosis & Enrolment",
+    "headline": "Close the gap between a positive sputum and a started regimen"
+   },
+   {
+    "slug": "treatment-care",
+    "name": "Treatment & Care",
+    "headline": "Doses observed, side effects caught, patients kept on regimen"
+   },
+   {
+    "slug": "follow-up-outcomes",
+    "name": "Follow-up & Outcomes",
+    "headline": "Trace every missed dose and record an outcome for everyone"
+   }
+  ],
+  "thread_id": "Patient ID"
+ },
+ {
+  "file": "05-mental-health.md",
+  "sector": "Mental Health",
+  "tagline": "Care that's measured gently, kept private, and never loses someone.",
+  "slug": "mental-health",
+  "group": "svc",
+  "stages": [
+   {
+    "slug": "awareness-screening",
+    "name": "Awareness & Screening",
+    "headline": "Screening for depression in villages where nobody says 'depression'"
+   },
+   {
+    "slug": "assessment-enrolment",
+    "name": "Assessment & Enrolment",
+    "headline": "An intake that feels safe and gets risk right"
+   },
+   {
+    "slug": "therapy-delivery",
+    "name": "Therapy Delivery",
+    "headline": "Keeping IPT-G and HAP sessions faithful, attended and supervised"
+   },
+   {
+    "slug": "monitoring-follow-up",
+    "name": "Monitoring & Follow-up",
+    "headline": "Knowing who stays well at six months, and who's slipping"
+   }
+  ],
+  "thread_id": "Client ID"
+ },
+ {
+  "file": "06-maternal-child-health.md",
+  "sector": "Maternal & Child Health",
+  "tagline": "One mother, one baby, tracked from first trimester to first birthday.",
+  "slug": "maternal-child-health",
+  "group": "svc",
+  "stages": [
+   {
+    "slug": "pregnancy-registration",
+    "name": "Pregnancy Registration",
+    "headline": "Register in the first trimester, or miss the window"
+   },
+   {
+    "slug": "antenatal-care",
+    "name": "Antenatal Care",
+    "headline": "Four ANC visits that actually check BP, haemoglobin and danger signs"
+   },
+   {
+    "slug": "delivery-referral",
+    "name": "Delivery & Referral",
+    "headline": "Getting her to the right facility before labour turns into emergency"
+   },
+   {
+    "slug": "postnatal-child-follow-up",
+    "name": "Postnatal & Child Follow-up",
+    "headline": "The first 42 days, then every vaccine and weight to one year"
+   }
+  ],
+  "thread_id": "Mother ID + Child ID"
+ },
+ {
+  "file": "07-child-protection.md",
+  "sector": "Child Rights & Protection",
+  "tagline": "Every decision on a child's file, made in their best interest",
+  "slug": "child-protection",
+  "group": "svc",
+  "stages": [
+   {
+    "slug": "identification-reporting",
+    "name": "Identification & Reporting",
+    "headline": "From a 1098 call to a verified case in hours"
+   },
+   {
+    "slug": "rescue-case-assessment",
+    "name": "Rescue & Case Assessment",
+    "headline": "Produce before the CWC with the facts already assembled"
+   },
+   {
+    "slug": "care-rehabilitation",
+    "name": "Care & Rehabilitation",
+    "headline": "Care plans that get reviewed, not filed and forgotten"
+   },
+   {
+    "slug": "restoration-follow-up",
+    "name": "Restoration & Follow-up",
+    "headline": "Knowing the child is still safe a year after going home"
+   }
+  ],
+  "thread_id": "Child Case ID"
+ },
+ {
+  "file": "08-gender.md",
+  "sector": "Gender Equality & Women's Empowerment",
+  "tagline": "Counting what women decide, not only what women receive",
+  "slug": "gender",
+  "group": "svc",
+  "stages": [
+   {
+    "slug": "mobilisation-enrolment",
+    "name": "Mobilisation & Enrolment",
+    "headline": "Reaching the women the last programme left out"
+   },
+   {
+    "slug": "rights-skills-building",
+    "name": "Rights & Skills Building",
+    "headline": "Sessions women keep coming back to, and why"
+   },
+   {
+    "slug": "economic-support-linkages",
+    "name": "Economic & Support Linkages",
+    "headline": "Savings, credit and GBV referrals women can actually use"
+   },
+   {
+    "slug": "graduation-leadership",
+    "name": "Graduation & Leadership",
+    "headline": "Proving shifts in voice, mobility and control after graduation"
+   }
+  ],
+  "thread_id": "Member ID"
+ },
+ {
+  "file": "09-disability.md",
+  "sector": "Disability & Inclusion",
+  "tagline": "Count functioning, remove barriers, track inclusion. Nothing about us without us.",
+  "slug": "disability",
+  "group": "svc",
+  "stages": [
+   {
+    "slug": "identification-screening",
+    "name": "Identification & Screening",
+    "headline": "Finding the persons with disabilities the census never counted"
+   },
+   {
+    "slug": "assessment-planning",
+    "name": "Assessment & Planning",
+    "headline": "UDID, a functional assessment, and a plan the person wrote"
+   },
+   {
+    "slug": "therapy-skilling",
+    "name": "Therapy & Skilling",
+    "headline": "Therapy, devices and skills measured against the person's goals"
+   },
+   {
+    "slug": "inclusion-follow-up",
+    "name": "Inclusion & Follow-up",
+    "headline": "Placed is a start. Still there after a year is inclusion."
+   }
+  ],
+  "thread_id": "Person ID"
+ },
+ {
+  "file": "10-justice.md",
+  "sector": "Human Rights & Access to Justice",
+  "tagline": "From grievance to enforced remedy, with every deadline tracked",
+  "slug": "justice",
+  "group": "svc",
+  "stages": [
+   {
+    "slug": "awareness-intake",
+    "name": "Awareness & Intake",
+    "headline": "Legal literacy camps that turn into registered grievances"
+   },
+   {
+    "slug": "case-assessment-documentation",
+    "name": "Case Assessment & Documentation",
+    "headline": "Building the evidence file before the first hearing"
+   },
+   {
+    "slug": "resolution-representation",
+    "name": "Resolution & Representation",
+    "headline": "Every hearing, adjournment and next date on one record"
+   },
+   {
+    "slug": "follow-up-systemic-advocacy",
+    "name": "Follow-up & Systemic Advocacy",
+    "headline": "Enforced remedies and case data that change policy"
+   }
+  ],
+  "thread_id": "Case ID"
+ },
+ {
+  "file": "11-environment.md",
+  "sector": "Environment & Climate",
+  "tagline": "Restoration counted in surviving trees and working institutions, not saplings planted",
+  "slug": "environment",
+  "group": "place",
+  "stages": [
+   {
+    "slug": "mobilisation-baseline",
+    "name": "Mobilisation & Baseline",
+    "headline": "Map the commons with the village before anyone draws a polygon"
+   },
+   {
+    "slug": "planning-governance",
+    "name": "Planning & Governance",
+    "headline": "Micro-plans the gram sabha wrote, with rules it will enforce"
+   },
+   {
+    "slug": "restoration-implementation",
+    "name": "Restoration Implementation",
+    "headline": "Every sapling and trench logged with species, GPS and wage"
+   },
+   {
+    "slug": "monitoring-stewardship",
+    "name": "Monitoring & Stewardship",
+    "headline": "Year-three survival rates and institutions that run without us"
+   }
+  ],
+  "thread_id": "Commons Parcel ID"
+ },
+ {
+  "file": "12-waste.md",
+  "sector": "Waste Management",
+  "tagline": "Every kilo recovered traced to a ward, a worker and a wage",
+  "slug": "waste",
+  "group": "place",
+  "stages": [
+   {
+    "slug": "worker-enumeration-onboarding",
+    "name": "Worker Enumeration & Onboarding",
+    "headline": "Count the waste pickers before the city counts them out"
+   },
+   {
+    "slug": "collection-segregation",
+    "name": "Collection & Segregation",
+    "headline": "Kilos per ward, by stream, weighed at the gate every shift"
+   },
+   {
+    "slug": "processing-sale",
+    "name": "Processing & Sale",
+    "headline": "From baled PET to EPR certificate, every tonne traceable"
+   },
+   {
+    "slug": "welfare-impact-tracking",
+    "name": "Welfare & Impact Tracking",
+    "headline": "Income, insurance and the tonnes waste pickers kept out of landfill"
+   }
+  ],
+  "thread_id": "Worker ID"
+ },
+ {
+  "file": "13-food-systems.md",
+  "sector": "Food Systems",
+  "tagline": "From seed on credit to a hot meal, tracked per plate",
+  "slug": "food-systems",
+  "group": "place",
+  "stages": [
+   {
+    "slug": "enrolment-needs-mapping",
+    "name": "Enrolment & Needs Mapping",
+    "headline": "Registering farmers before planting, households before the lean season"
+   },
+   {
+    "slug": "sourcing-production",
+    "name": "Sourcing & Production",
+    "headline": "Inputs on time, surplus rescued, kitchens cooking to count"
+   },
+   {
+    "slug": "distribution-delivery",
+    "name": "Distribution & Delivery",
+    "headline": "Last-mile delivery that arrives before planting or before lunch"
+   },
+   {
+    "slug": "outcome-monitoring",
+    "name": "Outcome Monitoring",
+    "headline": "Yield per acre, repayment and nutrition, measured every season"
+   }
+  ],
+  "thread_id": "Enrolment ID"
+ },
+ {
+  "file": "14-community-development.md",
+  "sector": "Community Development",
+  "tagline": "Villages own the plan. The data should prove who was heard.",
+  "slug": "community-development",
+  "group": "place",
+  "stages": [
+   {
+    "slug": "community-entry-mobilisation",
+    "name": "Community Entry & Mobilisation",
+    "headline": "Enumerate every household, including the hamlet past the river"
+   },
+   {
+    "slug": "participatory-planning",
+    "name": "Participatory Planning",
+    "headline": "Record every priority the gram sabha raised, and what happened"
+   },
+   {
+    "slug": "implementation-delivery",
+    "name": "Implementation & Delivery",
+    "headline": "Track works, funds and scheme money in one ledger"
+   },
+   {
+    "slug": "handover-sustainability",
+    "name": "Handover & Sustainability",
+    "headline": "Keep the water flowing five years after handover"
+   }
+  ],
+  "thread_id": "Village ID"
+ },
+ {
+  "file": "15-media.md",
+  "sector": "Media & Journalism",
+  "tagline": "From the tip to the correction to the policy that changed",
+  "slug": "media",
+  "group": "voice",
+  "stages": [
+   {
+    "slug": "sourcing-newsgathering",
+    "name": "Sourcing & Newsgathering",
+    "headline": "Build a stringer network the story budget can count on"
+   },
+   {
+    "slug": "production-verification",
+    "name": "Production & Verification",
+    "headline": "Verdicts that survive a legal notice, in every language"
+   },
+   {
+    "slug": "distribution-engagement",
+    "name": "Distribution & Engagement",
+    "headline": "Publish where readers are: web, WhatsApp, radio and village screenings"
+   },
+   {
+    "slug": "impact-audience-tracking",
+    "name": "Impact & Audience Tracking",
+    "headline": "Reach versus impact: the story that got the handpump fixed"
+   }
+  ],
+  "thread_id": "Story ID"
+ },
+ {
+  "file": "16-arts.md",
+  "sector": "Arts & Culture",
+  "tagline": "Follow the artist from open call to archive to career",
+  "slug": "arts",
+  "group": "voice",
+  "stages": [
+   {
+    "slug": "open-call-selection",
+    "name": "Open Call & Selection",
+    "headline": "Open calls that reach beyond the usual metros and networks"
+   },
+   {
+    "slug": "creation-capacity-support",
+    "name": "Creation & Capacity Support",
+    "headline": "Residencies, mentorship and rehearsals tracked without policing the process"
+   },
+   {
+    "slug": "presentation-audience",
+    "name": "Presentation & Audience",
+    "headline": "Who came, who came back, and who we still don't reach"
+   },
+   {
+    "slug": "documentation-alumni",
+    "name": "Documentation & Alumni",
+    "headline": "An archive you can search, and alumni careers you can show"
+   }
+  ],
+  "thread_id": "Artist ID"
+ }
+]

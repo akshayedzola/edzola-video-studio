@@ -1,0 +1,254 @@
+<!doctype html>
+<!-- ep000 v2 · hospital · "A hospital you'd walk out of".
+     The analogy: one patient, three separate files, one update that never travels.
+     Then the mapping: patient -> learner, doctor -> Programme, nurse -> M&E, pharmacist -> Finance.
+     Times come from narration beats via EZ.b(n)/EZ.at(n, f). Illustrative only. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <link rel="stylesheet" href="brand.css" />
+  <script src="cues.js"></script>
+  <script src="gsap.min.js"></script>
+  <script src="kit.js"></script>
+  <style>
+    #scene { position: absolute; left: 0; top: 0; width: 1920px; height: 900px; }
+
+    /* Centre subject: bed / learner */
+    #subject { position: absolute; left: 800px; top: 118px; width: 320px; height: 190px; }
+    #subject svg { position: absolute; left: 0; top: 0; width: 320px; height: 190px; }
+    #sublabel { position: absolute; left: 710px; top: 318px; width: 500px; height: 60px; }
+    .swap { position: absolute; left: 0; top: 0; width: 100%; text-align: center; white-space: nowrap; }
+    #sublabel .swap { font-size: 46px; line-height: 60px; }
+
+    /* Three people with their files */
+    .grp { position: absolute; top: 470px; width: 440px; height: 330px; }
+    #g1 { left: 140px; } #g2 { left: 740px; } #g3 { left: 1340px; }
+    .fig { position: absolute; left: 0; top: 24px; width: 180px; height: 230px; }
+    .fig .head { position: absolute; left: 42px; top: 0; width: 96px; height: 96px; border-radius: 50%; }
+    .fig .body { position: absolute; left: 10px; top: 108px; width: 160px; height: 118px; border-radius: 80px 80px 24px 24px; }
+    .fig .badge { position: absolute; left: 66px; top: 140px; width: 48px; height: 48px; border-radius: 50%; background: #fff;
+      display: flex; align-items: center; justify-content: center; }
+    #g1 .head, #g1 .body { background: var(--coral); }
+    #g2 .head, #g2 .body { background: var(--yellow); }
+    #g3 .head, #g3 .body { background: var(--teal); }
+    .name { position: absolute; left: -20px; top: 270px; width: 220px; height: 46px; }
+    .name .swap { font-size: 34px; line-height: 46px; font-weight: 700; }
+    .ul { position: absolute; left: 50%; top: 50px; width: 120px; margin-left: -60px; height: 6px; border-radius: 3px; }
+    #g1 .ul { background: var(--coral); } #g2 .ul { background: var(--yellow); } #g3 .ul { background: var(--teal); }
+    #sublabel .ul { top: 62px; width: 160px; margin-left: -80px; background: var(--coral); }
+
+    /* Folder (the hospital file) and sheet (the nonprofit spreadsheet) share a slot */
+    .file { position: absolute; left: 200px; top: 30px; width: 240px; height: 210px; }
+    .folder { position: absolute; left: 0; top: 0; width: 240px; height: 210px; }
+    .folder .tab { position: absolute; left: 0; top: 0; width: 100px; height: 30px; border-radius: 14px 14px 0 0; }
+    .folder .face { position: absolute; left: 0; top: 22px; width: 240px; height: 188px; border-radius: 0 18px 18px 18px;
+      background: var(--paper); border: 4px solid; box-shadow: var(--shadow); padding: 20px 22px; }
+    #g1 .tab { background: var(--coral); } #g1 .face { border-color: var(--coral); }
+    #g2 .tab { background: var(--yellow); } #g2 .face { border-color: var(--yellow); }
+    #g3 .tab { background: var(--teal); } #g3 .face { border-color: var(--teal); }
+    .face .k { font-size: 18px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--grey); }
+    .face .line { position: relative; margin-top: 14px; font-size: 32px; font-weight: 600; white-space: nowrap; }
+    .face .v { position: relative; display: inline-block; }
+    .face .line.new { color: var(--coral-deep); font-weight: 700; margin-top: 8px; }
+    #pen { position: absolute; left: 0; top: -26px; width: 44px; height: 44px; }
+    #stale { position: absolute; left: 22px; top: 140px; padding: 4px 12px; border-radius: 999px; font-size: 18px; font-weight: 700;
+      background: var(--danger); color: #fff; letter-spacing: .04em; }
+
+    .sheet { position: absolute; left: 0; top: 0; width: 240px; height: 210px; border-radius: 18px; background: var(--paper);
+      box-shadow: var(--shadow); border: 3px solid var(--line); overflow: hidden; }
+    .sheet .bar { height: 40px; display: flex; align-items: center; padding-left: 16px; gap: 8px; }
+    .sheet .bar i { width: 10px; height: 10px; border-radius: 50%; background: rgba(26,26,26,.25); display: block; }
+    #g1 .sheet .bar { background: var(--coral); } #g2 .sheet .bar { background: var(--yellow); } #g3 .sheet .bar { background: var(--teal); }
+    .sheet .grid { position: absolute; left: 16px; top: 54px; width: 208px; height: 102px;
+      background-image: linear-gradient(var(--line) 2px, transparent 2px), linear-gradient(90deg, var(--line) 2px, transparent 2px);
+      background-size: 52px 34px; border-right: 2px solid var(--line); border-bottom: 2px solid var(--line); }
+    .sheet .fn { position: absolute; left: 16px; top: 166px; font-size: 21px; font-weight: 600; color: var(--grey); }
+
+    /* The update that never arrives */
+    #arrow { position: absolute; left: 0; top: 0; width: 1920px; height: 900px; }
+    #xmark { position: absolute; left: 1028px; top: 398px; width: 64px; height: 64px; border-radius: 50%; background: var(--danger);
+      color: #fff; font-size: 38px; font-weight: 800; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 16px rgba(154,60,34,.3); }
+
+    /* Wry joke */
+    #exit { position: absolute; left: 1560px; top: 118px; width: 230px; height: 84px; border-radius: 12px; background: #1d6b45;
+      color: #fff; display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 40px; font-weight: 800;
+      letter-spacing: .12em; }
+
+    /* Closing line */
+    #moral { position: absolute; left: 0; top: 112px; width: 1920px; text-align: center; font-size: 78px; line-height: 1.1; }
+    #moral .coral { font-style: italic; }
+    #sub { position: absolute; left: 0; top: 214px; width: 1920px; text-align: center; font-size: 34px; color: var(--grey); }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="hospital" data-start="0" data-duration="{{DURATION}}"
+       data-width="1920" data-height="1080" data-fps="30">
+    <div id="stage" class="abs" style="inset:0">
+      <div id="scene">
+        <div id="subject" data-layout-allow-overlap data-layout-allow-occlusion>
+          <svg id="bed" viewBox="0 0 320 190" aria-hidden="true">
+            <rect x="18" y="40" width="16" height="140" rx="8" fill="#6b6360" />
+            <rect x="286" y="80" width="16" height="100" rx="8" fill="#6b6360" />
+            <rect x="26" y="112" width="268" height="26" rx="10" fill="#6b6360" />
+            <rect x="34" y="94" width="252" height="26" rx="12" fill="#ffffff" stroke="#e6dbd0" stroke-width="3" />
+            <rect x="44" y="70" width="70" height="34" rx="14" fill="#ffffff" stroke="#e6dbd0" stroke-width="3" />
+            <circle cx="82" cy="62" r="26" fill="#e8967a" />
+            <path d="M106 96 Q118 66 160 68 L270 68 Q284 68 284 84 L284 104 L106 104 Z" fill="#8ecfca" />
+            <rect x="214" y="22" width="40" height="40" rx="10" fill="#ffffff" stroke="#e6dbd0" stroke-width="3" />
+            <path d="M234 32 v20 M224 42 h20" stroke="#a64c35" stroke-width="6" stroke-linecap="round" />
+          </svg>
+          <svg id="cap" viewBox="0 0 320 190" aria-hidden="true">
+            <circle cx="160" cy="112" r="52" fill="#e8967a" />
+            <path d="M160 18 L262 56 L160 94 L58 56 Z" fill="#1a1a1a" />
+            <path d="M104 74 L104 104 Q160 130 216 104 L216 74 L160 94 Z" fill="#1a1a1a" />
+            <path d="M246 62 L246 112" stroke="#f7c948" stroke-width="5" stroke-linecap="round" />
+            <circle cx="246" cy="118" r="9" fill="#f7c948" />
+          </svg>
+        </div>
+        <div id="sublabel" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div class="swap serif" id="pa">One patient</div>
+          <div class="swap serif" id="pb">One <span class="coral">learner</span></div><div class="ul" id="u0"></div>
+        </div>
+
+        <svg id="arrow" viewBox="0 0 1920 900" aria-hidden="true" data-layout-allow-overlap data-layout-allow-occlusion>
+          <defs><clipPath id="reach"><rect id="reachRect" x="420" y="300" width="0" height="260" /></clipPath></defs>
+          <path d="M460 504 Q1060 356 1660 504" fill="none" stroke="#a64c35" stroke-width="6" stroke-dasharray="16 14"
+                stroke-linecap="round" clip-path="url(#reach)" />
+        </svg>
+        <div id="xmark" data-layout-allow-overlap data-layout-allow-occlusion>✕</div>
+
+        <div class="grp" id="g1">
+          <div class="fig"><div class="head"></div><div class="body"></div>
+            <div class="badge" id="bd1"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 4v20M4 14h20" stroke="#a64c35" stroke-width="6" stroke-linecap="round"/></svg></div></div>
+          <div class="name" data-layout-allow-overlap data-layout-allow-occlusion>
+            <div class="swap" id="n1a">Doctor</div><div class="swap" id="n1b">Programme</div><div class="ul" id="u1"></div></div>
+          <div class="file" data-layout-allow-overlap data-layout-allow-occlusion>
+            <div class="folder" id="f1"><div class="tab"></div><div class="face">
+              <div class="k">Patient file</div>
+              <div class="line">Dose: <span class="v" id="old5">5mg<span class="strike-line"></span></span></div>
+              <div class="line new" id="new10">Dose: 10mg</div>
+              <svg id="pen" viewBox="0 0 44 44" aria-hidden="true"><path d="M8 36 L12 26 L32 6 L38 12 L18 32 Z" fill="#1a1a1a"/><path d="M8 36 L12 26 L18 32 Z" fill="#f7c948"/></svg>
+            </div></div>
+            <div class="sheet" id="s1"><div class="bar"><i></i><i></i><i></i></div><div class="grid"></div><div class="fn">programme.xlsx</div></div>
+          </div>
+        </div>
+
+        <div class="grp" id="g2">
+          <div class="fig"><div class="head"></div><div class="body"></div>
+            <div class="badge" id="bd2"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 24 C4 16 3 10 7 6.5 C10 4 13 6 14 8 C15 6 18 4 21 6.5 C25 10 24 16 14 24 Z" fill="#a64c35"/></svg></div></div>
+          <div class="name" data-layout-allow-overlap data-layout-allow-occlusion>
+            <div class="swap" id="n2a">Nurse</div><div class="swap" id="n2b">M&amp;E</div><div class="ul" id="u2"></div></div>
+          <div class="file" data-layout-allow-overlap data-layout-allow-occlusion>
+            <div class="folder" id="f2"><div class="tab"></div><div class="face">
+              <div class="k">Patient file</div><div class="line">Dose: 5mg</div></div></div>
+            <div class="sheet" id="s2"><div class="bar"><i></i><i></i><i></i></div><div class="grid"></div><div class="fn">me_tracker.xlsx</div></div>
+          </div>
+        </div>
+
+        <div class="grp" id="g3">
+          <div class="fig"><div class="head"></div><div class="body"></div>
+            <div class="badge" id="bd3"><svg width="30" height="30" viewBox="0 0 30 30"><g transform="rotate(-40 15 15)"><rect x="3" y="9" width="24" height="12" rx="6" fill="#2f6f68"/><rect x="15" y="9" width="12" height="12" rx="0" fill="#8ecfca"/><rect x="3" y="9" width="24" height="12" rx="6" fill="none" stroke="#2f6f68" stroke-width="2"/></g></svg></div></div>
+          <div class="name" data-layout-allow-overlap data-layout-allow-occlusion>
+            <div class="swap" id="n3a">Pharmacist</div><div class="swap" id="n3b">Finance</div><div class="ul" id="u3"></div></div>
+          <div class="file" data-layout-allow-overlap data-layout-allow-occlusion>
+            <div class="folder" id="f3"><div class="tab"></div><div class="face" id="face3">
+              <div class="k">Patient file</div><div class="line" id="ph5">Dose: 5mg</div>
+              <div id="stale">OUT OF DATE</div></div></div>
+            <div class="sheet" id="s3"><div class="bar"><i></i><i></i><i></i></div><div class="grid"></div><div class="fn">finance.xlsx</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="exit"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="24" cy="7" r="5" fill="#fff"/><path d="M22 14 L14 22 L20 26 L16 36 M22 14 L28 24 L34 22 M18 20 L10 18" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>EXIT</div>
+
+      <div id="moral" class="serif">Most nonprofits run like <span class="coral">this hospital.</span></div>
+      <div id="sub">Not because anyone is careless. Because nobody designed it any other way.</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tl = gsap.timeline({paused: true, defaults: {ease: "power2.out"}});
+      var b = EZ.b, e = EZ.e, at = EZ.at;
+
+      // Hidden start states (outside the timeline so frame 0 is clean).
+      gsap.set(["#subject", "#sublabel", "#cap", "#pb", ".grp", ".sheet", "#n1b", "#n2b", "#n3b",
+                "#new10", "#pen", "#xmark", "#arrow", ".ul", "#stale", "#exit", "#moral", "#sub"], {opacity: 0});
+      gsap.set("#new10", {clipPath: "inset(0% 100% 0% 0%)"});
+
+      // b1 "Picture a hospital. One patient." — the bed, then its label.
+      EZ.rise(tl, "#subject", b(1) + 0.1, {y: 40, d: 0.8});
+      EZ.rise(tl, "#sublabel", at(1, 0.6), {y: 20});
+
+      // b2 — doctor, nurse, pharmacist arrive, each with their own file.
+      var cs = EZ.cues.beats[1].captions || [];
+      var gt = [b(2), cs[1] ? cs[1].start : at(2, 0.36), cs[2] ? cs[2].start : at(2, 0.7)];
+      [1, 2, 3].forEach(function (i) {
+        EZ.rise(tl, "#g" + i, gt[i - 1] + 0.05, {y: 40, d: 0.6});
+        tl.fromTo("#f" + i, {rotation: -8}, {rotation: 0, duration: 0.6, ease: "back.out(2)"}, gt[i - 1] + 0.2);
+      });
+
+      // b3 "On Monday, the doctor doubles the dose." — pen strikes 5mg, writes 10mg in the doctor's file only.
+      EZ.pulse(tl, "#g1 .fig", b(3) + 0.1, 1.05);
+      tl.to("#f1 .face", {backgroundColor: "#fff3cc", duration: 0.4}, at(3, 0.35));
+      EZ.strike(tl, "#old5", at(3, 0.45));
+      tl.set("#new10", {opacity: 1}, at(3, 0.6));
+      tl.to("#new10", {clipPath: "inset(0% 0% 0% 0%)", duration: 0.7, ease: "power1.inOut"}, at(3, 0.6));
+      tl.fromTo("#pen", {opacity: 0, x: 20, y: 44}, {opacity: 1, duration: 0.15}, at(3, 0.58));
+      tl.to("#pen", {x: 170, duration: 0.7, ease: "power1.inOut"}, at(3, 0.6));
+      tl.to("#pen", {opacity: 0, duration: 0.25}, at(3, 0.6) + 0.75);
+
+      // b4 "The pharmacist's file never hears about it." — the update sets off, stops halfway.
+      tl.set("#arrow", {opacity: 1}, b(4));
+      tl.to("#reachRect", {attr: {width: 620}, duration: 1.0, ease: "power1.out"}, b(4) + 0.1);
+      EZ.pop(tl, "#xmark", at(4, 0.55), {d: 0.4});
+      EZ.shake(tl, "#xmark", at(4, 0.55) + 0.4);
+      tl.to("#face3", {borderColor: "#9a3c22", backgroundColor: "#f6d9cf", duration: 0.35}, at(4, 0.65));
+      tl.to("#ph5", {color: "#9a3c22", duration: 0.35}, at(4, 0.65));
+      EZ.pop(tl, "#stale", at(4, 0.72));
+      EZ.shake(tl, "#f3", at(4, 0.72));
+
+      // b5 "You'd walk out of that hospital, wouldn't you?" — a wry EXIT sign glows.
+      tl.fromTo("#exit", {opacity: 0, boxShadow: "0 0 0 rgba(46,180,110,0)"},
+        {opacity: 1, boxShadow: "0 0 46px rgba(46,180,110,0.75)", duration: 0.6}, at(5, 0.35));
+      tl.to("#exit", {boxShadow: "0 0 18px rgba(46,180,110,0.35)", duration: 0.5, yoyo: true, repeat: 3, ease: "sine.inOut"}, at(5, 0.35) + 0.6);
+
+      // b6 — the mapping. Clear the hospital drama, then swap each label as it's spoken.
+      tl.to(["#exit", "#arrow", "#xmark"], {opacity: 0, duration: 0.4}, b(6));
+      function swapLabel(a, bb, t) {
+        tl.to(a, {opacity: 0, y: -36, duration: 0.45, ease: "power2.in"}, t);
+        tl.fromTo(bb, {opacity: 0, y: 36}, {opacity: 1, y: 0, duration: 0.55, ease: "power3.out"}, t + 0.25);
+        var u = bb.replace(/#(n(\d)b|pb)/, function (m, x, d) { return "#u" + (d || "0"); });
+        tl.fromTo(u, {opacity: 1, scaleX: 0}, {scaleX: 1, duration: 0.5, ease: "power2.out"}, t + 0.5);
+      }
+      function swapFile(i, t) {
+        tl.to("#f" + i, {opacity: 0, scale: 0.85, rotation: -6, duration: 0.4, ease: "power2.in"}, t);
+        tl.fromTo("#s" + i, {opacity: 0, scale: 0.85, rotation: 6}, {opacity: 1, scale: 1, rotation: 0, duration: 0.55, ease: "back.out(1.8)"}, t + 0.3);
+        tl.to("#bd" + i, {opacity: 0, scale: 0.4, duration: 0.35}, t);
+        EZ.pulse(tl, "#g" + i + " .fig", t + 0.35, 1.06);
+      }
+      var tP = at(6, 0.28), tD = at(6, 0.53), tN = at(6, 0.65), tF = at(6, 0.88);
+      // patient -> learner (bed becomes a graduation cap)
+      tl.to("#bed", {opacity: 0, scale: 0.8, duration: 0.45, ease: "power2.in"}, tP);
+      tl.fromTo("#cap", {opacity: 0, scale: 0.7, rotation: -10}, {opacity: 1, scale: 1, rotation: 0, duration: 0.7, ease: "back.out(1.8)"}, tP + 0.3);
+      swapLabel("#pa", "#pb", tP);
+      // doctor -> Programme, nurse -> M&E, pharmacist -> Finance
+      swapLabel("#n1a", "#n1b", tD); swapFile(1, tD);
+      swapLabel("#n2a", "#n2b", tN); swapFile(2, tN);
+      swapLabel("#n3a", "#n3b", tF); swapFile(3, tF);
+
+      // b7 "Most nonprofits run exactly like this hospital." — pull back, land the line.
+      tl.to("#scene", {scale: 0.8, y: 30, transformOrigin: "50% 100%", duration: 1.1, ease: "power2.inOut"}, b(7));
+      EZ.rise(tl, "#moral", b(7) + 0.4, {y: 30, d: 0.8});
+      EZ.pulse(tl, "#moral .coral", at(7, 0.3), 1.05);
+      EZ.rise(tl, "#sub", at(7, 0.45), {y: 20});
+
+      EZ.finish(tl, {tag: false});
+      window.__timelines = window.__timelines || {};
+      window.__timelines["hospital"] = tl;
+    })();
+  </script>
+</body>
+</html>

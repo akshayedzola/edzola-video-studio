@@ -1,0 +1,39 @@
+# Keeps the queue moving: claims with no activity for 14 days get a reminder;
+# 7 days after the reminder they are released back to stage:open.
+name: stale-claims
+on:
+  schedule:
+    - cron: '30 3 * * *' # daily, 09:00 IST
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const {owner, repo} = context.repo;
+            const DAY = 864e5, now = Date.now();
+            const issues = await github.paginate(github.rest.issues.listForRepo,
+              {owner, repo, state: 'open', labels: 'episode,stage:claimed', per_page: 100});
+            for (const i of issues) {
+              const idle = (now - new Date(i.updated_at)) / DAY;
+              const stale = i.labels.some(l => l.name === 'stale-claim');
+              const who = i.assignees.map(a => '@' + a.login).join(' ');
+              if (!stale && idle >= 14) {
+                await github.rest.issues.addLabels({owner, repo, issue_number: i.number, labels: ['stale-claim']});
+                await github.rest.issues.createComment({owner, repo, issue_number: i.number,
+                  body: `${who} no activity for 14 days. Still on it? Reply here (or open your draft PR) to keep the claim. Otherwise it reopens for others in 7 days.`});
+              } else if (stale && idle >= 7) {
+                await github.rest.issues.removeAssignees({owner, repo, issue_number: i.number, assignees: i.assignees.map(a => a.login)});
+                for (const name of ['stale-claim', 'stage:claimed'])
+                  await github.rest.issues.removeLabel({owner, repo, issue_number: i.number, name}).catch(() => {});
+                await github.rest.issues.addLabels({owner, repo, issue_number: i.number, labels: ['stage:open']});
+                await github.rest.issues.createComment({owner, repo, issue_number: i.number,
+                  body: 'Released after 21 days without activity. Anyone can `/claim` it now. (Thanks for any work so far; leave notes here for the next person.)'});
+              }
+            }

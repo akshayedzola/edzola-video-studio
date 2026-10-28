@@ -1,0 +1,122 @@
+<!doctype html>
+<!-- ep000 v2 · predict · "Your turn: pick a number".
+     Direct address, three choice cards, a silent 3-2-1 countdown, then "Hold that thought."
+     Times come from narration beats via EZ.b(n)/EZ.at(n, f). Fictional data (Sitara Foundation). -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <link rel="stylesheet" href="brand.css" />
+  <script src="cues.js"></script>
+  <script src="gsap.min.js"></script>
+  <script src="kit.js"></script>
+  <style>
+    #hero { position: absolute; left: 0; top: 300px; width: 1920px; text-align: center; }
+    #hero .k { margin-bottom: 24px; }
+    #hero .big { font-size: 190px; line-height: 1; color: var(--coral-deep); font-style: italic; }
+
+    #head { position: absolute; left: 0; top: 118px; width: 1920px; text-align: center; }
+    #head .k { font-size: 24px; }
+    #head .q { margin-top: 18px; font-size: 64px; line-height: 1.1; }
+
+    .choice { position: absolute; top: 330px; width: 400px; height: 480px; overflow: hidden; }
+    #c1 { left: 250px; } #c2 { left: 760px; } #c3 { left: 1270px; }
+    .choice .top { position: absolute; left: 0; top: 0; width: 400px; height: 170px; }
+    #c1 .top { background: var(--coral); } #c2 .top { background: var(--yellow); } #c3 .top { background: var(--teal); }
+    .choice .mh { position: absolute; left: 170px; top: 34px; width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,.55); }
+    .choice .mb { position: absolute; left: 150px; top: 100px; width: 100px; height: 70px; border-radius: 50px 50px 0 0; background: rgba(255,255,255,.55); }
+    .choice .team { position: absolute; left: 0; top: 196px; width: 400px; text-align: center; font-size: 30px; font-weight: 700; }
+    .choice .num { position: absolute; left: 0; top: 246px; width: 400px; text-align: center; font-size: 150px; line-height: 1; }
+    .choice .unit { position: absolute; left: 0; top: 416px; width: 400px; text-align: center; font-size: 24px; color: var(--grey); }
+
+    #timer { position: absolute; left: 860px; top: 104px; width: 200px; height: 200px; }
+    #timer svg { position: absolute; left: 0; top: 0; width: 200px; height: 200px; }
+    .tn { position: absolute; left: 0; top: 0; width: 200px; height: 200px; text-align: center; line-height: 200px;
+      font-size: 110px; color: var(--ink); }
+
+    #hold { position: absolute; left: 0; top: 150px; width: 1920px; text-align: center; font-size: 96px; line-height: 1.1; }
+    #hold .coral { font-style: italic; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="predict" data-start="0" data-duration="{{DURATION}}"
+       data-width="1920" data-height="1080" data-fps="30">
+    <div id="stage" class="abs" style="inset:0">
+      <div id="hero"><div class="kicker k">A question for you</div><div class="big serif">Your turn.</div></div>
+
+      <div id="head"><div class="kicker k">Your turn</div>
+        <div class="q serif">One number for the funder, tonight. Which one?</div></div>
+
+      <div class="choice card" id="c1"><div class="top"><div class="mh"></div><div class="mb"></div></div>
+        <div class="team">Programme</div><div class="num serif">312</div><div class="unit">learners placed</div></div>
+      <div class="choice card" id="c2"><div class="top"><div class="mh"></div><div class="mb"></div></div>
+        <div class="team">M&amp;E</div><div class="num serif">287</div><div class="unit">learners placed</div></div>
+      <div class="choice card" id="c3"><div class="top"><div class="mh"></div><div class="mb"></div></div>
+        <div class="team">Finance</div><div class="num serif">341</div><div class="unit">learners placed</div></div>
+
+      <div id="timer" data-layout-allow-overlap data-layout-allow-occlusion>
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="86" fill="#ffffff" stroke="#e6dbd0" stroke-width="12" />
+          <circle id="ring" cx="100" cy="100" r="86" fill="none" stroke="#e8967a" stroke-width="12" stroke-linecap="round"
+                  stroke-dasharray="540.354" stroke-dashoffset="540.354" transform="rotate(-90 100 100)" />
+        </svg>
+        <div class="tn serif" id="t3">3</div><div class="tn serif" id="t2">2</div><div class="tn serif" id="t1">1</div>
+      </div>
+
+      <div id="hold" class="serif">Hold <span class="coral">that thought.</span></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tl = gsap.timeline({paused: true, defaults: {ease: "power2.out"}});
+      var b = EZ.b, e = EZ.e, at = EZ.at;
+
+      gsap.set(["#hero", "#head", "#head .k", "#head .q", ".choice", "#timer", ".tn", "#hold"], {opacity: 0});
+
+      // b1 "So here's a question for you." — direct address.
+      tl.set("#hero", {opacity: 1}, b(1));
+      EZ.rise(tl, "#hero .k", b(1), {y: 20});
+      tl.fromTo("#hero .big", {opacity: 0, y: 40, scale: 0.92}, {opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "back.out(1.6)"}, b(1) + 0.25);
+
+      // b2 — the question moves up; the three answers pop in as they're named.
+      tl.to("#hero", {opacity: 0, y: -60, duration: 0.5, ease: "power2.in"}, b(2));
+      tl.set("#head", {opacity: 1}, b(2) + 0.3);
+      EZ.rise(tl, "#head .k", b(2) + 0.3, {y: 16});
+      EZ.rise(tl, "#head .q", b(2) + 0.45, {y: 24, d: 0.8});
+      var pops = [0.72, 0.82, 0.93];
+      [1, 2, 3].forEach(function (i) {
+        var t = at(2, pops[i - 1]);
+        tl.fromTo("#c" + i, {opacity: 0, y: 60, scale: 0.85}, {opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.7)"}, t);
+        // a subtle hover-like float, out of phase per card
+        tl.to("#c" + i, {y: -10, duration: 1.4, ease: "sine.inOut", yoyo: true, repeat: 3}, t + 0.6 + i * 0.25);
+      });
+
+      // b3 "Take three seconds." — the question gives way to a timer; it runs in the silence after.
+      tl.to("#head", {opacity: 0, y: -30, duration: 0.4, ease: "power2.in"}, b(3));
+      tl.fromTo("#timer", {opacity: 0, scale: 0.7}, {opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)"}, b(3) + 0.35);
+      var t0 = e(3), span = Math.min(2.4, Math.max(1.5, b(4) - e(3) - 0.15)), step = span / 3;
+      tl.to("#ring", {attr: {"stroke-dashoffset": 0}, duration: span, ease: "none"}, t0);
+      ["#t3", "#t2", "#t1"].forEach(function (id, k) {
+        var tk = t0 + k * step;
+        tl.fromTo(id, {opacity: 0, scale: 1.5}, {opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)"}, tk);
+        tl.to(id, {opacity: 0, scale: 0.7, duration: 0.2, ease: "power2.in"}, tk + step - 0.15);
+      });
+      tl.to(".choice", {opacity: 0.94, duration: 0.3}, t0);
+
+      // b4 "Got one? Hold on to it." — ring done; cards pulse; the line lands.
+      tl.to("#timer", {opacity: 0, scale: 0.8, duration: 0.35, ease: "power2.in"}, Math.max(t0 + span, b(4) - 0.3));
+      tl.to(".choice", {opacity: 1, duration: 0.3}, b(4));
+      EZ.rise(tl, "#hold", b(4) + 0.1, {y: 30, d: 0.7});
+      EZ.pulse(tl, "#c1", at(4, 0.45), 1.04);
+      EZ.pulse(tl, "#c2", at(4, 0.45) + 0.18, 1.04);
+      EZ.pulse(tl, "#c3", at(4, 0.45) + 0.36, 1.04);
+      tl.to(".choice", {y: -8, duration: 1.2, ease: "sine.inOut", yoyo: true, repeat: 1, stagger: 0.2}, e(4));
+
+      EZ.finish(tl, {tag: true});
+      window.__timelines = window.__timelines || {};
+      window.__timelines["predict"] = tl;
+    })();
+  </script>
+</body>
+</html>

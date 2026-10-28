@@ -1,0 +1,249 @@
+{
+  "$schema": "../../schemas/storyboard.schema.json",
+  "video_id": "REPLACE-with-catalogue-id",
+  "title": "The viewer's question?",
+  "series": "Technology for Impact, Explained",
+  "audience": "",
+  "learning_outcome": "",
+  "format": "before_after",
+  "status": "draft",
+  "renderer": "hyperframes",
+  "captions": "burned",
+  "music": "procedural:warm-pulse",
+  "voice": {
+    "engine": "chatterbox",
+    "voice": "default",
+    "speed": 1.0,
+    "lang": "en-gb"
+  },
+  "sources": [],
+  "claims": [],
+  "scenes": [
+    {
+      "id": "cold-open",
+      "type": "hook",
+      "chapter": "Cold open: the mystery",
+      "template": "CaseOpen",
+      "composition": "scenes/cold-open.html",
+      "notes": "See docs/13-explainer-formula.md for this move.",
+      "visual": "Describe what appears on each beat.",
+      "beats": [
+        {
+          "text": "One short spoken sentence.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.55,
+            "direction": "Acting note."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analogy",
+      "type": "analogy",
+      "chapter": "The analogy",
+      "template": "Analogy",
+      "composition": "scenes/analogy.html",
+      "notes": "See docs/13-explainer-formula.md for this move.",
+      "visual": "Describe what appears on each beat.",
+      "beats": [
+        {
+          "text": "One short spoken sentence.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.55,
+            "direction": "Acting note."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "watch",
+      "type": "system_simulation",
+      "chapter": "Watch it happen",
+      "template": "QuarterSim",
+      "composition": "scenes/watch.html",
+      "notes": "See docs/13-explainer-formula.md for this move.",
+      "visual": "Describe what appears on each beat.",
+      "beats": [
+        {
+          "text": "One short spoken sentence.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.55,
+            "direction": "Acting note."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "predict",
+      "type": "retrieval",
+      "chapter": "Your turn",
+      "template": "Predict",
+      "composition": "scenes/predict.html",
+      "notes": "See docs/13-explainer-formula.md for this move.",
+      "visual": "Describe what appears on each beat.",
+      "beats": [
+        {
+          "text": "One short spoken sentence.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.55,
+            "direction": "Acting note."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "twist",
+      "type": "reveal",
+      "chapter": "The twist",
+      "template": "Collapse",
+      "composition": "scenes/twist.html",
+      "notes": "See docs/13-explainer-formula.md for this move.",
+      "visual": "Describe what appears on each beat.",
+      "beats": [
+        {
+          "text": "One short spoken sentence.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.55,
+            "direction": "Acting note."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "build",
+      "type": "concept_build",
+      "chapter": "Build the answer",
+      "template": "LayerStack",
+      "composition": "scenes/build.html",
+      "notes": "See docs/13-explainer-formula.md for this move.",
+      "visual": "Describe what appears on each beat.",
+      "beats": [
+        {
+          "text": "One short spoken sentence.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.55,
+            "direction": "Acting note."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "replay",
+      "type": "before_after",
+      "chapter": "Replay",
+      "template": "SplitReplay",
+      "composition": "scenes/replay.html",
+      "notes": "See docs/13-explainer-formula.md for this move.",
+      "visual": "Describe what appears on each beat.",
+      "beats": [
+        {
+          "text": "One short spoken sentence.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.55,
+            "direction": "Acting note."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "not-list",
+      "type": "myth_vs_reality",
+      "chapter": "What it's not, and Monday's questions",
+      "template": "NotList",
+      "composition": "scenes/not-list.html",
+      "notes": "See docs/13-explainer-formula.md for this move.",
+      "visual": "Describe what appears on each beat.",
+      "beats": [
+        {
+          "text": "One short spoken sentence.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.55,
+            "direction": "Acting note."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "type": "outro",
+      "chapter": "Close",
+      "template": "Close",
+      "composition": "scenes/close.html",
+      "notes": "See docs/13-explainer-formula.md for this move.",
+      "visual": "Describe what appears on each beat.",
+      "beats": [
+        {
+          "text": "One short spoken sentence.",
+          "voice": {
+            "pace": 1.0,
+            "energy": 0.55,
+            "direction": "Acting note."
+          },
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 0.5
+            }
+          ]
+        }
+      ],
+      "hold": 1.8
+    }
+  ]
+}

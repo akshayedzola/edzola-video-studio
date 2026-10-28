@@ -1,0 +1,176 @@
+<!doctype html>
+<!-- ep000 v2 · replay · "Same quarter, replayed".
+     Split screen: left the old way (events land in one of three sheets),
+     right the same events landing in one shared record. Fictional data. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <link rel="stylesheet" href="brand.css" />
+  <script src="cues.js"></script>
+  <script src="gsap.min.js"></script>
+  <script src="kit.js"></script>
+  <style>
+    .side-h { position: absolute; top: 112px; width: 840px; text-align: center; font-size: 46px; }
+    #hl { left: 60px; color: var(--grey); }
+    #hr { left: 1020px; color: var(--coral-deep); }
+    #divider { position: absolute; left: 958px; top: 110px; width: 4px; height: 760px; border-radius: 2px; background: var(--line); }
+    #weeks { position: absolute; left: 120px; top: 196px; width: 1680px; height: 12px; border-radius: 6px; background: var(--line); }
+    #wfill { position: absolute; left: 0; top: 0; width: 1680px; height: 12px; border-radius: 6px; background: var(--coral); transform-origin: left center; }
+    #wlab { position: absolute; left: 120px; top: 218px; font-size: 22px; font-weight: 700; color: var(--grey); }
+    #wlab2 { position: absolute; left: 1660px; top: 218px; font-size: 22px; font-weight: 700; color: var(--grey); }
+
+    .mini { position: absolute; top: 290px; width: 250px; height: 330px; overflow: hidden; }
+    .mini .mh { height: 52px; display: flex; align-items: center; padding: 0 18px; font-size: 22px; font-weight: 700; }
+    .mini.p .mh { background: var(--coral-deep); color: #fff; }
+    .mini.m .mh { background: var(--yellow); }
+    .mini.f .mh { background: var(--teal); }
+    .mrow { height: 44px; margin: 8px 12px 0; padding: 0 12px; border-radius: 10px; background: #f6efe8;
+      display: flex; align-items: center; justify-content: space-between; font-size: 21px; font-weight: 600; }
+    .mrow .s { font-size: 18px; font-weight: 700; padding: 3px 10px; border-radius: 8px; }
+    .ok { background: var(--success-bg); color: var(--success); }
+    .warn { background: var(--warning-bg); color: #735810; }
+    .token { background: var(--coral-deep); }
+    .bad { background: var(--danger-bg); color: var(--danger); }
+    #mp { left: 100px; } #mm { left: 375px; } #mf { left: 650px; }
+
+    #record { position: absolute; left: 1150px; top: 280px; width: 580px; padding: 26px 32px; }
+    #record .who { font-size: 40px; }
+    #record .id { font-size: 22px; font-weight: 700; color: var(--coral-deep); margin-top: 4px; letter-spacing: .06em; }
+    .step { display: flex; align-items: center; gap: 16px; margin-top: 16px; font-size: 26px; font-weight: 600; color: #7d7470; }
+    .step .dot { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--line); display: flex;
+      align-items: center; justify-content: center; font-size: 20px; color: #fff; }
+    .step .dot span { opacity: 0; } .step.on .dot span { opacity: 1; }
+    .step.on { color: var(--ink); }
+    .step.on .dot { background: var(--success); border-color: var(--success); }
+    .screen { position: absolute; top: 650px; width: 170px; height: 70px; border-radius: 14px; border: 3px solid var(--line);
+      background: var(--paper); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #7d7470; }
+    #sp { left: 1160px; } #sm { left: 1355px; } #sf { left: 1550px; }
+    #wires { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+
+    .rep { position: absolute; top: 745px; width: 840px; text-align: center; }
+    .rep .lab { font-size: 24px; font-weight: 700; color: var(--grey); letter-spacing: .12em; text-transform: uppercase; }
+    .rep .num { font-size: 96px; line-height: 1.05; }
+    #repL { left: 60px; } #repR { left: 1040px; width: 400px; }
+    #repL .num { color: var(--grey); }
+    #repR .num { color: var(--coral-deep); }
+    .pillx { position: absolute; top: 120px; padding: 10px 22px; border-radius: 999px; font-size: 24px; font-weight: 700; }
+    #watch { left: 1480px; top: 765px; background: var(--peach); color: var(--coral-deep); }
+    #back { left: 1480px; top: 832px; background: var(--teal); color: var(--ink); }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="replay" data-start="0" data-duration="{{DURATION}}"
+       data-width="1920" data-height="1080" data-fps="30">
+    <div id="stage" class="abs" style="inset:0">
+      <div class="side-h serif" id="hl">Without an MIS</div>
+      <div class="side-h serif" id="hr">With an MIS</div>
+      <div id="divider"></div>
+      <div id="weeks"><div id="wfill"></div></div>
+      <div id="wlab">Week 1</div><div id="wlab2">Week 13</div>
+
+      <div class="mini card p" id="mp"><div class="mh">Programme</div>
+        <div class="mrow" id="r0"><span>Kavya Sharma</span><span class="s ok">Placed</span></div>
+        <div class="mrow" id="r3"><span>Arjun I.</span><span class="s warn">Training</span></div></div>
+      <div class="mini card m" id="mm"><div class="mh">M&amp;E</div>
+        <div class="mrow" id="r1"><span>K. Sharma</span><span class="s warn">Training</span></div>
+        <div class="mrow" id="r4"><span>A. Iyer</span><span class="s ok">Placed</span></div></div>
+      <div class="mini card f" id="mf"><div class="mh">Finance</div>
+        <div class="mrow" id="r2"><span>Kavya S.</span><span class="s bad">Stopped</span></div>
+        <div class="mrow" id="r5"><span>Arjun Iyer</span><span class="s ok">Paid</span></div></div>
+
+      <svg id="wires" viewBox="0 0 1920 1080">
+        <path id="w1" d="M1245 650 C1245 610, 1440 610, 1440 590" fill="none" stroke="#e8967a" stroke-width="4" />
+        <path id="w2" d="M1440 650 L1440 590" fill="none" stroke="#e8967a" stroke-width="4" />
+        <path id="w3" d="M1635 650 C1635 610, 1440 610, 1440 590" fill="none" stroke="#e8967a" stroke-width="4" />
+      </svg>
+      <div id="record" class="card">
+        <div class="who serif">Kavya Sharma</div><div class="id">ONE RECORD · ID 0217</div>
+        <div class="step" id="s1"><div class="dot"><span>✓</span></div>Enrolled</div>
+        <div class="step" id="s2"><div class="dot"><span>✓</span></div>Attended</div>
+        <div class="step" id="s3"><div class="dot"><span>✓</span></div>Stipend paid</div>
+        <div class="step" id="s4"><div class="dot"><span>✓</span></div>Placed</div>
+      </div>
+      <div class="screen" id="sp">Programme</div>
+      <div class="screen" id="sm">M&amp;E</div>
+      <div class="screen" id="sf">Finance</div>
+
+      <div class="rep" id="repL"><div class="lab">Quarterly report</div><div class="num serif" id="nL">312</div></div>
+      <div class="rep" id="repR"><div class="lab">Every team sees</div><div class="num serif" id="nR">0</div></div>
+      <div class="pillx" id="watch">⏱ 2 min</div>
+      <div class="pillx" id="back">120 hours back to learners</div>
+
+      <div class="token" id="tl0" data-layout-allow-overlap data-layout-allow-occlusion>Enrolled</div>
+      <div class="token" id="tl1" style="background:#c99a21" data-layout-allow-overlap data-layout-allow-occlusion>Attendance</div>
+      <div class="token" id="tl2" style="background:#34766f" data-layout-allow-overlap data-layout-allow-occlusion>₹ Stipend</div>
+      <div class="token" id="tl3" data-layout-allow-overlap data-layout-allow-occlusion>Enrolled</div>
+      <div class="token" id="tl4" style="background:#c99a21" data-layout-allow-overlap data-layout-allow-occlusion>Placed</div>
+      <div class="token" id="tl5" style="background:#34766f" data-layout-allow-overlap data-layout-allow-occlusion>₹ Stipend</div>
+      <div class="token" id="tr0" data-layout-allow-overlap data-layout-allow-occlusion>Enrolled</div>
+      <div class="token" id="tr1" style="background:#c99a21" data-layout-allow-overlap data-layout-allow-occlusion>Attendance</div>
+      <div class="token" id="tr2" style="background:#34766f" data-layout-allow-overlap data-layout-allow-occlusion>₹ Stipend</div>
+      <div class="token" id="tr3" data-layout-allow-overlap data-layout-allow-occlusion>Placed</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tl = gsap.timeline({paused: true, defaults: {ease: "power2.out"}});
+      var b = EZ.b, at = EZ.at, $ = EZ.$;
+
+      gsap.set([".side-h", "#divider", "#weeks", "#wlab", "#wlab2", ".mini", ".mrow", "#record", ".screen",
+                "#wires path", ".rep", ".pillx"], {opacity: 0});
+      gsap.set("#wfill", {scaleX: 0});
+      ["#w1", "#w2", "#w3"].forEach(function (w) {
+        var p = $(w), len = p.getTotalLength();
+        gsap.set(p, {strokeDasharray: len, strokeDashoffset: len});
+      });
+
+      // b1 — set the stage: two sides, one shared clock.
+      EZ.rise(tl, ["#hl", "#hr"], b(1) + 0.1, {stagger: 0.25});
+      tl.fromTo("#divider", {opacity: 0, scaleY: 0}, {opacity: 1, scaleY: 1, duration: 0.8, transformOrigin: "top"}, b(1) + 0.3);
+      EZ.rise(tl, ["#weeks", "#wlab", "#wlab2"], at(1, 0.4), {y: 10});
+      EZ.rise(tl, ".mini", at(1, 0.6), {stagger: 0.12});
+      EZ.rise(tl, ["#record", ".screen"], at(1, 0.75), {stagger: 0.08});
+      tl.to("#wfill", {scaleX: 1, duration: EZ.e(4) - b(2), ease: "none"}, b(2));
+
+      // b2 — the old way: each event lands in ONE sheet, copies disagree.
+      var sheetX = [130, 405, 680];
+      for (var i = 0; i < 6; i++) {
+        var land = EZ.fly(tl, "#tl" + i, 400, 236, sheetX[i % 3], 350 + Math.floor(i / 3) * 52,
+          at(2, 0.05 + i * 0.14), 0.7, 90);
+        tl.to("#tl" + i, {opacity: 0, duration: 0.15}, land);
+        EZ.pop(tl, "#r" + i, land - 0.05, {d: 0.35});
+      }
+
+      // b3 — with an MIS: the same events land in one record, the moment they happen.
+      for (var j = 0; j < 4; j++) {
+        var hit = EZ.fly(tl, "#tr" + j, 1370, 236, 1370, 300, at(3, 0.05 + j * 0.2), 0.6, 60);
+        tl.to("#tr" + j, {opacity: 0, duration: 0.15}, hit);
+        tl.call((function (k) { return function () { $("#s" + k).classList.add("on"); }; })(j + 1), null, hit);
+        tl.call((function (k) { return function () { $("#s" + k).classList.remove("on"); }; })(j + 1), null, hit - 0.01);
+        EZ.pulse(tl, "#s" + (j + 1) + " .dot", hit, 1.25);
+      }
+      tl.to("#wires path", {opacity: 1, strokeDashoffset: 0, duration: 0.6, stagger: 0.1}, at(3, 0.85));
+      tl.to(".screen", {borderColor: "#e8967a", color: "#1a1a1a", duration: 0.4, stagger: 0.1}, at(3, 0.9));
+
+      // b4 — the report: three flickering numbers vs one steady number.
+      EZ.rise(tl, ".rep", b(4), {y: 20});
+      var vals = ["312", "287", "341"];
+      for (var f = 0; f < 9; f++) {
+        tl.call((function (v) { return function () { $("#nL").textContent = v; }; })(vals[f % 3]), null, at(4, 0.08 + f * 0.1));
+      }
+      EZ.count(tl, "#nR", 0, 298, at(4, 0.55), 1.1);
+      EZ.shake(tl, "#nL", at(4, 0.9));
+
+      // b5 — what that buys: a two-minute call, hours back to learners.
+      EZ.pop(tl, "#watch", at(5, 0.2));
+      EZ.pop(tl, "#back", at(5, 0.6));
+
+      EZ.finish(tl, {tag: true});
+      window.__timelines = window.__timelines || {};
+      window.__timelines["replay"] = tl;
+    })();
+  </script>
+</body>
+</html>

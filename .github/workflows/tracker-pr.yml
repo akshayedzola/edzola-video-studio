@@ -1,0 +1,48 @@
+# Moves an episode issue through stages from its pull request.
+# Convention: the PR description contains "Episode: #<issue>".
+#   draft PR        -> stage:creation
+#   ready for review -> stage:review   (manual review)
+#   merged           -> stage:approved (waiting for /published)
+#   closed unmerged  -> stage:claimed
+# pull_request_target so it also works for forks; it never checks out PR code.
+name: tracker-pr
+on:
+  pull_request_target:
+    types: [opened, reopened, ready_for_review, converted_to_draft, closed, edited]
+
+permissions:
+  issues: write
+  pull-requests: read
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const STAGES = ['stage:open', 'stage:claimed', 'stage:creation', 'stage:review', 'stage:approved', 'stage:published'];
+            const {owner, repo} = context.repo;
+            const pr = context.payload.pull_request;
+            const m = (pr.body || '').match(/Episode:\s*#(\d+)/i);
+            if (!m) return;
+            const issue_number = Number(m[1]);
+            const {data: issue} = await github.rest.issues.get({owner, repo, issue_number});
+            const labels = issue.labels.map(l => l.name);
+            if (!labels.includes('episode') || labels.includes('stage:published')) return;
+
+            let stage;
+            if (context.payload.action === 'closed') stage = pr.merged ? 'stage:approved' : 'stage:claimed';
+            else stage = pr.draft ? 'stage:creation' : 'stage:review';
+            if (labels.includes(stage)) return;
+
+            for (const s of STAGES) if (labels.includes(s))
+              await github.rest.issues.removeLabel({owner, repo, issue_number, name: s}).catch(() => {});
+            await github.rest.issues.addLabels({owner, repo, issue_number, labels: [stage]});
+            const note = {
+              'stage:creation': `🛠️ In creation: ${pr.html_url}`,
+              'stage:review': `👀 Ready for manual review: ${pr.html_url}. Reviewers, use the checklist in docs/07-editorial-review.md.`,
+              'stage:approved': `✅ Approved and merged. A maintainer uploads it to YouTube, then comments \`/published <url>\`.`,
+              'stage:claimed': `PR closed without merging; the episode is still claimed by its assignee.`,
+            }[stage];
+            await github.rest.issues.createComment({owner, repo, issue_number, body: note});

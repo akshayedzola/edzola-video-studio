@@ -1,0 +1,752 @@
+{
+ "$comment": "Curated core episodes. Add new ideas via a PR (or the 'Episode idea' issue form); ids never change once created.",
+ "episodes": [
+  {
+   "id": "a001-what-is-an-mis",
+   "series": "A",
+   "title": "What is an MIS, really?",
+   "format": "before_after",
+   "thesis": "An MIS is one record per person, shared by everyone, that the work runs through.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/case-studies/sitara-foundation.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a002-software-didnt-fix-data",
+   "series": "A",
+   "title": "Why nonprofits struggle with data even after buying software",
+   "format": "fictional_case_study",
+   "thesis": "The gap is process clarity and ownership, not tools.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md",
+    "knowledge/concepts/points-of-view.md",
+    "knowledge/source-texts/technology-that-sticks/01_mission-rich-systems-poor.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a003-placement-vs-employment",
+   "series": "A",
+   "title": "Why 80% placement isn't 80% employment",
+   "format": "data_storytelling",
+   "thesis": "Placement is a leading indicator; retention is the outcome that matters.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/frameworks/dashboards-and-kpis.md",
+    "knowledge/case-studies/sitara-foundation.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a004-build-buy-customise",
+   "series": "A",
+   "title": "Should your nonprofit build, buy or customise software?",
+   "format": "decision_simulation",
+   "thesis": "Decide on process clarity, capacity and uniqueness, not on features.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md",
+    "knowledge/source-texts/technology-that-sticks/04_problem-first-tool-last.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a005-dashboards-decisions",
+   "series": "A",
+   "title": "Why dashboards don't automatically improve decisions",
+   "format": "myth_vs_reality",
+   "thesis": "A dashboard without a decision is decoration.",
+   "sources": [
+    "knowledge/frameworks/dashboards-and-kpis.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a006-every-field-is-a-tax",
+   "series": "A",
+   "title": "Every field is a tax on the frontline",
+   "format": "data_storytelling",
+   "thesis": "Every data point must earn its place; more data is not better.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a007-data-only-flows-up",
+   "series": "A",
+   "title": "If data only flows up, it's compliance",
+   "format": "reveal_invisible_system",
+   "thesis": "Data must flow back to the people who enter it.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a008-theory-of-change",
+   "series": "A",
+   "title": "Theory of Change in five minutes",
+   "format": "progressive_construction",
+   "thesis": "Activities, outputs, outcomes, impact: the causal story behind a programme.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a009-logframe",
+   "series": "A",
+   "title": "What a logframe is for, and why funders ask for it",
+   "format": "progressive_construction",
+   "thesis": "The Theory of Change is the story; the logframe is the matrix.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a010-output-vs-outcome",
+   "series": "A",
+   "title": "Outputs vs outcomes: the indicator trap",
+   "format": "myth_vs_reality",
+   "thesis": "Counting what you did is not the same as measuring change.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/frameworks/dashboards-and-kpis.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a011-leading-lagging",
+   "series": "A",
+   "title": "Leading and lagging indicators: attendance vs income",
+   "format": "data_storytelling",
+   "thesis": "Early signals let you act before the outcome is lost.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/frameworks/dashboards-and-kpis.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a012-unique-id",
+   "series": "A",
+   "title": "What one unique ID actually fixes",
+   "format": "before_after",
+   "thesis": "One stable ID per person ends duplicates and conflicting counts.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/case-studies/sitara-foundation.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a013-single-source-of-truth",
+   "series": "A",
+   "title": "A single source of truth isn't one file",
+   "format": "myth_vs_reality",
+   "thesis": "It is an agreement: one definition, one ID, one owner per concept.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a014-go-live-start-line",
+   "series": "A",
+   "title": "Go-live is the start line",
+   "format": "fictional_case_study",
+   "thesis": "Adoption begins at go-live; plan for the months after.",
+   "sources": [
+    "knowledge/concepts/points-of-view.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a015-why-staff-stop-using-systems",
+   "series": "A",
+   "title": "Why staff stop using new systems",
+   "format": "fictional_case_study",
+   "thesis": "Adoption is a social process, not a technical event.",
+   "sources": [
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a016-dont-automate-a-messy-kitchen",
+   "series": "A",
+   "title": "Don't automate a messy kitchen",
+   "format": "myth_vs_reality",
+   "thesis": "Automate a confused workflow and you get a confused workflow at scale.",
+   "sources": [
+    "knowledge/concepts/points-of-view.md",
+    "knowledge/frameworks/technology-that-sticks.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a017-three-jobs-of-technology",
+   "series": "A",
+   "title": "Technology has three jobs. Do them in order.",
+   "format": "progressive_construction",
+   "thesis": "Infrastructure, then acceleration, then insight.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md",
+    "knowledge/source-texts/technology-that-sticks/02_three-jobs-in-order.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a018-mission-rich-systems-poor",
+   "series": "A",
+   "title": "Mission-rich, systems-poor",
+   "format": "fictional_case_study",
+   "thesis": "Nonprofits are rich in purpose and short on systems; the gap is structural.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/01_mission-rich-systems-poor.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a019-problem-first-tool-last",
+   "series": "A",
+   "title": "Problem first, tool last",
+   "format": "decision_simulation",
+   "thesis": "Tools feel like progress; problems feel like delay.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/04_problem-first-tool-last.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a020-free-tool-isnt-free",
+   "series": "A",
+   "title": "A free tool nobody uses isn't free",
+   "format": "decision_simulation",
+   "thesis": "The cost of software is mostly the cost of making it stick.",
+   "sources": [
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a021-prototype-week-two",
+   "series": "A",
+   "title": "Why a prototype that fails in week two is a gift",
+   "format": "fictional_case_study",
+   "thesis": "Early mismatch is cheap; late mismatch is expensive.",
+   "sources": [
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 3,
+   "product": false
+  },
+  {
+   "id": "a022-stop-rebuilding-the-same-system",
+   "series": "A",
+   "title": "Stop rebuilding the same system",
+   "format": "reveal_invisible_system",
+   "thesis": "Sector patterns repeat; start from them.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/07_stop-rebuilding-the-same-system.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a023-built-for-donors-not-teams",
+   "series": "A",
+   "title": "Built for donors, not teams",
+   "format": "before_after",
+   "thesis": "Systems designed only for compliance fail the frontline.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a024-we-have-a-data-problem",
+   "series": "A",
+   "title": "'We have a data problem' usually isn't",
+   "format": "myth_vs_reality",
+   "thesis": "It is usually a decision, workflow or adoption problem.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a025-baseline-midline-endline",
+   "series": "A",
+   "title": "Baseline, midline, endline: measuring change",
+   "format": "data_storytelling",
+   "thesis": "Measure the same thing before, during and after.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a026-red-amber-green",
+   "series": "A",
+   "title": "Red, amber, green: making targets readable",
+   "format": "progressive_construction",
+   "thesis": "Thresholds turn numbers into decisions.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/frameworks/dashboards-and-kpis.md"
+   ],
+   "priority": 3,
+   "product": false
+  },
+  {
+   "id": "a027-people-money-evidence",
+   "series": "A",
+   "title": "The three maps of any nonprofit: people, money, evidence",
+   "format": "reveal_invisible_system",
+   "thesis": "Show how people, money and evidence move, and where they meet.",
+   "sources": [
+    "knowledge/frameworks/three-operating-maps.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "a028-dpdp-and-nonprofit-data",
+   "series": "A",
+   "title": "What India's DPDP Act means for nonprofit data",
+   "format": "progressive_construction",
+   "thesis": "Consent, purpose and minimisation become legal duties.",
+   "sources": [
+    "knowledge/products/products.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "a029-consent-the-field-you-cant-skip",
+   "series": "A",
+   "title": "Consent: the field you can't skip",
+   "format": "fictional_case_study",
+   "thesis": "Consent is a record with a date, a purpose and a way to withdraw.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false
+  },
+  {
+   "id": "a030-is-your-organisation-ready",
+   "series": "A",
+   "title": "Is your organisation ready for a new system?",
+   "format": "decision_simulation",
+   "thesis": "Leadership buy-in, process clarity and realistic sequencing come first.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md",
+    "knowledge/source-texts/technology-that-sticks/03_what-we-cant-do.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "b001-ai-voice-agents",
+   "series": "B",
+   "title": "How AI voice agents actually work",
+   "format": "reveal_invisible_system",
+   "thesis": "Speech to text to understanding to the next question, with a human in the loop.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/products/products.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "b002-ai-employee-vs-chatbot",
+   "series": "B",
+   "title": "What is an AI employee, and how is it different from a chatbot?",
+   "format": "myth_vs_reality",
+   "thesis": "A chatbot answers; an AI employee does an encoded task end to end, with review.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "b003-ai-amplifier-not-purifier",
+   "series": "B",
+   "title": "AI is an amplifier, not a purifier",
+   "format": "myth_vs_reality",
+   "thesis": "AI on messy data produces confident mess.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md",
+    "knowledge/concepts/points-of-view.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "b004-ai-maturity-ladder",
+   "series": "B",
+   "title": "The AI maturity ladder: from chatbot to organisation-wide",
+   "format": "progressive_construction",
+   "thesis": "Climb one rung at a time: chat, file in/deliverable out, encoded task, scheduled, organisation-wide.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "b005-what-is-a-data-model",
+   "series": "B",
+   "title": "What a data model is: entities, fields, relationships",
+   "format": "progressive_construction",
+   "thesis": "Decide the things you track, what you know about them and how they connect.",
+   "sources": [
+    "knowledge/frameworks/entity-library.md",
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "b006-how-records-connect",
+   "series": "B",
+   "title": "One-to-many, many-to-many: how records connect",
+   "format": "progressive_construction",
+   "thesis": "Relationships stop you copying the same data into many places.",
+   "sources": [
+    "knowledge/frameworks/entity-library.md",
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "b007-master-tables",
+   "series": "B",
+   "title": "Master tables: why dropdowns matter",
+   "format": "before_after",
+   "thesis": "Standard lists make counts comparable.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false
+  },
+  {
+   "id": "b008-reading-an-erd",
+   "series": "B",
+   "title": "Reading an entity-relationship diagram",
+   "format": "progressive_construction",
+   "thesis": "Boxes are things; lines are how they relate.",
+   "sources": [
+    "knowledge/frameworks/entity-library.md",
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false
+  },
+  {
+   "id": "b009-data-migration",
+   "series": "B",
+   "title": "Moving off spreadsheets: data migration without tears",
+   "format": "fictional_case_study",
+   "thesis": "Clean, map, test, then move; never migrate the mess.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "b010-what-uat-is-for",
+   "series": "B",
+   "title": "What user acceptance testing is for",
+   "format": "fictional_case_study",
+   "thesis": "UAT is where real users prove the system fits real work.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false
+  },
+  {
+   "id": "b011-how-systems-talk",
+   "series": "B",
+   "title": "How systems talk to each other: APIs in plain words",
+   "format": "reveal_invisible_system",
+   "thesis": "Systems share data through agreed requests, not copy and paste.",
+   "sources": [
+    "knowledge/frameworks/three-operating-maps.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "b012-offline-field-data",
+   "series": "B",
+   "title": "Collecting data where there's no internet",
+   "format": "reveal_invisible_system",
+   "thesis": "Capture offline, sync later, resolve conflicts deliberately.",
+   "sources": [
+    "knowledge/frameworks/three-operating-maps.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "b013-why-duplicates-happen",
+   "series": "B",
+   "title": "Why duplicates happen, and how systems prevent them",
+   "format": "data_storytelling",
+   "thesis": "Duplicates come from many entry points and no shared ID.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md",
+    "knowledge/case-studies/sitara-foundation.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "b014-validation-rules",
+   "series": "B",
+   "title": "Validation rules: stopping bad data at the door",
+   "format": "before_after",
+   "thesis": "Rules at entry are cheaper than cleaning later.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "b015-roles-and-permissions",
+   "series": "B",
+   "title": "Who sees what: roles and permissions",
+   "format": "reveal_invisible_system",
+   "thesis": "Least privilege protects people and the data about them.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false
+  },
+  {
+   "id": "b016-audit-trails",
+   "series": "B",
+   "title": "Audit trails: who changed what, and when",
+   "format": "reveal_invisible_system",
+   "thesis": "Trust in data comes from knowing its history.",
+   "sources": [
+    "knowledge/frameworks/map-glossary.md"
+   ],
+   "priority": 3,
+   "product": false
+  },
+  {
+   "id": "b017-stories-at-scale",
+   "series": "B",
+   "title": "Collecting stories at scale: qualitative data",
+   "format": "reveal_invisible_system",
+   "thesis": "Conversations capture the why behind the numbers.",
+   "sources": [
+    "knowledge/products/products.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "b018-where-ai-fits-in-an-mis",
+   "series": "B",
+   "title": "Where AI fits in a nonprofit MIS",
+   "format": "progressive_construction",
+   "thesis": "Collect, build, work smarter, know faster, on trusted data only.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "c001-why-low-code",
+   "series": "C",
+   "title": "Why we build on low-code platforms",
+   "format": "decision_simulation",
+   "thesis": "Speed, ownership and cost of change matter more than custom code.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "c002-inside-impactos",
+   "series": "C",
+   "title": "Inside ImpactOS: how we build an MIS",
+   "format": "product_walkthrough",
+   "thesis": "A structured path from discovery to adoption.",
+   "sources": [
+    "knowledge/products/products.md",
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 2,
+   "product": true
+  },
+  {
+   "id": "c003-map-framework",
+   "series": "C",
+   "title": "MAP: model, align, power with AI",
+   "format": "progressive_construction",
+   "thesis": "Model what is worth knowing, align with real work, add AI on trusted data.",
+   "sources": [
+    "knowledge/frameworks/map-framework.md"
+   ],
+   "priority": 1,
+   "product": false
+  },
+  {
+   "id": "c004-what-we-cant-do",
+   "series": "C",
+   "title": "Why we tell prospects what we can't do",
+   "format": "myth_vs_reality",
+   "thesis": "Honesty about readiness saves everyone a failed project.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/03_what-we-cant-do.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "c005-when-the-project-hits-a-wall",
+   "series": "C",
+   "title": "When the project hits a wall",
+   "format": "fictional_case_study",
+   "thesis": "A blocker protocol beats blame.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/05_when-the-project-hits-a-wall.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "c006-warmth-is-how-standards-travel",
+   "series": "C",
+   "title": "Warmth is how standards travel",
+   "format": "fictional_case_study",
+   "thesis": "High standards spread through relationships.",
+   "sources": [
+    "knowledge/source-texts/technology-that-sticks/06_warmth-is-how-standards-travel.md"
+   ],
+   "priority": 3,
+   "product": false
+  },
+  {
+   "id": "c007-zolabs-survey-to-conversation",
+   "series": "C",
+   "title": "How Zolabs turns a survey into a conversation",
+   "format": "product_walkthrough",
+   "thesis": "A voice conversation collects richer, more honest answers than a form.",
+   "sources": [
+    "knowledge/products/products.md"
+   ],
+   "priority": 2,
+   "product": true
+  },
+  {
+   "id": "c008-dozai-placement-verification",
+   "series": "C",
+   "title": "How DozAI verifies placement and retention",
+   "format": "product_walkthrough",
+   "thesis": "Bounded AI follow-ups with human review. Confirm framing with the product owner first.",
+   "sources": [
+    "knowledge/products/products.md"
+   ],
+   "priority": 3,
+   "product": true
+  },
+  {
+   "id": "c009-isom-explained",
+   "series": "C",
+   "title": "ISOM: an open operating model for skilling nonprofits",
+   "format": "progressive_construction",
+   "thesis": "Shared stages and SOPs so every skilling nonprofit need not start from zero.",
+   "sources": [
+    "knowledge/frameworks/three-operating-maps.md",
+    "knowledge/products/products.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "c010-inside-a-discovery-call",
+   "series": "C",
+   "title": "What happens in a discovery call",
+   "format": "fictional_case_study",
+   "thesis": "We ask about your Theory of Change before any tool.",
+   "sources": [
+    "knowledge/frameworks/technology-that-sticks.md"
+   ],
+   "priority": 3,
+   "product": false
+  },
+  {
+   "id": "c011-patterns-across-sectors",
+   "series": "C",
+   "title": "The patterns we see across 16 sectors",
+   "format": "reveal_invisible_system",
+   "thesis": "Every sector has one data thread that holds it together.",
+   "sources": [
+    "knowledge/sectors/README.md"
+   ],
+   "priority": 2,
+   "product": false
+  },
+  {
+   "id": "c012-how-we-make-these-videos",
+   "series": "C",
+   "title": "How we make these videos",
+   "format": "reveal_invisible_system",
+   "thesis": "Structured storyboards, open tools and human review.",
+   "sources": [
+    "docs/13-explainer-formula.md"
+   ],
+   "priority": 3,
+   "product": false
+  }
+ ]
+}

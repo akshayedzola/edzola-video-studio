@@ -1,0 +1,99 @@
+<!doctype html>
+<!-- ep000 v2 · not-list · "What an MIS is not, and Monday's questions".
+     Part A: three misconceptions struck through. Part B: transfer to the
+     viewer's own organisation with three questions. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <link rel="stylesheet" href="brand.css" />
+  <script src="cues.js"></script>
+  <script src="gsap.min.js"></script>
+  <script src="kit.js"></script>
+  <style>
+    #headA { position: absolute; left: 0; top: 130px; width: 1920px; text-align: center; font-size: 84px; }
+    .not { position: absolute; left: 330px; width: 1260px; height: 168px; padding: 26px 44px; display: flex; flex-direction: column; justify-content: center; }
+    #n1 { top: 280px; } #n2 { top: 470px; } #n3 { top: 660px; }
+    .not .t { position: relative; display: inline-block; align-self: flex-start; font-size: 58px; line-height: 1.1; }
+    .not .s { margin-top: 10px; font-size: 30px; color: var(--grey); }
+    .not .s b { color: var(--coral-deep); font-weight: 700; }
+    .not .x { position: absolute; right: 44px; top: 50%; margin-top: -32px; width: 64px; height: 64px; border-radius: 50%;
+      background: var(--danger-bg); color: var(--danger); font-size: 34px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+    #pad { position: absolute; left: 410px; top: 150px; width: 1100px; height: 720px; padding: 70px 70px 40px; }
+    #clip { position: absolute; left: 430px; top: -26px; width: 240px; height: 56px; border-radius: 14px; background: var(--ink); }
+    #pad .kick { font-size: 24px; font-weight: 700; letter-spacing: .16em; color: var(--coral-deep); text-transform: uppercase; }
+    #pad .h { font-size: 64px; margin-top: 10px; }
+    .q { display: flex; align-items: center; gap: 28px; margin-top: 52px; }
+    .q .box { flex: none; width: 58px; height: 58px; border-radius: 14px; border: 4px solid var(--line); display: flex;
+      align-items: center; justify-content: center; font-size: 36px; color: #fff; }
+    .q .box span { opacity: 0; }
+    .q .n { flex: none; font-size: 54px; color: var(--coral-deep); width: 40px; }
+    .q .txt { font-size: 42px; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="not-list" data-start="0" data-duration="{{DURATION}}"
+       data-width="1920" data-height="1080" data-fps="30">
+    <div id="stage" class="abs" style="inset:0">
+      <div id="headA" class="serif">An MIS is <span class="coral">not</span>…</div>
+      <div class="not card" id="n1"><div class="t serif">Software you buy<div class="strike-line"></div></div>
+        <div class="s">Software is a tool. <b>The system is how you agree to work.</b></div><div class="x">✕</div></div>
+      <div class="not card" id="n2"><div class="t serif">A dashboard<div class="strike-line"></div></div>
+        <div class="s">A dashboard without a decision is <b>decoration.</b></div><div class="x">✕</div></div>
+      <div class="not card" id="n3"><div class="t serif">A bigger spreadsheet<div class="strike-line"></div></div>
+        <div class="s">More columns won't fix <b>three copies.</b></div><div class="x">✕</div></div>
+
+      <div id="pad" class="card">
+        <div id="clip"></div>
+        <div class="kick">Ask your team on Monday</div>
+        <div class="h serif">Three questions</div>
+        <div class="q" id="q1"><div class="box"><span>✓</span></div><div class="n serif">1</div><div class="txt">How many places does one learner live?</div></div>
+        <div class="q" id="q2"><div class="box"><span>✓</span></div><div class="n serif">2</div><div class="txt">Who decides what "placed" means?</div></div>
+        <div class="q" id="q3"><div class="box"><span>✓</span></div><div class="n serif">3</div><div class="txt">Does data come back to the field?</div></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tl = gsap.timeline({paused: true, defaults: {ease: "power2.out"}});
+      var b = EZ.b, at = EZ.at, e = EZ.e;
+
+      gsap.set(["#headA", ".not", ".not .s", ".not .x", "#pad", ".q", ".q .txt"], {opacity: 0});
+      gsap.set(".strike-line", {scaleX: 0});
+
+      // b1 — heading.
+      EZ.rise(tl, "#headA", b(1) + 0.1, {y: 30, d: 0.8});
+
+      // b2–b4 — each misconception arrives, gets struck, then the reason lands.
+      [1, 2, 3].forEach(function (i) {
+        var beat = i + 1, card = "#n" + i;
+        EZ.rise(tl, card, b(beat) - 0.15, {y: 30});
+        EZ.strike(tl, card + " .t", at(beat, 0.18));
+        tl.to(card + " .t", {color: "#8a817c", duration: 0.3}, at(beat, 0.25));
+        EZ.pop(tl, card + " .x", at(beat, 0.22), {d: 0.35});
+        EZ.rise(tl, card + " .s", at(beat, 0.38), {y: 12});
+      });
+
+      // b5 — clear Part A; the notepad arrives.
+      tl.to(["#headA", ".not"], {opacity: 0, x: -120, duration: 0.5, stagger: 0.06, ease: "power2.in"}, b(5) - 0.1);
+      tl.fromTo("#pad", {opacity: 0, y: 60, rotation: -2}, {opacity: 1, y: 0, rotation: 0, duration: 0.8, ease: "power3.out"}, at(5, 0.25));
+
+      // b6–b8 — each question writes itself in, then its box ticks.
+      [1, 2, 3].forEach(function (i) {
+        var beat = i + 5, q = "#q" + i;
+        tl.set(q, {opacity: 1}, b(beat) - 0.05);
+        EZ.type(tl, q + " .txt", at(beat, 0.12), (e(beat) - b(beat)) * 0.7);
+        tl.to(q + " .box", {backgroundColor: "#2e6e68", borderColor: "#2e6e68", duration: 0.25}, at(beat, 0.9));
+        tl.to(q + " .box span", {opacity: 1, duration: 0.2}, at(beat, 0.92));
+        EZ.pulse(tl, q + " .box", at(beat, 0.92), 1.15);
+      });
+
+      EZ.finish(tl, {tag: false});
+      window.__timelines = window.__timelines || {};
+      window.__timelines["not-list"] = tl;
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "edzola-video-studio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "EdZola knowledge-to-video pipeline: storyboard JSON -> narration -> Revideo animation -> FFmpeg master",
+  "scripts": {
+    "setup": "bash setup.sh",
+    "editor": "tsx pipeline/editor.ts",
+    "validate": "tsx pipeline/build.ts validate",
+    "narrate": "tsx pipeline/build.ts narrate",
+    "listen": "tsx pipeline/build.ts listen",
+    "render": "tsx pipeline/build.ts render",
+    "say": "tsx pipeline/build.ts say",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@revideo/2d": "0.11.0",
+    "@revideo/core": "0.11.0",
+    "@revideo/ffmpeg": "0.11.0",
+    "@revideo/renderer": "0.11.0",
+    "@revideo/vite-plugin": "0.11.0",
+    "ajv": "8.17.1"
+  },
+  "devDependencies": {
+    "@revideo/cli": "0.11.0",
+    "@revideo/ui": "0.11.0",
+    "@types/node": "20.19.9",
+    "tsx": "4.20.3",
+    "typescript": "5.5.4"
+  }
+}

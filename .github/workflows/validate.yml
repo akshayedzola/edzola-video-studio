@@ -1,0 +1,40 @@
+# Pull-request gate: catalogue integrity, privacy scan, storyboard validation.
+name: validate
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+
+      - name: Catalogue integrity
+        run: node scripts/catalog.mjs --check
+
+      - name: Privacy and secrets scan (changed files)
+        run: |
+          BASE="${{ github.event.pull_request.base.sha || github.event.before }}"
+          git diff --name-only --diff-filter=AM "$BASE" HEAD > changed.txt || git ls-files > changed.txt
+          xargs -a changed.txt node scripts/privacy-scan.mjs
+
+      - name: Install validator
+        working-directory: studio
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: 'true'
+        run: npm ci --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+
+      - name: Validate changed storyboards
+        working-directory: studio
+        run: |
+          EPS=$(grep "^episodes/" ../changed.txt | cut -d/ -f2 | sort -u | while read d; do [ -f "../episodes/$d/storyboard.json" ] && [[ "$d" != _* ]] && echo "$d"; done; true)
+          if [ -z "$EPS" ]; then echo "No storyboards changed"; exit 0; fi
+          for ep in $EPS; do npx tsx pipeline/build.ts validate "$ep"; done

@@ -7,8 +7,8 @@
 
 | Stage | Episodes |
 |---|---|
-| [Open](../../issues?q=label%3Aepisode+label%3Astage%3Aopen) | 220 |
-| [Claimed](../../issues?q=label%3Aepisode+label%3Astage%3Aclaimed) | 0 |
+| [Open](../../issues?q=label%3Aepisode+label%3Astage%3Aopen) | 218 |
+| [Claimed](../../issues?q=label%3Aepisode+label%3Astage%3Aclaimed) | 2 |
 | [Creation](../../issues?q=label%3Aepisode+label%3Astage%3Acreation) | 0 |
 | [Manual review](../../issues?q=label%3Aepisode+label%3Astage%3Areview) | 0 |
 | [Approved](../../issues?q=label%3Aepisode+label%3Astage%3Aapproved) | 0 |
@@ -19,7 +19,8 @@
 
 | Episode | Title | Stage | Who | Idle (days) |
 |---|---|---|---|---|
-| – | Nothing in flight yet. Comment `/claim` on an open episode! | | | |
+| [b013-why-duplicates-happen](https://github.com/akshayedzola/edzola-video-studio/issues/43) | Why duplicates happen, and how systems prevent them | Claimed | @VishwaPoojithaKannan | 0 |
+| [a003-placement-vs-employment](https://github.com/akshayedzola/edzola-video-studio/issues/3) | Why 80% placement isn't 80% employment | Claimed | @VishwaPoojithaKannan | 0 |
 
 ## Recently published
 

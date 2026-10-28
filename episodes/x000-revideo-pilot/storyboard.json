@@ -6,6 +6,11 @@
   "audience": "Nonprofit programme leaders and M&E heads who have bought software but still fight over reports",
   "learning_outcome": "An MIS is the shared system of record, workflows and reports that makes every team's numbers agree, not a dashboard on top of spreadsheets.",
   "format": "before_after",
+  "creative": {
+    "structure": "explainer",
+    "visual_world": "warm-flat",
+    "bet": "First pipeline test (superseded by a001)"
+  },
   "status": "in_review",
   "aspect": "16:9",
   "captions": "burned",

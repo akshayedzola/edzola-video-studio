@@ -6,7 +6,8 @@
 `brief.md`, `knowledge-brief.md`, [`docs/09-pedagogy-and-formats.md`](../docs/09-pedagogy-and-formats.md), [`studio/templates.manifest.json`](../studio/templates.manifest.json)
 
 ## Steps
-1. Propose **three approaches** in `brief.md` under "Teaching approaches":
+0. Read [docs/16-creative-range.md](../docs/16-creative-range.md). The three approaches below must differ in structure **and** visual world, and must not repeat the last three published episodes in the series.
+1. Propose **three approaches** in `brief.md` under "Three treatments":
    - a **story** (Sitara Foundation case),
    - a **simulation** (watch the system behave),
    - a **visual explanation** (build the model).

@@ -25,7 +25,7 @@ Thank you for helping. Every video here teaches someone in the social sector som
 git checkout -b ep/<id>
 cp -R episodes/_template episodes/<id>
 ```
-1. `brief.md`: one question, audience, the misconception, the takeaway. Pick the analogy and the twist (see [formula](docs/13-explainer-formula.md)).
+1. `brief.md`: one question, audience, the misconception, the takeaway. Sketch **three different treatments** (structure + visual world) and declare your **creative bet** ([creative range](docs/16-creative-range.md)); don't repeat the structure + world of the last three episodes in your series.
 2. `knowledge-brief.md`: facts with sources, EdZola opinions, illustrative material, and what you excluded.
 3. `storyboard.json`: the nine moves as scenes; every beat with voice direction and a `visual` brief per scene. Run `npm run validate -- <id>`.
 4. `npm run narrate -- <id>` then `npm run listen -- <id>`. Retake flagged lines (new `seed`, calmer `energy`, or a `say` rewrite) until there are 0 flags.
@@ -63,5 +63,5 @@ Add 2–5 lines to [LEARNINGS.md](LEARNINGS.md): what worked, what you'd change,
 | Terminal (`studio/`) | `npm run validate -- <id>` | Schema, brand, privacy, claims |
 | | `npm run narrate -- <id>` / `npm run listen -- <id>` | Voice, then transcription check |
 | | `npm run render -- <id>` | Full pipeline + QA |
-| | `bash hyperframes/render-scene.sh <id> <scene> --snap "2,6,9"` | Stills of one scene for design review |
+| | `node hyperframes/render-scene.mjs <id> <scene> --snap "2,6,9"` | Stills of one scene for design review (Windows and Mac) |
 | Repo root | `node scripts/catalog.mjs` | Rebuild the catalogue and counts |

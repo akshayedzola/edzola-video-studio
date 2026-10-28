@@ -336,6 +336,37 @@
       ],
       "default": "revideo",
       "description": "revideo: scenes use studio templates. hyperframes: each scene is an HTML composition (scene.composition) timed by beat variables."
+    },
+    "creative": {
+      "type": "object",
+      "description": "The creative treatment (docs/16-creative-range.md). Used to keep episodes varied.",
+      "required": [
+        "structure",
+        "visual_world",
+        "bet"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "structure": {
+          "type": "string",
+          "description": "e.g. mystery, two-timelines, day-in-the-life, build-along, dialogue, myth-countdown, quiz, reverse, letter, one-chart, three-ways, history, field-journal, or a new name"
+        },
+        "visual_world": {
+          "type": "string",
+          "description": "e.g. warm-flat, paper-cutout, whiteboard, blueprint, isometric, data-ink, kinetic-type, map, chalkboard, comic, retro-ui, or a new name"
+        },
+        "bet": {
+          "type": "string",
+          "description": "What this episode tries that we haven't done before"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Outside work you're borrowing a device from"
+        }
+      }
     }
   }
 }

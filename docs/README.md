@@ -15,7 +15,9 @@
 | 10 | [Series and season plan](10-series-and-season-plan.md) | Picking what to make |
 | 11 | [Roadmap and metrics](11-roadmap-and-metrics.md) | Planning the studio |
 | 12 | [Runbook](12-runbook.md) | Setup and troubleshooting |
-| **13** | **[The explainer formula](13-explainer-formula.md)** | **Before every episode** |
+| **13** | **[The explainer formula](13-explainer-formula.md)** | **Before every episode: one proven recipe, and why it works** |
 | 14 | [Content strategy and tracking](14-content-strategy-and-tracking.md) | How 3,500 videos fit together; stages; GitHub vs Zoho Sprints |
+| 15 | [Working on Windows](15-windows.md) | You have a Windows laptop |
+| **16** | **[Creative range](16-creative-range.md)** | **Before every episode, with 13: what's fixed, what's free, how we avoid sameness** |
 
 HyperFrames scenes: [studio/hyperframes/SCENE_GUIDE.md](../studio/hyperframes/SCENE_GUIDE.md) and [patterns](../studio/hyperframes/patterns/README.md).

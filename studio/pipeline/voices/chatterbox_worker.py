@@ -12,7 +12,8 @@ import torch
 import torchaudio as ta
 from chatterbox.tts import ChatterboxTTS
 
-dev = "mps" if torch.backends.mps.is_available() else "cpu"
+# NVIDIA GPU (Windows/Linux) > Apple GPU > CPU.
+dev = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
 _load = torch.load
 torch.load = lambda *a, **k: _load(*a, **{"map_location": torch.device(dev), **k})
 

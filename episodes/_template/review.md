@@ -14,6 +14,7 @@
 **Teaching:** hook ≤ 10 s · there's a prediction and a twist · visuals carry the reasoning · practical takeaway
 **Voice & brand:** British English · brand terminology · problem first · EdZola mentioned lightly
 **Craft:** pronunciation · cue timing · pacing · sound levels
+**Originality:** could this be mistaken for another episode? Does it deliver its declared creative bet? (docs/16)
 
 ## Decision
 - [ ] Approve · [ ] Changes requested: …

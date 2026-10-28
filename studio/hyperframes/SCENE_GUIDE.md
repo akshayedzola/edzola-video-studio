@@ -47,9 +47,9 @@ A scene is one HTML file at `episodes/<id>/scenes/<scene-id>.html`: plain HTML/C
 
 ```bash
 # design review: stills at chosen seconds (fast)
-bash studio/hyperframes/render-scene.sh <ep> <scene> [timing.json] --snap "2,6,10"
+node studio/hyperframes/render-scene.mjs <ep> <scene> [timing.json] --snap "2,6,10"
 # full render
-bash studio/hyperframes/render-scene.sh <ep> <scene> [timing.json]
+node studio/hyperframes/render-scene.mjs <ep> <scene> [timing.json]
 ```
 
 The check gate (lint, runtime, layout overlap, motion, WCAG contrast) must pass. **Look at the snapshot PNGs** at every beat before calling a scene done.

@@ -40,9 +40,16 @@ DEFAULT_HOLD = 0.9
 CAPTION_MAX_CHARS = 52
 HERE = Path(__file__).resolve().parent
 HOME = Path(os.environ.get("EDZOLA_VIDEO_HOME", Path.home() / ".edzola-video-studio"))
+def venv_python(venv: Path) -> Path:
+    return venv / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
+
+
+# qwen: mlx-audio on Apple Silicon (.venv-mlx); the PyTorch qwen-tts package elsewhere (.venv-qwen).
 WORKERS = {
-    "chatterbox": (HOME / "voice-lab/.venv/bin/python", HERE / "voices/chatterbox_worker.py"),
-    "qwen": (HOME / "voice-lab/.venv-mlx/bin/python", HERE / "voices/qwen_worker.py"),
+    "chatterbox": (venv_python(HOME / "voice-lab/.venv"), HERE / "voices/chatterbox_worker.py"),
+    "qwen": (venv_python(HOME / "voice-lab/.venv-mlx"), HERE / "voices/qwen_worker.py")
+    if sys.platform == "darwin"
+    else (venv_python(HOME / "voice-lab/.venv-qwen"), HERE / "voices/qwen_torch_worker.py"),
 }
 
 
@@ -131,6 +138,8 @@ class Voice:
                 sf.write(j["out"], trim(np.asarray(samples, dtype=np.float32)), SR)
             return
         if self.engine == "macos-say":
+            if sys.platform != "darwin":
+                raise SystemExit("macos-say only works on macOS; use kokoro or chatterbox")
             for j in jobs:
                 aiff = j["out"].with_suffix(".aiff")
                 rate = int(180 * j["params"]["speed"])
@@ -141,7 +150,7 @@ class Voice:
             return
         python, worker = WORKERS[self.engine]
         if not python.exists():
-            raise SystemExit(f"{self.engine} env missing at {python}; run: bash setup.sh --voices")
+            raise SystemExit(f"{self.engine} env missing at {python}; run setup with --voices (setup.sh or setup.ps1)")
         with tempfile.TemporaryDirectory() as tmp:
             raw_jobs = []
             for i, j in enumerate(jobs):

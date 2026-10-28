@@ -30,6 +30,12 @@ const inflight = issues
   .filter(i => ['Claimed', 'Creation', 'Manual review', 'Approved'].includes(stageOf(i)))
   .sort((a, b) => STAGES.findIndex(s => s[1] === stageOf(b)) - STAGES.findIndex(s => s[1] === stageOf(a)));
 const recent = issues.filter(i => stageOf(i) === 'Published').sort((a, b) => new Date(b.closedAt) - new Date(a.closedAt)).slice(0, 15);
+// Creative treatment of each published episode, so makers can avoid repeating recent combinations.
+const creativeOf = id => {
+  const p = path.join(ROOT, 'episodes', id, 'storyboard.json');
+  const c = fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')).creative : null;
+  return c ? `${c.structure} · ${c.visual_world}` : '–';
+};
 const bar = n => '█'.repeat(Math.round((n / cat.total) * 40)).padEnd(40, '░');
 
 const md = `# Video tracker
@@ -52,7 +58,11 @@ ${inflight.map(i => `| [${idOf(i)}](${i.url}) | ${titleOf(i)} | ${stageOf(i)} | 
 
 ## Recently published
 
-${recent.map(i => `- [${idOf(i)}](${i.url}) ${titleOf(i)}`).join('\n') || '_None yet._'}
+| Episode | Title | Structure · visual world |
+|---|---|---|
+${recent.map(i => `| [${idOf(i)}](${i.url}) | ${titleOf(i)} | ${creativeOf(idOf(i))} |`).join('\n') || '| – | _None yet._ | |'}
+
+Pick a different structure + world from the last three in your series ([docs/16](docs/16-creative-range.md)).
 
 ## Start here
 

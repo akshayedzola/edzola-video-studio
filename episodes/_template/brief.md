@@ -14,13 +14,19 @@
 | Target length | |
 | Knowledge sources | knowledge/... |
 
-## Teaching approaches (instructional designer)
+## Three treatments (sketch all three before writing a script)
 
-1. **Story:** …
-2. **Simulation:** …
-3. **Visual explanation:** …
+Make them genuinely different: different **structure** *and* **visual world** ([docs/16](../../docs/16-creative-range.md)). The a001 mystery arc is one option, never the default.
 
-**Recommended:** … because …
+| | Structure | Visual world | The active moment | The reframe |
+|---|---|---|---|---|
+| 1 | | | | |
+| 2 | | | | |
+| 3 | | | | |
+
+**Chosen:** … because …  ·  **Creative bet** (what we haven't done before): …
+**Borrowed from** (outside reference): …
+**Last three published in this series used:** … (check TRACKER, no repeat of structure + world)
 **Chosen by (human):** ____
 
 ## Scene plan

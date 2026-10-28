@@ -6,6 +6,14 @@
   "audience": "Nonprofit programme leaders and M&E heads who have bought software but still fight over report numbers",
   "learning_outcome": "The viewer can explain the mechanism by which separate team records produce conflicting reports, and name the five layers of an MIS that prevent it.",
   "format": "before_after",
+  "creative": {
+    "structure": "mystery",
+    "visual_world": "warm-flat",
+    "bet": "A full lesson arc: prediction pause, a data twist, and building the answer floor by floor",
+    "references": [
+      "3Blue1Brown-style prediction pauses"
+    ]
+  },
   "status": "draft",
   "renderer": "hyperframes",
   "captions": "burned",

@@ -6,6 +6,11 @@
   "audience": "",
   "learning_outcome": "",
   "format": "before_after",
+  "creative": {
+    "structure": "REPLACE: see docs/16-creative-range.md",
+    "visual_world": "REPLACE",
+    "bet": "REPLACE: what this episode tries that we haven't done before"
+  },
   "status": "draft",
   "renderer": "hyperframes",
   "captions": "burned",

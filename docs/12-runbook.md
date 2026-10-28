@@ -2,7 +2,7 @@
 
 ## First-time setup (each machine)
 
-Prerequisites: macOS on Apple Silicon, Node ≥ 20.19 (22 LTS recommended), Homebrew FFmpeg, `uv`.
+**Windows users: see [15-windows.md](15-windows.md).** macOS prerequisites: Apple Silicon, Node 22+ (`nvm install 22`; the repo has an `.nvmrc`), Homebrew FFmpeg, `uv`.
 
 ```bash
 git clone https://github.com/akshayedzola/edzola-video-studio.git
@@ -22,7 +22,7 @@ bash setup.sh --voices     # omit --voices for Kokoro only (smaller download)
 | `npm run listen -- <id>` | Re-run the transcription check only |
 | `npm run say -- "text" [voice]` | Hear how a line or name is pronounced |
 | `npm run editor` | Live Revideo editor at http://localhost:9000 for template development; shows the last built episode (run `render` or `narrate` + `render` first) |
-| `bash hyperframes/render-scene.sh <id> <scene> --snap "2,6"` | Check + stills for one HyperFrames scene (`HF_ALLOW_CHECK_FAIL=1` to inspect a failing one) |
+| `node hyperframes/render-scene.mjs <id> <scene> --snap "2,6"` | Check + stills for one HyperFrames scene (`HF_ALLOW_CHECK_FAIL=1` to inspect a failing one) |
 | `node ../scripts/catalog.mjs` | Rebuild the catalogue and counts |
 | `node ../scripts/tracker.mjs` | Regenerate TRACKER.md locally (needs `gh`) |
 | `npm run typecheck` | TypeScript check |

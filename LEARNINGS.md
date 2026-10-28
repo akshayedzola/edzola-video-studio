@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-10-28 · studio · @akshayedzola (with Claude Code)
+- **Change:** most of the team is on Windows. The pipeline is now Node + Python only (no bash in the render path), with `setup.ps1` and a Windows CI job that renders a scene and a full episode on every studio change.
+- **Change:** the a001 formula risked becoming a template. Split into six fixed learning principles plus open structure, visual world, voice and length; every brief declares three treatments and a creative bet; no repeating the last three structure + world combinations in a series.
+→ folded into: [docs/15-windows.md](docs/15-windows.md), [docs/16-creative-range.md](docs/16-creative-range.md)
+
 ## 2026-10-27 · a001-what-is-an-mis (v2) · @akshayedzola (with Claude Code)
 - **Worked:** the nine-move arc (cold open mystery → analogy → watch it happen → predict → twist → build → replay → not-list + Monday questions → close). The prediction pause and the twist ("each team counted correctly") are what make it feel like a lesson.
 - **Worked:** voice direction per beat (pace, energy, acting note) plus synthesised SFX and a ducked music bed took the voice from flat to alive.

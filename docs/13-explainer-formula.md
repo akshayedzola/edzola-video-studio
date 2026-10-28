@@ -1,6 +1,8 @@
 # The EdZola explainer formula
 
-What made *What is an MIS, really?* (v2) work, written down so every episode can start there. Watch it first (link in the README), then read this. Reference implementation: [`episodes/a001-what-is-an-mis/`](../episodes/a001-what-is-an-mis/).
+What made *What is an MIS, really?* (v2) work. Reference implementation: [`episodes/a001-what-is-an-mis/`](../episodes/a001-what-is-an-mis/).
+
+> **This is one proven recipe, not a template.** Use it to understand *why* a lesson works. Then read **[16: creative range](16-creative-range.md)**, which sets out the six things every video must do and the many structures and visual worlds for doing them. At most one in four episodes in a series uses this full nine-move arc; its individual moves (predict, twist, replay…) can be remixed into any structure.
 
 > **One-line version:** make the viewer *feel* the problem, *watch* the mechanism, *guess*, get *surprised*, then *build* the answer with us and *take it home*.
 
@@ -16,9 +18,9 @@ What made *What is an MIS, really?* (v2) work, written down so every episode can
 | One flat voice speed | Per-line pace, energy and acting direction; sound effects; music ducked under voice |
 | Ends on a framework card | Ends on three questions to ask your team on Monday |
 
-## The nine moves
+## The nine moves (the a001 recipe)
 
-Use them in this order. Rough timings are for a 4–5 minute explainer; Shorts use moves 1, 5 and 9 only.
+In a001 they ran in this order. Rough timings are for a 4–5 minute explainer. Each move serves one of the six fixed principles in [docs/16](16-creative-range.md), and other structures serve the same principles differently.
 
 | # | Move | Job | ep000 v2 example | Scene pattern |
 |---|---|---|---|---|
@@ -74,7 +76,9 @@ The twist overturns the most common wrong explanation. In ep000 the wrong explan
 4. `npm run render`: scenes → join → mix (voice + 75 effects + ducked bed) → −14 LUFS → captions, chapters, QA.
 5. Human review with sound, full screen. Write `review.md` and add what you learned to [LEARNINGS.md](../LEARNINGS.md).
 
-## Adapting the formula: three worked examples
+## Adapting the recipe: three worked examples
+
+These show the recipe stretched to new topics. Equally valid: tell *build, buy or customise* as **two timelines**, *AI voice agents* as **explain it three ways**, or *80% placement* as **one chart, evolving**. Pick by what teaches the idea best, and by what the series hasn't done lately.
 
 | Move | *Why 80% placement isn't 80% employment* | *Should you build, buy or customise?* | *How AI voice agents actually work* |
 |---|---|---|---|

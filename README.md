@@ -4,7 +4,7 @@
 
 **The goal: 3,500+ videos.** That's 220 long-form explainers, 660 Shorts, and Hindi, Tamil and Marathi versions, made together by the EdZola team and contributors.
 
-▶ **Watch the reference episode first:** *What is an MIS, really?* (4:09). See [Releases](../../releases). Then read **[the explainer formula](docs/13-explainer-formula.md)**: it explains why that video works and how to repeat it.
+▶ **Watch the reference episode first:** *What is an MIS, really?* (4:09). See [Releases](../../releases). Then read **[the explainer formula](docs/13-explainer-formula.md)** (why it works) and **[creative range](docs/16-creative-range.md)** (the six things every video must do, and the many ways to do them, so 3,500 videos don't look alike).
 
 ---
 
@@ -21,7 +21,7 @@ flowchart LR
 ```
 
 1. **Pick** an open episode in [Issues](../../issues?q=is%3Aopen+label%3Aepisode+label%3Astage%3Aopen+label%3Apriority%3Ap1) (start with `priority:p1`) and comment **`/claim`**. Progress for everyone is in **[TRACKER.md](TRACKER.md)**.
-2. **Set up** your Mac once: `cd studio && bash setup.sh --voices` ([runbook](docs/12-runbook.md)).
+2. **Set up** once. **Windows:** `powershell -ExecutionPolicy Bypass -File studio\setup.ps1 -Voices` ([Windows guide](docs/15-windows.md)). **macOS:** `cd studio && bash setup.sh --voices` ([runbook](docs/12-runbook.md)).
 3. **Create**: copy `episodes/_template` to `episodes/<id>`, write the brief, storyboard and scenes following [the formula](docs/13-explainer-formula.md), then run `npm run render -- <id>`. Open a **draft PR** containing `Episode: #<issue>` early.
 4. **Review**: when QA is green and you've watched it with sound, mark the PR *ready for review*. A reviewer uses the [checklist](docs/07-editorial-review.md).
 5. **Publish**: once merged, an EdZola maintainer uploads to YouTube and comments `/published <url>`.
@@ -53,7 +53,7 @@ Full details: **[CONTRIBUTING.md](CONTRIBUTING.md)** · Non-negotiables: **[GUAR
 | Assembly | FFmpeg 8 | LGPL/GPL (CLI) |
 | Fonts | Fraunces + Inter | SIL OFL |
 
-Requirements: macOS on Apple Silicon, Node 22 via nvm, Homebrew FFmpeg, `uv`. See [docs/02](docs/02-stack-and-licensing.md) for why each was chosen.
+Runs on **Windows 10/11** and **macOS (Apple Silicon)**: Node 22+, FFmpeg, `uv`, Git. Windows is tested in CI on every studio change ([guide](docs/15-windows.md)). An NVIDIA GPU (Windows) or Apple Silicon (Mac) makes the expressive voices fast; Kokoro works anywhere. See [docs/02](docs/02-stack-and-licensing.md) for why each was chosen.
 
 ## Licence
 

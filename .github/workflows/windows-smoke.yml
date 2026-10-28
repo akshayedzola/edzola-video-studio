@@ -1,0 +1,51 @@
+# Proves the studio works on Windows (most of the team uses Windows laptops):
+# setup.ps1 from scratch -> validate -> HyperFrames scene render -> full Kokoro + Revideo
+# episode with mixing, captions, listen-back and QA. Artifacts: the rendered clips + QA.
+name: windows-smoke
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['studio/**', 'scripts/**', '.github/workflows/windows-smoke.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - uses: astral-sh/setup-uv@v6
+      - name: FFmpeg
+        run: choco install ffmpeg -y --no-progress
+
+      - name: setup.ps1 (core, no expressive voices)
+        run: powershell -ExecutionPolicy Bypass -File studio/setup.ps1
+
+      - name: Catalogue + storyboard validation
+        run: |
+          node scripts/catalog.mjs --check
+          cd studio
+          npx tsx pipeline/build.ts validate a001-what-is-an-mis
+
+      - name: HyperFrames scene render (preview timing, no voice needed)
+        run: node studio/hyperframes/render-scene.mjs a001-what-is-an-mis predict --draft
+
+      - name: Full episode render (Kokoro voice + Revideo + mix + listen-back + QA)
+        working-directory: studio
+        run: npx tsx pipeline/build.ts render x000-revideo-pilot
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-smoke-output
+          path: |
+            ~/.edzola-video-studio/build/a001-what-is-an-mis/scenes/predict.mp4
+            episodes/x000-revideo-pilot/output/qa.json
+            episodes/x000-revideo-pilot/output/contact-sheet.png
+            episodes/x000-revideo-pilot/output/x000-revideo-pilot.mp4
+          if-no-files-found: warn

@@ -21,7 +21,10 @@ import {fileURLToPath} from 'node:url';
 const STUDIO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ROOT = path.resolve(STUDIO, '..');
 const HOME = process.env.EDZOLA_VIDEO_HOME ?? path.join(os.homedir(), '.edzola-video-studio');
-const PY = path.join(HOME, '.venv', 'bin', 'python');
+// Windows venvs keep the interpreter in Scripts\python.exe; macOS/Linux in bin/python.
+const venvPython = (venv: string) =>
+  process.platform === 'win32' ? path.join(venv, 'Scripts', 'python.exe') : path.join(venv, 'bin', 'python');
+const PY = venvPython(path.join(HOME, '.venv'));
 const MODELS = path.join(HOME, 'models');
 
 const readJson = (p: string) => JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -97,6 +100,9 @@ export function validate(id: string): {errors: string[]; warnings: string[]} {
     const blob = JSON.stringify(scene);
     for (const {name, re} of PII) if (re.test(blob)) errors.push(`${scene.id}: looks like it contains a ${name}. Never put PII in a storyboard.`);
   }
+
+  if (!board.creative) warnings.push('no `creative` block: declare structure, visual_world and bet (docs/16-creative-range.md)');
+  else if (/REPLACE/.test(JSON.stringify(board.creative))) warnings.push('`creative` still has template placeholders');
 
   for (const src of board.sources ?? []) {
     if (!fs.existsSync(path.join(ROOT, src))) errors.push(`source not found: ${src}`);
@@ -257,12 +263,13 @@ async function render(id: string) {
 /** One HyperFrames composition per scene, timed by narration, then joined. */
 function renderHyperframes(id: string, board: any, timing: any) {
   const p = paths(id);
-  const script = path.join(STUDIO, 'hyperframes', 'render-scene.sh');
+  const script = path.join(STUDIO, 'hyperframes', 'render-scene.mjs');
   const list: string[] = [];
   for (const scene of board.scenes) {
     const t0 = Date.now();
-    execFileSync('bash', [script, id, scene.id], {stdio: ['ignore', 'ignore', 'inherit']});
-    const clip = path.join(p.build, 'scenes', `${scene.id}.mp4`);
+    execFileSync(process.execPath, [script, id, scene.id, path.join(p.build, 'timing.json')], {stdio: ['ignore', 'ignore', 'inherit']});
+    // FFmpeg's concat list wants forward slashes, also on Windows.
+    const clip = path.join(p.build, 'scenes', `${scene.id}.mp4`).split(path.sep).join('/');
     list.push(`file '${clip.replace(/'/g, "'\\''")}'`);
     console.log(`  scene ${scene.id} rendered in ${((Date.now() - t0) / 1000).toFixed(0)}s`);
   }
@@ -334,7 +341,18 @@ function say(text: string, voice = 'bf_emma') {
   fs.writeFileSync(sb, JSON.stringify(board));
   execFileSync(PY, ['-I', path.join(STUDIO, 'pipeline', 'narrate.py'), sb, path.join(STUDIO, 'lexicon.json'), dir, MODELS], {stdio: 'inherit'});
   console.log(`spoken as: ${readJson(path.join(dir, 'timing.json')).scenes[0].beats[0].spoken}`);
-  execFileSync('afplay', [path.join(dir, 'narration.wav')]);
+  const wav = path.join(dir, 'narration.wav');
+  const player: Record<string, [string, string[]]> = {
+    darwin: ['afplay', [wav]],
+    win32: ['powershell', ['-NoProfile', '-Command', `(New-Object Media.SoundPlayer '${wav}').PlaySync()`]],
+    linux: ['aplay', [wav]],
+  };
+  const [cmd, argv] = player[process.platform] ?? ['', []];
+  try {
+    if (cmd) execFileSync(cmd, argv, {stdio: 'ignore'});
+  } catch {
+    console.log(`(couldn't play audio here; open ${wav})`);
+  }
 }
 
 // -------------------------------------------------------------------- main

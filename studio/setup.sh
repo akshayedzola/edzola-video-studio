@@ -23,11 +23,10 @@ WITH_VOICES=0
 say_step() { printf "\n\033[1;33m==> %s\033[0m\n" "$1"; }
 
 say_step "Checking prerequisites"
-command -v node >/dev/null || { echo "Install Node via nvm: https://github.com/nvm-sh/nvm, then: nvm install 22"; exit 1; }
+command -v node >/dev/null || { echo "Install Node 22+: https://github.com/nvm-sh/nvm then 'nvm install 22' (or brew install node@22)"; exit 1; }
 command -v ffmpeg >/dev/null || { echo "Install FFmpeg: brew install ffmpeg"; exit 1; }
 command -v uv >/dev/null || { echo "Install uv: curl -LsSf https://astral.sh/uv/install.sh | sh"; exit 1; }
-[ -s "$HOME/.nvm/nvm.sh" ] || { echo "nvm is required (HyperFrames needs Node 22): https://github.com/nvm-sh/nvm"; exit 1; }
-node -e 'const [a,b]=process.versions.node.split(".").map(Number); if(a<20||(a===20&&b<19)){console.error("Node >= 20.19 required");process.exit(1)}'
+node -e 'if (+process.versions.node.split(".")[0] < 22) { console.error("Node 22+ required (found " + process.version + "). With nvm: nvm install 22 && nvm use (the repo has an .nvmrc)"); process.exit(1) }'
 echo "node $(node -v) | $(ffmpeg -version | head -1 | cut -d' ' -f1-3) | $(uv --version)"
 
 say_step "Revideo engine (template episodes) in $ENGINE"
@@ -43,18 +42,13 @@ fi
 ln -sfn "$ENGINE/node_modules" "$STUDIO/node_modules"
 (cd "$ENGINE" && npx --yes puppeteer browsers install chrome-headless-shell >/dev/null && echo "chrome-headless-shell ready")
 
-say_step "HyperFrames engine (HTML/GSAP scenes, Node 22) in $HF_ENGINE"
-# shellcheck disable=SC1091
-source "$HOME/.nvm/nvm.sh"
-nvm install 22 >/dev/null 2>&1 || true
-nvm use 22 >/dev/null
+say_step "HyperFrames engine (HTML/GSAP scenes) in $HF_ENGINE"
 mkdir -p "$HF_ENGINE"
 if [ ! -d "$HF_ENGINE/node_modules/hyperframes" ]; then
-  (cd "$HF_ENGINE" && npm init -y >/dev/null && npm install --no-fund --no-audit hyperframes@0.8.181 gsap@3.14.2 >/dev/null)
+  (cd "$HF_ENGINE" && echo '{"private":true}' > package.json && npm install --no-fund --no-audit hyperframes@0.8.181 gsap@3.14.2 >/dev/null)
 fi
-(cd "$HF_ENGINE" && HYPERFRAMES_SKIP_SKILLS=1 npx hyperframes telemetry disable >/dev/null 2>&1 || true)
-echo "hyperframes $(cd "$HF_ENGINE" && node -p 'require("hyperframes/package.json").version')"
-nvm use default >/dev/null 2>&1 || true
+HYPERFRAMES_SKIP_SKILLS=1 node "$HF_ENGINE/node_modules/hyperframes/bin/hyperframes.mjs" telemetry disable >/dev/null 2>&1 || true
+echo "hyperframes $(node -p "require('$HF_ENGINE/node_modules/hyperframes/package.json').version")"
 
 say_step "Python env (Kokoro, mixing, listen-back) in $HOME_DIR/.venv"
 [ -x "$HOME_DIR/.venv/bin/python" ] || uv venv --python 3.11 "$HOME_DIR/.venv"

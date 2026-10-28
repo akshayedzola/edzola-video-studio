@@ -1,0 +1,1578 @@
+{
+  "total": 249.333,
+  "scenes": [
+    {
+      "id": "cold-open",
+      "start": 0.0,
+      "duration": 27.366666666666667,
+      "beats": [
+        {
+          "start": 0.6,
+          "end": 2.353,
+          "spoken": "Tomorrow. Ten a.m.",
+          "captions": [
+            {
+              "text": "Tomorrow. Ten a.m.",
+              "start": 0.6,
+              "end": 2.353
+            }
+          ],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": 0.775,
+              "gain": 0
+            },
+            {
+              "name": "tick",
+              "at": 1.652,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 2.753,
+          "end": 5.338,
+          "spoken": "Your biggest funder asks you one simple question.",
+          "captions": [
+            {
+              "text": "Your biggest funder asks you one simple question.",
+              "start": 2.753,
+              "end": 5.338
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 5.688,
+          "end": 7.655,
+          "spoken": "How many learners did you place this quarter?",
+          "captions": [
+            {
+              "text": "How many learners did you place this quarter?",
+              "start": 5.688,
+              "end": 7.655
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 8.155,
+          "end": 9.77,
+          "spoken": "Programme says three hundred and twelve.",
+          "captions": [
+            {
+              "text": "Programme says 312.",
+              "start": 8.155,
+              "end": 9.77
+            }
+          ],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 9.285,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 9.92,
+          "end": 11.825,
+          "spoken": "And M and E? Two eighty-seven.",
+          "captions": [
+            {
+              "text": "M&E says 287.",
+              "start": 9.92,
+              "end": 11.825
+            }
+          ],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 11.254,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 11.975,
+          "end": 13.571,
+          "spoken": "Finance says three forty-one!",
+          "captions": [
+            {
+              "text": "Finance says 341.",
+              "start": 11.975,
+              "end": 13.571
+            }
+          ],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 13.092,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 14.071,
+          "end": 17.173,
+          "spoken": "Same organisation. Same quarter. Three answers.",
+          "captions": [
+            {
+              "text": "Same organisation. Same quarter. Three answers.",
+              "start": 14.071,
+              "end": 17.173
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 17.673,
+          "end": 18.88,
+          "spoken": "So, who got it wrong?",
+          "captions": [
+            {
+              "text": "So who got it wrong?",
+              "start": 17.673,
+              "end": 18.88
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 19.58,
+          "end": 22.141,
+          "spoken": "Nobody. And that's exactly the problem.",
+          "captions": [
+            {
+              "text": "Nobody.",
+              "start": 19.58,
+              "end": 20.051
+            },
+            {
+              "text": "And that's exactly the problem.",
+              "start": 20.051,
+              "end": 22.141
+            }
+          ],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 19.708,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 22.641,
+          "end": 25.638,
+          "spoken": "Let's find out why. What is an M.I.S., really?",
+          "captions": [
+            {
+              "text": "Let's find out why.",
+              "start": 22.641,
+              "end": 23.997
+            },
+            {
+              "text": "What is an MIS, really?",
+              "start": 23.997,
+              "end": 25.638
+            }
+          ],
+          "sfx": [
+            {
+              "name": "rise",
+              "at": 23.241,
+              "gain": 0
+            },
+            {
+              "name": "chime",
+              "at": 24.889,
+              "gain": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hospital",
+      "start": 27.367,
+      "duration": 27.833333333333332,
+      "beats": [
+        {
+          "start": 0.6,
+          "end": 2.452,
+          "spoken": "Picture a hospital. One patient.",
+          "captions": [
+            {
+              "text": "Picture a hospital. One patient.",
+              "start": 0.6,
+              "end": 2.452
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 2.802,
+          "end": 7.019,
+          "spoken": "The doctor keeps a file. The nurse keeps her own file. The pharmacist keeps a third.",
+          "captions": [
+            {
+              "text": "The doctor keeps a file.",
+              "start": 2.802,
+              "end": 4.036
+            },
+            {
+              "text": "The nurse keeps her own file.",
+              "start": 4.036,
+              "end": 5.528
+            },
+            {
+              "text": "The pharmacist keeps a third.",
+              "start": 5.528,
+              "end": 7.019
+            }
+          ],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 3.013,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 4.489,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 5.965,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 7.369,
+          "end": 9.339,
+          "spoken": "On Monday, the doctor doubles the dose.",
+          "captions": [
+            {
+              "text": "On Monday, the doctor doubles the dose.",
+              "start": 7.369,
+              "end": 9.339
+            }
+          ],
+          "sfx": [
+            {
+              "name": "scribble",
+              "at": 8.551,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 9.689,
+          "end": 11.75,
+          "spoken": "The pharmacist's file never hears about it.",
+          "captions": [
+            {
+              "text": "The pharmacist's file never hears about it.",
+              "start": 9.689,
+              "end": 11.75
+            }
+          ],
+          "sfx": [
+            {
+              "name": "error",
+              "at": 10.926,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 12.25,
+          "end": 13.951,
+          "spoken": "You'd walk out of that hospital, wouldn't you?",
+          "captions": [
+            {
+              "text": "You'd walk out of that hospital, wouldn't you?",
+              "start": 12.25,
+              "end": 13.951
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 14.551,
+          "end": 19.41,
+          "spoken": "Now swap the words. The patient becomes a learner. The doctor becomes your programme team. The pharmacist becomes finance.",
+          "captions": [
+            {
+              "text": "Now swap the words.",
+              "start": 14.551,
+              "end": 15.327
+            },
+            {
+              "text": "The patient becomes a learner.",
+              "start": 15.327,
+              "end": 16.552
+            },
+            {
+              "text": "The doctor becomes your programme team.",
+              "start": 16.552,
+              "end": 18.144
+            },
+            {
+              "text": "The pharmacist becomes finance.",
+              "start": 18.144,
+              "end": 19.409
+            }
+          ],
+          "sfx": [
+            {
+              "name": "swish",
+              "at": 15.766,
+              "gain": 0
+            },
+            {
+              "name": "swish",
+              "at": 17.223,
+              "gain": 0
+            },
+            {
+              "name": "swish",
+              "at": 18.681,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 19.759,
+          "end": 26.23,
+          "spoken": "Most nonprofits run exactly like this hospital. Not because anyone is careless, but because nobody designed it any other way.",
+          "captions": [
+            {
+              "text": "Most nonprofits run exactly like this hospital.",
+              "start": 19.759,
+              "end": 22.232
+            },
+            {
+              "text": "Not because anyone is careless, but because nobody",
+              "start": 22.232,
+              "end": 24.862
+            },
+            {
+              "text": "designed it any other way.",
+              "start": 24.862,
+              "end": 26.23
+            }
+          ],
+          "sfx": []
+        }
+      ]
+    },
+    {
+      "id": "quarter-sim",
+      "start": 55.2,
+      "duration": 42.0,
+      "beats": [
+        {
+          "start": 0.6,
+          "end": 6.271,
+          "spoken": "Let's watch it happen. Meet Sitara Foundation, a fictional skilling nonprofit with five hundred learners.",
+          "captions": [
+            {
+              "text": "Let's watch it happen.",
+              "start": 0.6,
+              "end": 1.811
+            },
+            {
+              "text": "Meet Sitara Foundation, a fictional skilling",
+              "start": 1.811,
+              "end": 4.234
+            },
+            {
+              "text": "nonprofit with five hundred learners.",
+              "start": 4.234,
+              "end": 6.271
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 6.621,
+          "end": 10.278,
+          "spoken": "Week one. Kavya enrols. The field officer adds her to the programme sheet.",
+          "captions": [
+            {
+              "text": "Week one. Kavya enrols.",
+              "start": 6.621,
+              "end": 7.773
+            },
+            {
+              "text": "The field officer adds her to the programme sheet.",
+              "start": 7.773,
+              "end": 10.278
+            }
+          ],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 8.633,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 9.547,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 10.628,
+          "end": 16.37,
+          "spoken": "Week two. Her trainer marks attendance on paper. A week later, someone in M and E types it in again, as K. Sharma.",
+          "captions": [
+            {
+              "text": "Week two.",
+              "start": 10.628,
+              "end": 11.107
+            },
+            {
+              "text": "Her trainer marks attendance on paper.",
+              "start": 11.107,
+              "end": 13.127
+            },
+            {
+              "text": "A week later, someone in M&E types it in again, as K. Sharma.",
+              "start": 13.127,
+              "end": 16.37
+            }
+          ],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 14.073,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 15.509,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 16.72,
+          "end": 21.204,
+          "spoken": "Week three. Finance pays her stipend. Only finance knows, and to them she's Kavya S.",
+          "captions": [
+            {
+              "text": "Week three.",
+              "start": 16.72,
+              "end": 17.321
+            },
+            {
+              "text": "Finance pays her stipend.",
+              "start": 17.321,
+              "end": 18.689
+            },
+            {
+              "text": "Only finance knows, and to them she's Kavya S.",
+              "start": 18.689,
+              "end": 21.204
+            }
+          ],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 18.289,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 19.411,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 21.604,
+          "end": 25.524,
+          "spoken": "Now multiply Kaavya by five hundred. And run the clock, for the entire quarter.",
+          "captions": [
+            {
+              "text": "Now multiply Kavya by five hundred, and run the",
+              "start": 21.604,
+              "end": 24.128
+            },
+            {
+              "text": "clock for a whole quarter.",
+              "start": 24.128,
+              "end": 25.524
+            }
+          ],
+          "sfx": [
+            {
+              "name": "rise",
+              "at": 23.564,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 25.874,
+          "end": 29.732,
+          "spoken": "Every event lands in one sheet, but not the others. Copies drift. Spellings multiply.",
+          "captions": [
+            {
+              "text": "Every event lands in one sheet, but not the others. Copies drift.",
+              "start": 25.874,
+              "end": 28.859
+            },
+            {
+              "text": "Spellings multiply.",
+              "start": 28.859,
+              "end": 29.732
+            }
+          ],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 26.26,
+              "gain": 0
+            },
+            {
+              "name": "whoosh",
+              "at": 27.032,
+              "gain": 0
+            },
+            {
+              "name": "whoosh",
+              "at": 27.803,
+              "gain": 0
+            },
+            {
+              "name": "whoosh",
+              "at": 28.574,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 30.082,
+          "end": 35.803,
+          "spoken": "And quietly, a counter keeps climbing. Hours spent copying and reconciling. Forty. Eighty. A hundred and twenty.",
+          "captions": [
+            {
+              "text": "And quietly, a counter keeps climbing.",
+              "start": 30.082,
+              "end": 32.058
+            },
+            {
+              "text": "Hours spent copying and reconciling. Forty. Eighty.",
+              "start": 32.058,
+              "end": 34.71
+            },
+            {
+              "text": "A hundred and twenty.",
+              "start": 34.71,
+              "end": 35.803
+            }
+          ],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": 33.629,
+              "gain": 0
+            },
+            {
+              "name": "tick",
+              "at": 34.43,
+              "gain": 0
+            },
+            {
+              "name": "tick",
+              "at": 35.345,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 36.153,
+          "end": 40.276,
+          "spoken": "By the end of the quarter, Kavya lives in three places, and none of them agree.",
+          "captions": [
+            {
+              "text": "By the end of the quarter, Kavya lives in three",
+              "start": 36.153,
+              "end": 38.637
+            },
+            {
+              "text": "places, and none of them agree.",
+              "start": 38.637,
+              "end": 40.276
+            }
+          ],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 39.657,
+              "gain": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "predict",
+      "start": 97.2,
+      "duration": 14.866666666666667,
+      "beats": [
+        {
+          "start": 0.6,
+          "end": 2.122,
+          "spoken": "So here's a question for you.",
+          "captions": [
+            {
+              "text": "So here's a question for you.",
+              "start": 0.6,
+              "end": 2.122
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 2.472,
+          "end": 7.06,
+          "spoken": "If you had to send the funder one number tonight, which would you pick? Programme, M and E, or finance?",
+          "captions": [
+            {
+              "text": "If you had to send the funder one number tonight,",
+              "start": 2.472,
+              "end": 4.79
+            },
+            {
+              "text": "which would you pick?",
+              "start": 4.79,
+              "end": 5.783
+            },
+            {
+              "text": "Programme, M&E, or finance?",
+              "start": 5.783,
+              "end": 7.06
+            }
+          ],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 5.776,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 6.235,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 6.739,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 7.41,
+          "end": 8.745,
+          "spoken": "Take three seconds.",
+          "captions": [
+            {
+              "text": "Take three seconds.",
+              "start": 7.41,
+              "end": 8.745
+            }
+          ],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": 9.011,
+              "gain": 0
+            },
+            {
+              "name": "tick",
+              "at": 9.478,
+              "gain": 0
+            },
+            {
+              "name": "tick",
+              "at": 9.945,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 11.345,
+          "end": 13.344,
+          "spoken": "Got one? Good. Now hold on to it.",
+          "captions": [
+            {
+              "text": "Got one? Good. Hold on to it.",
+              "start": 11.345,
+              "end": 13.344
+            }
+          ],
+          "sfx": []
+        }
+      ]
+    },
+    {
+      "id": "twist",
+      "start": 112.067,
+      "duration": 25.866666666666667,
+      "beats": [
+        {
+          "start": 0.6,
+          "end": 2.211,
+          "spoken": "Here's what actually happened.",
+          "captions": [
+            {
+              "text": "Here's what actually happened.",
+              "start": 0.6,
+              "end": 2.211
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 2.561,
+          "end": 4.907,
+          "spoken": "Line up all three sheets and you get five hundred rows.",
+          "captions": [
+            {
+              "text": "Line up all three sheets and you get five hundred rows.",
+              "start": 2.561,
+              "end": 4.907
+            }
+          ],
+          "sfx": [
+            {
+              "name": "swish",
+              "at": 3.969,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 5.257,
+          "end": 8.971,
+          "spoken": "But thirty-seven of them are the same people, typed twice and spelled differently.",
+          "captions": [
+            {
+              "text": "But thirty-seven of them are the same people, typed",
+              "start": 5.257,
+              "end": 7.596
+            },
+            {
+              "text": "twice and spelled differently.",
+              "start": 7.596,
+              "end": 8.971
+            }
+          ],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 7.114,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 8.229,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 9.321,
+          "end": 12.917,
+          "spoken": "Merge them, and five hundred rows become four hundred and sixty-three real people.",
+          "captions": [
+            {
+              "text": "Merge them, and five hundred rows become four",
+              "start": 9.321,
+              "end": 11.319
+            },
+            {
+              "text": "hundred and sixty-three real people.",
+              "start": 11.319,
+              "end": 12.917
+            }
+          ],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": 11.838,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 13.267,
+          "end": 15.174,
+          "spoken": "Now count who was actually placed.",
+          "captions": [
+            {
+              "text": "Now count who was actually placed.",
+              "start": 13.267,
+              "end": 15.174
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 15.574,
+          "end": 16.816,
+          "spoken": "Two hundred and ninety-eight.",
+          "captions": [
+            {
+              "text": "Two hundred and ninety-eight.",
+              "start": 15.574,
+              "end": 16.816
+            }
+          ],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 15.574,
+              "gain": 0
+            },
+            {
+              "name": "chime",
+              "at": 16.195,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 17.416,
+          "end": 19.103,
+          "spoken": "None of the three numbers was right.",
+          "captions": [
+            {
+              "text": "None of the three numbers was right.",
+              "start": 17.416,
+              "end": 19.103
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 19.503,
+          "end": 24.034,
+          "spoken": "And here's the twist. Each team counted correctly. They were just counting different things.",
+          "captions": [
+            {
+              "text": "And here's the twist.",
+              "start": 19.503,
+              "end": 20.56
+            },
+            {
+              "text": "Each team counted correctly.",
+              "start": 20.56,
+              "end": 21.97
+            },
+            {
+              "text": "They were just counting different things.",
+              "start": 21.97,
+              "end": 24.034
+            }
+          ],
+          "sfx": []
+        }
+      ]
+    },
+    {
+      "id": "build-mis",
+      "start": 137.933,
+      "duration": 46.06666666666667,
+      "beats": [
+        {
+          "start": 0.6,
+          "end": 4.23,
+          "spoken": "So what would fix this? Not a better spreadsheet. A different kind of system.",
+          "captions": [
+            {
+              "text": "So what would fix this?",
+              "start": 0.6,
+              "end": 1.713
+            },
+            {
+              "text": "Not a better spreadsheet.",
+              "start": 1.713,
+              "end": 2.923
+            },
+            {
+              "text": "A different kind of system.",
+              "start": 2.923,
+              "end": 4.23
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 4.58,
+          "end": 6.283,
+          "spoken": "Let's build it, one floor at a time.",
+          "captions": [
+            {
+              "text": "Let's build it, one floor at a time.",
+              "start": 4.58,
+              "end": 6.283
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 6.683,
+          "end": 11.113,
+          "spoken": "Floor one. One ID per person. Kavya gets one record, and only one.",
+          "captions": [
+            {
+              "text": "Floor one.",
+              "start": 6.683,
+              "end": 7.375
+            },
+            {
+              "text": "One ID per person.",
+              "start": 7.375,
+              "end": 8.621
+            },
+            {
+              "text": "Kavya gets one record, and only one.",
+              "start": 8.621,
+              "end": 11.113
+            }
+          ],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 6.904,
+              "gain": 0
+            },
+            {
+              "name": "swish",
+              "at": 9.784,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 11.463,
+          "end": 17.534,
+          "spoken": "Floor two. One place to record each event. Enrolment, attendance, stipend, placement. Entered once, where the work happens.",
+          "captions": [
+            {
+              "text": "Floor two.",
+              "start": 11.463,
+              "end": 11.969
+            },
+            {
+              "text": "One place to record each event.",
+              "start": 11.969,
+              "end": 13.537
+            },
+            {
+              "text": "Enrolment, attendance, stipend, placement.",
+              "start": 13.537,
+              "end": 15.662
+            },
+            {
+              "text": "Entered once, where the work happens.",
+              "start": 15.662,
+              "end": 17.534
+            }
+          ],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 11.584,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 14.195,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 14.802,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 15.409,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 16.016,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 17.884,
+          "end": 23.29,
+          "spoken": "Floor three. Shared rules. Placed means the same thing to everyone, and the system won't let you mark someone placed before they've trained.",
+          "captions": [
+            {
+              "text": "Floor three. Shared rules.",
+              "start": 17.884,
+              "end": 18.91
+            },
+            {
+              "text": "Placed means the same thing to everyone, and the",
+              "start": 18.91,
+              "end": 20.804
+            },
+            {
+              "text": "system won't let you mark someone placed before",
+              "start": 20.804,
+              "end": 22.659
+            },
+            {
+              "text": "they've trained.",
+              "start": 22.659,
+              "end": 23.29
+            }
+          ],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 17.992,
+              "gain": 0
+            },
+            {
+              "name": "error",
+              "at": 22.479,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 23.64,
+          "end": 29.534,
+          "spoken": "Floor four. A view for every team. Programme, M and E and finance each see their own screen, all drawing from the same record.",
+          "captions": [
+            {
+              "text": "Floor four.",
+              "start": 23.64,
+              "end": 24.185
+            },
+            {
+              "text": "A view for every team.",
+              "start": 24.185,
+              "end": 25.275
+            },
+            {
+              "text": "Programme, M&E and finance each see their own",
+              "start": 25.275,
+              "end": 27.503
+            },
+            {
+              "text": "screen, all drawing from the same record.",
+              "start": 27.503,
+              "end": 29.534
+            }
+          ],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 23.758,
+              "gain": 0
+            },
+            {
+              "name": "swish",
+              "at": 27.177,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 29.884,
+          "end": 35.548,
+          "spoken": "Floor five, the one most people miss. The data flows back to the field. Kavya has missed three sessions. Call her today.",
+          "captions": [
+            {
+              "text": "Floor five, the one most people miss.",
+              "start": 29.884,
+              "end": 31.66
+            },
+            {
+              "text": "The data flows back to the field.",
+              "start": 31.66,
+              "end": 33.244
+            },
+            {
+              "text": "Kavya has missed three sessions. Call her today.",
+              "start": 33.244,
+              "end": 35.548
+            }
+          ],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": 29.998,
+              "gain": 0
+            },
+            {
+              "name": "ping",
+              "at": 33.962,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 36.148,
+          "end": 39.821,
+          "spoken": "Put those five floors together, and you have a management information system.",
+          "captions": [
+            {
+              "text": "Put those five floors together, and you have a",
+              "start": 36.148,
+              "end": 38.371
+            },
+            {
+              "text": "management information system.",
+              "start": 38.371,
+              "end": 39.821
+            }
+          ],
+          "sfx": [
+            {
+              "name": "rise",
+              "at": 37.25,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 40.171,
+          "end": 44.138,
+          "spoken": "One record per person, shared by everyone, that the work actually runs through.",
+          "captions": [
+            {
+              "text": "One record per person, shared by everyone, that the",
+              "start": 40.171,
+              "end": 42.765
+            },
+            {
+              "text": "work actually runs through.",
+              "start": 42.765,
+              "end": 44.138
+            }
+          ],
+          "sfx": [
+            {
+              "name": "chime",
+              "at": 40.568,
+              "gain": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "replay",
+      "start": 184.0,
+      "duration": 21.233333333333334,
+      "beats": [
+        {
+          "start": 0.6,
+          "end": 4.973,
+          "spoken": "Now let's replay that same quarter. Same learners, same events, but with an M.I.S..",
+          "captions": [
+            {
+              "text": "Now let's replay that same quarter.",
+              "start": 0.6,
+              "end": 2.537
+            },
+            {
+              "text": "Same learners, same events, but with an MIS.",
+              "start": 2.537,
+              "end": 4.973
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 5.323,
+          "end": 8.215,
+          "spoken": "On the left, the old way. Three sheets, three versions.",
+          "captions": [
+            {
+              "text": "On the left, the old way.",
+              "start": 5.323,
+              "end": 6.662
+            },
+            {
+              "text": "Three sheets, three versions.",
+              "start": 6.662,
+              "end": 8.215
+            }
+          ],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 6.769,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 8.565,
+          "end": 11.696,
+          "spoken": "On the right, every event lands in one record, the moment it happens.",
+          "captions": [
+            {
+              "text": "On the right, every event lands in one record, the",
+              "start": 8.565,
+              "end": 10.868
+            },
+            {
+              "text": "moment it happens.",
+              "start": 10.868,
+              "end": 11.696
+            }
+          ],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": 9.505,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 10.131,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 10.6,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 11.07,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 12.046,
+          "end": 15.582,
+          "spoken": "At the end of the quarter, everyone sees the same number. Two hundred and ninety-eight.",
+          "captions": [
+            {
+              "text": "At the end of the quarter, everyone sees the same number.",
+              "start": 12.046,
+              "end": 14.39
+            },
+            {
+              "text": "Two hundred and ninety-eight.",
+              "start": 14.39,
+              "end": 15.582
+            }
+          ],
+          "sfx": [
+            {
+              "name": "chime",
+              "at": 14.698,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 15.932,
+          "end": 19.515,
+          "spoken": "The funder call takes two minutes, and those hundred and twenty hours go back to the learners.",
+          "captions": [
+            {
+              "text": "The funder call takes two minutes, and those hundred",
+              "start": 15.932,
+              "end": 17.936
+            },
+            {
+              "text": "and twenty hours go back to the learners.",
+              "start": 17.936,
+              "end": 19.515
+            }
+          ],
+          "sfx": []
+        }
+      ]
+    },
+    {
+      "id": "not-list",
+      "start": 205.233,
+      "duration": 29.5,
+      "beats": [
+        {
+          "start": 0.6,
+          "end": 3.076,
+          "spoken": "Before we finish, three things an M.I.S. is not.",
+          "captions": [
+            {
+              "text": "Before we finish, three things an MIS is not.",
+              "start": 0.6,
+              "end": 3.076
+            }
+          ],
+          "sfx": []
+        },
+        {
+          "start": 3.426,
+          "end": 8.392,
+          "spoken": "It's not software you buy. Software is a tool. The system is how your organisation agrees to work.",
+          "captions": [
+            {
+              "text": "It's not software you buy.",
+              "start": 3.426,
+              "end": 4.771
+            },
+            {
+              "text": "Software is a tool.",
+              "start": 4.771,
+              "end": 5.754
+            },
+            {
+              "text": "The system is how your organisation agrees to work.",
+              "start": 5.754,
+              "end": 8.392
+            }
+          ],
+          "sfx": [
+            {
+              "name": "strike",
+              "at": 4.171,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 8.742,
+          "end": 12.181,
+          "spoken": "It's not a dashboard. A dashboard without a decision is decoration.",
+          "captions": [
+            {
+              "text": "It's not a dashboard.",
+              "start": 8.742,
+              "end": 9.836
+            },
+            {
+              "text": "A dashboard without a decision is decoration.",
+              "start": 9.836,
+              "end": 12.181
+            }
+          ],
+          "sfx": [
+            {
+              "name": "strike",
+              "at": 9.258,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 12.531,
+          "end": 15.771,
+          "spoken": "And it's not a bigger spreadsheet. More columns won't fix three copies.",
+          "captions": [
+            {
+              "text": "And it's not a bigger spreadsheet.",
+              "start": 12.531,
+              "end": 14.105
+            },
+            {
+              "text": "More columns won't fix three copies.",
+              "start": 14.105,
+              "end": 15.771
+            }
+          ],
+          "sfx": [
+            {
+              "name": "strike",
+              "at": 13.179,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 16.271,
+          "end": 19.159,
+          "spoken": "So here are three questions to ask your team on Monday.",
+          "captions": [
+            {
+              "text": "So here are three questions to ask your team on Monday.",
+              "start": 16.271,
+              "end": 19.159
+            }
+          ],
+          "sfx": [
+            {
+              "name": "swish",
+              "at": 17.138,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 19.509,
+          "end": 22.027,
+          "spoken": "One. How many places does one learner live?",
+          "captions": [
+            {
+              "text": "One.",
+              "start": 19.509,
+              "end": 19.749
+            },
+            {
+              "text": "How many places does one learner live?",
+              "start": 19.749,
+              "end": 22.027
+            }
+          ],
+          "sfx": [
+            {
+              "name": "scribble",
+              "at": 20.265,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 22.377,
+          "end": 24.451,
+          "spoken": "Two. Who decides what placed means?",
+          "captions": [
+            {
+              "text": "Two.",
+              "start": 22.377,
+              "end": 22.621
+            },
+            {
+              "text": "Who decides what placed means?",
+              "start": 22.621,
+              "end": 24.451
+            }
+          ],
+          "sfx": [
+            {
+              "name": "scribble",
+              "at": 22.999,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 24.801,
+          "end": 27.779,
+          "spoken": "Three. Does the data ever come back to the people in the field?",
+          "captions": [
+            {
+              "text": "Three.",
+              "start": 24.801,
+              "end": 25.089
+            },
+            {
+              "text": "Does the data ever come back to the people in the field?",
+              "start": 25.089,
+              "end": 27.779
+            }
+          ],
+          "sfx": [
+            {
+              "name": "scribble",
+              "at": 25.694,
+              "gain": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "start": 234.733,
+      "duration": 14.6,
+      "beats": [
+        {
+          "start": 0.6,
+          "end": 8.197,
+          "spoken": "At Ed Zola, we build these systems in three moves. Model what's worth knowing. Align it with how people actually work. And power it with A.I., once the data can be trusted.",
+          "captions": [
+            {
+              "text": "At EdZola, we build these systems in three moves.",
+              "start": 0.6,
+              "end": 2.843
+            },
+            {
+              "text": "Model what's worth knowing.",
+              "start": 2.843,
+              "end": 4.078
+            },
+            {
+              "text": "Align it with how people actually work.",
+              "start": 4.078,
+              "end": 5.863
+            },
+            {
+              "text": "And power it with AI, once the data can be trusted.",
+              "start": 5.863,
+              "end": 8.197
+            }
+          ],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": 3.259,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 5.006,
+              "gain": 0
+            },
+            {
+              "name": "pop",
+              "at": 6.83,
+              "gain": 0
+            }
+          ]
+        },
+        {
+          "start": 8.547,
+          "end": 12.425,
+          "spoken": "Next time: why an eighty percent placement rate might not mean what you think.",
+          "captions": [
+            {
+              "text": "Next time: why an eighty percent placement rate",
+              "start": 8.547,
+              "end": 10.914
+            },
+            {
+              "text": "might not mean what you think.",
+              "start": 10.914,
+              "end": 12.425
+            }
+          ],
+          "sfx": [
+            {
+              "name": "swish",
+              "at": 8.935,
+              "gain": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

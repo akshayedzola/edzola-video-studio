@@ -14,12 +14,13 @@ You are helping a contributor make one teaching video. Quality bar: `episodes/a0
 
 ## 1. Brief (`brief.md`) and knowledge (`knowledge-brief.md`)
 - Read the issue's knowledge sources, plus `knowledge/edzola/brand-voice.md`, `docs/13-explainer-formula.md` and `docs/09-pedagogy-and-formats.md`.
-- Decide: the viewer's question, the misconception, **the analogy** (familiar, high-stakes, maps word for word), **the twist** (overturns the viewer's likely guess), the Monday takeaway.
+- Decide: the viewer's question, the misconception, the active moment, the reframe, the Monday takeaway (the six fixed principles in `docs/16-creative-range.md`).
+- Propose **three genuinely different treatments**, each a different structure *and* visual world from docs/16. Check TRACKER for the last three published in the series and don't repeat their combination. **Never default to the a001 nine-move mystery**; it's one option among many. Record the chosen `creative` block.
 - Facts only from `knowledge/` or primary public sources; every number goes in `knowledge/claims-register.md`. Use the fictional Sitara Foundation (or add fictional characters to its bible).
 - Show the human the brief and get agreement before writing the script.
 
 ## 2. Storyboard (`storyboard.json`)
-- Nine scenes, one per formula move (Shorts: moves 1, 5 and 9).
+- As many scenes as the chosen structure needs (a001 used nine; a Short may use three).
 - One beat = one spoken sentence under ~15 words; each beat has `voice: {pace, energy, direction}`, a cue-worthy change on screen, and 0–3 `sfx`.
 - Digits in `text`, spelled out in `say`; acronyms and names in `studio/lexicon.json`.
 - Every scene gets a `visual` brief: what appears on which beat.
@@ -32,7 +33,7 @@ You are helping a contributor make one teaching video. Quality bar: `episodes/a0
 ## 4. Scenes (`episodes/<id>/scenes/<scene>.html`)
 - Follow `studio/hyperframes/SCENE_GUIDE.md` exactly. Start from the closest pattern in `studio/hyperframes/patterns/README.md`.
 - Time everything with `EZ.b(n)` / `EZ.at(n, f)` from narration; never literal seconds for narrated events.
-- `bash studio/hyperframes/render-scene.sh <id> <scene> --snap "<a time in every beat>"`; the check must pass. **Read every snapshot PNG** and fix overlaps, cropping, tiny text and empty frames before moving on.
+- `node studio/hyperframes/render-scene.mjs <id> <scene> --snap "<a time in every beat>"`; the check must pass. **Read every snapshot PNG** and fix overlaps, cropping, tiny text and empty frames before moving on.
 
 ## 5. Render and self-review
 - `npm run render -- <id>`. Confirm `qa.json` (duration_ok, loudness_ok, 0 black segments, 0 listen-back flags).

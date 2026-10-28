@@ -76,7 +76,7 @@ function check({long, derived}) {
 }
 
 function gh(argv, input) {
-  return execFileSync('gh', argv, {encoding: 'utf8', input, stdio: [input ? 'pipe' : 'ignore', 'pipe', 'inherit']});
+  return execFileSync('gh', argv, {encoding: 'utf8', input, stdio: [input ? 'pipe' : 'ignore', 'pipe', 'inherit'], shell: process.platform === 'win32'});
 }
 
 export const LABELS = [
@@ -95,6 +95,7 @@ export const LABELS = [
   ['playbook', '0052cc', 'Improves the playbook, docs, knowledge or tooling'],
   ['learning-loop', '006b75', 'A lesson to fold back into the playbook'],
   ['stale-claim', 'cccccc', 'Claimed but idle for 14+ days'],
+  ['creative-lab', 'ff77c8', 'Experiments with new structures, visual worlds or devices'],
 ];
 
 export function issueBody(e) {
@@ -129,7 +130,7 @@ function seedIssues({long}) {
     if (dry) { console.log(`would create [${e.id}] ${e.title}`); continue; }
     gh(['issue', 'create', '--title', `[${e.id}] ${e.title}`, '--body-file', '-', ...labels.flatMap(l => ['--label', l])], issueBody(e));
     console.log(`created [${e.id}]`);
-    execFileSync('sleep', ['1.2']); // stay under GitHub's content-creation rate limit
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 1200); // portable sleep: stay under GitHub's content-creation rate limit
   }
   console.log(`${todo.length} issue(s) ${dry ? 'to create' : 'created'}; ${existing.size} already existed`);
 }

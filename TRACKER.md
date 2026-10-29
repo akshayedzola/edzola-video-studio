@@ -19,8 +19,8 @@
 
 | Episode | Title | Stage | Who | Idle (days) |
 |---|---|---|---|---|
-| [b013-why-duplicates-happen](https://github.com/akshayedzola/edzola-video-studio/issues/43) | Why duplicates happen, and how systems prevent them | Claimed | @VishwaPoojithaKannan | 0 |
-| [a003-placement-vs-employment](https://github.com/akshayedzola/edzola-video-studio/issues/3) | Why 80% placement isn't 80% employment | Claimed | @VishwaPoojithaKannan | 0 |
+| [b013-why-duplicates-happen](https://github.com/akshayedzola/edzola-video-studio/issues/43) | Why duplicates happen, and how systems prevent them | Claimed | @VishwaPoojithaKannan | 1 |
+| [a003-placement-vs-employment](https://github.com/akshayedzola/edzola-video-studio/issues/3) | Why 80% placement isn't 80% employment | Claimed | @VishwaPoojithaKannan | 1 |
 
 ## Recently published
 

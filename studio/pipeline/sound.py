@@ -145,12 +145,122 @@ EFFECTS = {f.__name__: f for f in (tick, pop, whoosh, swish, thud, chime, rise, 
 
 # ------------------------------------------------------------------- music
 
+def ambient_lift(seconds):
+    """Ambient electronic score for 30 s brand films, shaped to the five-act arc.
+
+    0-6 s sparse pad (the challenge), 6 s the pulse and arpeggio enter (Zolabs),
+    a riser into the insights at ~14.5 s, a fuller section, then one held chord
+    blooming under the end card from ~24 s.
+    """
+    bpm = 100
+    beat = 60 / bpm
+    total = int(seconds * SR)
+    x = np.arange(total) / SR
+    out = np.zeros(total)
+
+    # Am9 - Fmaj9 - Cadd9 - G6 (bar = 4 beats = 2.4 s); the end card holds Fmaj9 -> C.
+    chords = [
+        [110.00, 164.81, 246.94, 261.63, 329.63],
+        [87.31, 174.61, 220.00, 261.63, 392.00],
+        [130.81, 196.00, 293.66, 329.63, 392.00],
+        [98.00, 146.83, 246.94, 293.66, 329.63],
+    ]
+    bar = 4 * beat
+    end_at = 24.0
+    def chord_at(sec):
+        return chords[2] if sec >= end_at else chords[int(sec // bar) % 4]
+
+    # Pad: detuned sines with soft upper partials, crossfaded per bar.
+    n_bars = int(np.ceil(seconds / bar))
+    for b in range(n_bars):
+        s0 = b * bar
+        if s0 >= end_at:
+            break
+        ch = chords[b % 4]
+        seg_len = min(bar + 0.8, end_at + 0.6 - s0)
+        i0, n = int(s0 * SR), int(seg_len * SR)
+        n = min(n, total - i0)
+        xx = np.arange(n) / SR
+        e = np.minimum(1, xx / 0.7) * np.minimum(1, np.maximum(0, (seg_len - xx) / 0.8))
+        p = sum(np.sin(2 * np.pi * f * xx) + 0.5 * np.sin(2 * np.pi * f * 1.004 * xx + 1.3)
+                + 0.12 * np.sin(4 * np.pi * f * xx) for f in ch[1:])
+        out[i0:i0 + n] += 0.045 * p * e
+    # End-card bloom: a long held C chord.
+    i0 = int((end_at - 0.3) * SR)
+    xx = np.arange(total - i0) / SR
+    e = np.minimum(1, xx / 1.2)
+    bloom = sum(np.sin(2 * np.pi * f * xx) + 0.5 * np.sin(2 * np.pi * f * 1.003 * xx)
+                + 0.25 * np.sin(4 * np.pi * f * xx + 0.7 * np.sin(2 * np.pi * 0.3 * xx)) for f in chords[2])
+    out[i0:] += 0.05 * bloom * e
+
+    # Pulse (sub thump on each beat) with a gentle sidechain pump on everything else, 9-24 s.
+    pump = np.ones(total)
+    sub = np.zeros(total)
+    k = 0
+    while True:
+        s = 6.0 + k * beat
+        if s >= end_at:
+            break
+        k += 1
+        i = int(s * SR)
+        n = min(int(0.5 * SR), total - i)
+        xx = np.arange(n) / SR
+        f = chord_at(s)[0] / 2 if s < 9 else chord_at(s)[0]
+        amp = 0.10 if s < 9 else 0.16
+        sub[i:i + n] += amp * np.sin(2 * np.pi * (f * xx + 18 * (1 - np.exp(-xx / 0.03)) * 0.03)) * np.exp(-xx / 0.22)
+        if s >= 9:
+            pump[i:i + n] *= 1 - 0.35 * np.exp(-xx / 0.12)
+    out *= pump
+
+    # Plucked arpeggio on eighths with a dotted-eighth echo; denser and brighter after the riser.
+    arp = np.zeros(total)
+    order = [1, 2, 3, 4, 3, 2, 4, 3]
+    k = 0
+    while True:
+        s = 6.0 + k * beat / 2
+        if s >= end_at - 0.2:
+            break
+        ch = chord_at(s)
+        f = ch[order[k % 8]] * (2 if s < 14.6 else 4 if k % 4 == 3 else 2)
+        k += 1
+        i = int(s * SR)
+        n = min(int(0.45 * SR), total - i)
+        xx = np.arange(n) / SR
+        g = 0.035 if s < 14.6 else 0.05
+        arp[i:i + n] += g * (np.sin(2 * np.pi * f * xx) + 0.25 * np.sin(6 * np.pi * f * xx)) * np.exp(-xx / 0.16)
+    d = int(0.75 * beat * SR)
+    echo = np.zeros(total)
+    for r in range(1, 5):
+        echo[d * r:] += arp[: total - d * r] * (0.38 ** r)
+    arp = lowpass(arp + echo, 4200)
+
+    # Riser into the insights (13.4-14.7 s) and a soft swell into the end card.
+    def riser(s0, s1, gain):
+        i0, i1 = int(s0 * SR), int(s1 * SR)
+        n = i1 - i0
+        noise = rng.standard_normal(n)
+        cut = np.linspace(400, 5000, n)
+        r = lowpass(noise, cut) * np.linspace(0, 1, n) ** 2 * gain
+        out[i0:i1] += r
+    riser(13.3, 14.7, 0.16)
+    riser(22.6, 24.0, 0.10)
+
+    out = out + arp + sub
+    out = lowpass(out, 6500)
+    fade_in, fade_out = int(1.2 * SR), int(2.2 * SR)
+    out[:fade_in] *= np.linspace(0, 1, fade_in)
+    out[-fade_out:] *= np.linspace(1, 0, fade_out)
+    return norm(out, 0.55)
+
+
 def music(seconds, style="warm-pulse"):
     """Soft 84 bpm bed: warm pad chords + gentle plucked arpeggio + soft pulse.
 
     Deliberately quiet and unobtrusive (coherence principle): it adds energy
     without competing with narration, and is ducked under the voice later.
     """
+    if style == "ambient-lift":
+        return ambient_lift(seconds)
     bpm = 84
     beat = 60 / bpm
     bar = 4 * beat

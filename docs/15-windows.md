@@ -52,7 +52,7 @@ Outputs land in `episodes\<id>\output\` (never committed). Snapshots and build f
 | Sound effects, music bed, mixing, captions, QA | ✅ | |
 | `macos-say` voice | ❌ | macOS only (it's just a fallback) |
 
-**No NVIDIA GPU?** Draft with Kokoro (`"engine": "kokoro"` in the storyboard), build and review your scenes, then ask a teammate with a GPU or a Mac to run the final Chatterbox narration. Narration is cached by content, so they only re-voice; your scenes re-time automatically. You can also design scenes before any voicing: `render-scene.mjs` falls back to the episode's committed `timing.preview.json`.
+**No NVIDIA GPU?** Draft with Kokoro (`"engine": "kokoro"` in the storyboard), build and review your scenes, then ask a teammate with a GPU or a Mac to run the final Chatterbox narration. Narration is cached by content, so they only re-voice; your scenes re-time automatically. You can also design scenes before any voicing: `render-scene.mjs` falls back to the episode's committed `timing.preview.json`. Once a build exists it prefers the build's `timing.json`, so pass the preview file explicitly to design against it: `node hyperframesender-scene.mjs <id> <scene> ..episodes<id>	iming.preview.json --snap "3,8"`.
 
 ## Git on Windows
 
@@ -71,4 +71,10 @@ Outputs land in `episodes\<id>\output\` (never committed). Snapshots and build f
 | `studio\node_modules is a real folder` | Delete `studio\node_modules`, then re-run setup (it creates a junction) |
 | Chatterbox very slow | No CUDA: check `nvidia-smi`; otherwise draft with Kokoro (above) |
 | Antivirus slows `npm install` or Chrome downloads | Exclude `%USERPROFILE%\.edzola-video-studio` from real-time scanning (ask IT) |
+| `python` not found, or it opens the Microsoft Store | Stock Windows only has the Store alias. Use the studio venv: `%USERPROFILE%.edzola-video-studio.venvScriptspython.exe` |
+| Chatterbox fails with "paging file is too small (os error 1455)" | 8 GB laptops can't load it. Use a 16 GB+ machine or raise the Windows page file; draft with Kokoro meanwhile |
+| Voice engines not found after a manual install | The voice venv must live at `%USERPROFILE%.edzola-video-studiooice-lab.venv` (`EDZOLA_VIDEO_HOME`), not `~oice-lab` |
+| `/claim` posted as `C:/Program Files/Git/claim` and the bot ignores it | Git Bash path conversion. Comment from PowerShell, or prefix with `MSYS_NO_PATHCONV=1` |
+| `ENAMETOOLONG` when an agent writes a file | A very long Bash heredoc. Have it write the file with its file-writing tool instead |
+| Need the text of a PDF brief | Git Bash ships `pdftotext`: `pdftotext -layout brief.pdf -` (`pdftoppm` isn't installed, so page images aren't available) |
 | Anything else | Check [docs/12-runbook.md](12-runbook.md), then open an issue with the *Playbook improvement* form and paste the error |

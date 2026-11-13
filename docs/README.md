@@ -19,5 +19,6 @@
 | 14 | [Content strategy and tracking](14-content-strategy-and-tracking.md) | How 3,500 videos fit together; stages; GitHub vs Zoho Sprints |
 | 15 | [Working on Windows](15-windows.md) | You have a Windows laptop |
 | **16** | **[Creative range](16-creative-range.md)** | **Before every episode, with 13: what's fixed, what's free, how we avoid sameness** |
+| 17 | [Vertical reels and promos](17-reels-and-promos.md) | Making a 9:16 reel or a promo for an EdZola offering (DPDP, Zolabs) |
 
 HyperFrames scenes: [studio/hyperframes/SCENE_GUIDE.md](../studio/hyperframes/SCENE_GUIDE.md) and [patterns](../studio/hyperframes/patterns/README.md).

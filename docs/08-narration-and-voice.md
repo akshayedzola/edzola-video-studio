@@ -8,6 +8,9 @@
 - Avoid "it's not X, it's Y". Say "Many teams think X. But Y." and let the visual do the contrast.
 - No em dashes. Use full stops; the voice pauses better on them.
 - Numbers: write digits in `text` (captions) and spell them out in `say`.
+- Acronyms: write them plain in `say` ("DPDP", not "D.P.D.P."). Full stops make Kokoro pause after every letter.
+- Years: keep them on screen and out of `say`; Whisper writes spoken years as digits and listen-back flags the line.
+- Short promos: sound conversational, not like a list of full-stop sentences. Contractions, "So…", "Plus…", and beats that end on a comma and run on. Keep gaps tight (`pause` about 0.1, `hold` about 0.25, `lead_in` about 0.15). Budget about 75 words for a 30 s reel. See [17](17-reels-and-promos.md).
 - Avoid words that blur into homophones when spoken. ep000's "Programme marks her as placed" was transcribed as "program marks are replaced", so we rewrote it. The listen-back check exists to catch exactly this.
 
 ## Voice settings
@@ -15,7 +18,7 @@
 | Setting | Default | Notes |
 |---|---|---|
 | Engine | `kokoro` (local, Apache-2.0) | `macos-say` is a no-dependency fallback (`Aman` en-IN voice), lower quality |
-| Voice | `bf_emma` (British female) | Alternatives: `bf_isabella`, `bm_george`, `bm_lewis` (British), `af_heart` (American, best overall quality). Hindi: `hf_alpha`, `hf_beta`, `hm_omega`, `hm_psi` |
+| Voice | `bf_emma` (British female) | Alternatives: `bf_isabella`, `bm_george`, `bm_lewis` (British), `af_heart` (American, best overall quality; used at speed 1.04 to 1.2 for promos). Hindi: `hf_alpha`, `hf_beta`, `hm_omega`, `hm_psi` |
 | Speed | 1.0 | 0.95 for dense technical episodes |
 | Lang | `en-gb` | Matches British English spelling |
 
@@ -34,4 +37,4 @@ Pick one voice per series and keep it. Viewers bond with a consistent narrator.
 1. **Indian-English narrator:** clone a consenting EdZola team member's voice with Chatterbox (MIT, local), or use Sarvam Bulbul v3 (en-IN, API). Add the engine to `narrate.py`'s `Voice` class; the rest of the pipeline is unchanged.
 2. **Hindi / Tamil versions:** translate `text` per beat (human-reviewed), set `voice.lang`, re-render. Visual text in `props` needs translating too, so keep it short.
 3. **Word-level timing** (for word-by-word caption highlighting): add WhisperX forced alignment of the known text.
-4. **Music:** licensed beds only, in `assets/music/` with licence notes. Set `"music": "file.mp3"` in the storyboard; it's mixed at −24 dB. Coherence principle: leave music off for dense explanations.
+4. **Music:** built-in procedural beds need no licence: `"music": "procedural:warm-pulse"` (soft 84 bpm bed, the default) or `"procedural:ambient-lift"` (100 bpm ambient score shaped for 30 s brand films; see [17](17-reels-and-promos.md)). Otherwise licensed beds only, in `assets/music/` with licence notes. Set `"music": "file.mp3"` in the storyboard; it's mixed at −24 dB. Coherence principle: leave music off for dense explanations.

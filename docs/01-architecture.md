@@ -78,6 +78,6 @@ A template builds all its visuals hidden on `stage` and returns named actions (`
 ## Extending
 
 - **New template:** add `src/templates/X.tsx`, register it in `src/templates/index.ts` **and** `templates.manifest.json`, then document it in [06-scene-template-library.md](06-scene-template-library.md).
-- **Vertical Shorts (next):** add `aspect: "9:16"` support. Templates read layout from a frame object, and the project size switches to 1080×1920.
+- **Vertical (9:16):** HyperFrames episodes already render 1080×1920 by setting the scene size; see [17](17-reels-and-promos.md). Revideo templates still need `aspect: "9:16"` support (layout from a frame object, project size 1080×1920).
 - **Manim / Excalidraw assets:** render to SVG/MP4, place under `assets/`, and embed with `Img`/`Video` inside a template.
 - **Product walkthroughs:** Playwright script records a demo tenant to MP4; a `UIHighlight` template overlays zooms and callouts on it.

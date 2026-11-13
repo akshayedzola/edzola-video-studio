@@ -21,3 +21,6 @@ assets/sfx/*.wav
 .env.*
 changed.txt
 experiments/**/renders/
+
+# Licensed third-party illustrations (e.g. Storyset): personal licence, no redistribution
+episodes/*/assets-storyset/

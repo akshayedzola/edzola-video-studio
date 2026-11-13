@@ -53,3 +53,27 @@ node studio/hyperframes/render-scene.mjs <ep> <scene> [timing.json]
 ```
 
 The check gate (lint, runtime, layout overlap, motion, WCAG contrast) must pass. **Look at the snapshot PNGs** at every beat before calling a scene done.
+
+## Vertical (9:16) scenes
+
+Set `data-width="1080" data-height="1920"` and override `html, body, #root` and `#ez-caption` in the scene CSS; nothing else changes. Full recipe, safe zones and transition devices: [docs/17-reels-and-promos.md](../../docs/17-reels-and-promos.md).
+
+## Check-gate gotchas (learned on p003 to p008)
+
+| Check fails | Cause | Fix |
+|---|---|---|
+| contrast, white text on an SVG fill | The checker can't see SVG `<rect>` backgrounds and measures against the page | Dark text on light SVG fills, or put the fill on an HTML element |
+| contrast, headline under an incoming wipe | Words hidden by masks are still sampled | Keep the headline container at `opacity: 0` until the wipe clears (`tl.set("#head", {opacity: 1}, 0.4)`) |
+| contrast on the last sample of a short beat | Shake or pulse still running at the end | Finish motion by about 85% of the beat |
+| `content_overlap` | Stacked headlines hidden only by masks | Also toggle each container's opacity so one is visible at a time |
+| `text_occluded` | Masked kinetic words (`.w > .wi`) with a card sliding under them, or a highlight ring over a label | `data-layout-allow-occlusion` on the `.wi` spans too; slide cards in sideways |
+| `text_box_overflow` | SVG chart labels near the bottom edge | Leave 20 px below the labels |
+| `negative_z_index` | `z-index: -1` highlight behind text | Put the text in a `position: relative` span above the highlight |
+| letter-spacing tween rejected | `letterSpacing` snaps to pixels | Animate `scale` instead |
+| highlight on wrapped inline text looks wrong | Absolute child with `scaleX` breaks across lines | `box-decoration-break: clone` plus a `backgroundColor` tween |
+| warning in a scene with no headline | Shared GSAP setup targets `.hd` | Guard with `document.querySelector` |
+
+- `--snap` uses the narration timing, not `hold` changes made since. A snap past the old scene end shows the closing transition, not a bug. Real durations are in `build/<id>/hf/<scene>/cues.js`.
+- `render-scene.mjs` prefers `~/.edzola-video-studio/build/<id>/timing.json` over the committed `timing.preview.json` whenever a build exists. Pass the preview file explicitly to design against it.
+- Only `assets/brand` is staged next to a scene. Embed any other image (plates, covers) as a data URI.
+- Brand files: `edzola-wordmark-cream.png` is the dark wordmark on a cream box. On coloured fills use `edzola-wordmark-transparent.png` with `filter: brightness(0) invert(.97)`.

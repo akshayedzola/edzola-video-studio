@@ -8,7 +8,7 @@ It turns EdZola's verified knowledge (nonprofit data systems, MAP, AI in the soc
 
 `catalog` issue (`/claim`) → `knowledge/` → `episodes/<id>/brief.md` → `storyboard.json` (voice-directed beats) → narrate + listen-back → HyperFrames scenes → `npm run render` → PR → human review → publish.
 
-**Start here:** [`docs/13-explainer-formula.md`](docs/13-explainer-formula.md) (one proven recipe) and [`docs/16-creative-range.md`](docs/16-creative-range.md) (what's fixed vs free; you must propose three different treatments and avoid repeating recent ones), [`CONTRIBUTING.md`](CONTRIBUTING.md) (the workflow), [`GUARDRAILS.md`](GUARDRAILS.md) (the rules). For Claude Code, the [`edzola-video-episode`](.claude/skills/edzola-video-episode/SKILL.md) skill walks through every step. Background: [`docs/00-concept-note.md`](docs/00-concept-note.md), [`docs/01-architecture.md`](docs/01-architecture.md).
+**Start here:** [`docs/13-explainer-formula.md`](docs/13-explainer-formula.md) (one proven recipe) and [`docs/16-creative-range.md`](docs/16-creative-range.md) (what's fixed vs free; you must propose three different treatments and avoid repeating recent ones), [`docs/17-reels-and-promos.md`](docs/17-reels-and-promos.md) (for 9:16 reels and promos of EdZola offerings), [`CONTRIBUTING.md`](CONTRIBUTING.md) (the workflow), [`GUARDRAILS.md`](GUARDRAILS.md) (the rules). For Claude Code, the [`edzola-video-episode`](.claude/skills/edzola-video-episode/SKILL.md) skill walks through every step. Background: [`docs/00-concept-note.md`](docs/00-concept-note.md), [`docs/01-architecture.md`](docs/01-architecture.md).
 
 ## Hard rules (never break these)
 
